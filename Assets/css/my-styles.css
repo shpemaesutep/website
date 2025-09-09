@@ -1,0 +1,113 @@
+body {
+    padding-top: 125px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Oswald', sans-serif;
+}
+
+li {
+    font-family: 'Oswald', sans-serif;
+}
+
+p,
+a,
+i,
+span {
+    font-family: 'Roboto', sans-serif;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.text-utep-orange {
+    color: #FF8200;
+}
+
+.text-chairs {
+    color: blue;
+}
+
+.text-directors {
+    color: green;
+}
+
+.text-maes-green {
+    color: #86dc3d;
+}
+
+.text-shpe-blue {
+    color: #89939e;
+}
+
+.home-first-slide-span {
+    font-family: 'Oswald', sans-serif;
+}
+
+.profile-image {
+    border-radius: 5px;
+}
+
+#members-container .profile-image {
+    height: 200px;
+    width: 200px;
+}
+
+.member :hover {
+    cursor: pointer;
+}
+
+.navbar-links {
+    font-family: 'Mohave', sans-serif !important;
+    color: #151d26 !important;
+}
+
+.nav-item :hover {
+    color: #FF8200 !important;
+}
+
+.bg-shpe-blue {
+    background-color: #151d26;
+}
+
+a {
+    color: inherit;
+}
+
+.fa-linkedin {
+    font-size: 25px;
+}
+
+.bg-light-white {
+    background-color: #ffffff;
+}
+
+.exception {
+    background-color: transparent !important; /* Make sure this exception takes precedence */
+}
+
+.register-button {
+    color: #0d6efd !important;
+}
+
+.rounded-photo {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.center-image {
+    position: relative;
+    text-align: center;
+}
+
+.center-image img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+}
+

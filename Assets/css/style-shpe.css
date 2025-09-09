@@ -1,0 +1,64 @@
+#eboard-welcome {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/eboard2023final.jpg");
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.img-eboard {
+    height: 65%;
+    width: 60%;
+    border-radius: 5px;
+    padding-top: 1.5rem !important;
+    object-fit: cover;
+    transition: .3s ease-in-out;
+}
+
+.img-eboard:hover {
+    transform: scale(1.050);
+    z-index: 7;
+}
+
+hr {
+    width: 70%;
+}
+
+.shadow-div {
+    height: 95%;
+}
+
+@media (max-width: 575.98px) {
+    .shadow-div {
+        height: auto;
+    }
+
+    #eboard-welcome {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/eboard2023final.jpg");
+        height: 800px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: initial;
+    }
+}
+
+.who-are-we {
+    text-decoration: underline;
+    -webkit-text-decoration-color: #FF8200;
+    text-decoration-color: #FF8200;
+    transition: .2s;
+}
+.who-are-we:hover {
+    height:105%;
+}
+
+#board-of-directors h2 {
+    color: green;
+}
+
+#board-of-chairs h2 {
+    color: blue;
+}
+
