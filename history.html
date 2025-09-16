@@ -31,9 +31,10 @@
 
     <header id="page-header">
     </header>
+
     <section>
         <div class="container-fluid text-center bg" id="history-welcome">
-            <h1 class="text-white pt-3">History</h1>
+            <h1 class="title">History</h1>
         </div>
         <div class="container" id="history-container">
             <div class="row py-3">
@@ -87,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        <!-- <div class="container">
 
             <div class="row">
                 <div class="col-md-6 px-4 py-4 offset-md-3 ">
@@ -104,13 +105,17 @@
                 </div>
             </div>
         <div class="container">
-        
+         -->
         <style>
         h5 {
             font-weight: 300;
         }
         #history-welcome {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/CComiteShpeConvetion.jpeg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/history/history.JPG");
             height: 800px;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -118,9 +123,9 @@
             background-attachment: fixed
         }
         
-        #history-container li {
+        /* #history-container li {
             font-size: 30px;
-        }
+        } */
         #history-container .mech {
             color: #3771CA;
         }
@@ -178,6 +183,22 @@
                 background-attachment: initial;
             }
         }
+        li {
+            font-size: 20px;
+        }
+        a {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .title {
+        font-family: 'Playfair Display', serif;
+        font-size: 5rem;        /* big size */
+        font-weight: 900;
+        color: #ffffff;         /* your accent green */
+        margin-bottom: 1rem;
+        text-align: center;   
+     }
+
 
         </style>
     </section>
@@ -195,7 +216,7 @@
     </style>
     <script>
         $("#page-header").load("header.html");
-        $("#page-footer").load("assets/footer.html");
+        $("#page-footer").load("footer.html");
     </script>
 </body>
 

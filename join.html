@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>UTEP MAES//SHPE</title>
+    <title>UTEP SHPE//MAES</title>
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -34,16 +34,16 @@
 
     <section>
         <div class="container-fluid text-center bg" id="join-welcome">
-            <h1 class="text-white pt-3">Get Involved</h1>
+            <h1 class="title">Get Involved</h1>
         </div>
-        <div class="container">
+        <!-- <div class="container">
             <br>
                 <h1 class="text-utep-orange text-center ">CHECK YOUR POINTS</h1>
-        </div>
+        </div> -->
 
         <!--Buttons-->
 
-        <div class="container">
+        <!-- <div class="container">
 
             <div class="row">
                 <div class="col-md-6 px-4 py-4 offset-md-3 ">
@@ -58,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         <div class="container">
             <br>
                 <h1 class="text-utep-orange text-center ">GET YOUR SHPE//MAES MEMBERSHIPS</h1>
@@ -105,7 +105,7 @@
             <br>
                 <h1 class="text-utep-orange text-center ">GET INVOLVED WITH SHPE//MAES</h1>
         </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6 px-4 py-4">
                     <div class="text-center bg" id="slack-button">
                         <div class="container-center">
@@ -117,7 +117,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-6 px-4 py-4">
                     <div class="text-center bg" id="whats-button">
                         <div class="container-center">
@@ -125,7 +125,7 @@
                                 <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
                                     WHATSAPP COMMUNITY  
                                 </h1>
-                                <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5" href="https://chat.whatsapp.com/LFTFpgkXW632a3Rc81ZaaZ">Join</a>
+                                <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5" href="https://chat.whatsapp.com/FxJFENxk9PPDI9YcGM02dM">Join</a>
                             </div>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
         <div class="container">
                 <h1 class="text-utep-orange text-center ">STUDENT RESOURCES</h1>
         </div>
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-md-6 px-4 py-4 offset-md-3">
                     <div class="text-center bg" id="internships-button">
                         <div class="container-center">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-6 px-4 py-4">
                     <div class="text-center bg" id="coursera-button">
                         <div class="container-center">
@@ -216,7 +216,11 @@
 
     <style>
         #join-welcome {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/join.jpeg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/join/get_involved.JPG");
             height: 700px;
             background-position: bottom;
             background-repeat: no-repeat;
@@ -241,6 +245,14 @@
                 background-attachment: initial;
             }
         }
+        .title {
+        font-family: 'Playfair Display', serif;
+        font-size: 5rem;        /* big size */
+        font-weight: 900;
+        color: #ffffff;         /* your accent green */
+        margin-bottom: 1rem;
+        text-align: center;   
+     }
 
         #points-button {
             background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/becomeamember.jpg");
@@ -391,7 +403,7 @@
     </style>
     <script>
         $("#page-header").load("header.html");
-        $("#page-footer").load("assets/footer.html");
+        $("#page-footer").load("footer.html");
     </script>
 </body>
 
