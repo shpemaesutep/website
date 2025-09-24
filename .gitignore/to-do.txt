@@ -1,0 +1,5 @@
+- add constitiution
+- add stevn picture 
+- fix lag on officer page
+- fix title page on phone 
+- fix fonts to flex when on another device

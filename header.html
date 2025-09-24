@@ -3,6 +3,12 @@
         <a class="navbar-brand" href="/">
             <img src="assets/img/websiteHeader.png" width="200" class="logo img-fluid" alt="SHPE//MAES Logo">
         </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
         <div class="collapse navbar-collapse " style="background-color: #f8f9fa;" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item px-4"><a class="nav-link navbar-links" href="index.html">Home</a></li>
@@ -11,9 +17,19 @@
                 <!-- <li class="nav-item px-4"><a class="nav-link navbar-links" href="shpetinas.html">SHPEtinas</a></li> -->
                 <li class="nav-item px-4"><a class="nav-link navbar-links" href="join.html">Join</a></li>
                 <!-- have a more tab with constitution, socials, resources -->
-                 <!-- make header text the same size -->
-                
-                
+                <!-- make header text the same size -->
+
+                <li class="nav-item dropdown px-4">
+                    <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        More
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="moreDropdown">
+                        <!-- <li><a class="dropdown-item" href="constitution.html">Constitution</a></li> -->
+                        <li><a class="dropdown-item" href="resources.html">Resources</a></li>
+                        <li><a class="dropdown-item" href="getinvolved.html">Social Media</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
@@ -21,7 +37,7 @@
 
 <style>
     logo {
-      position: absolute;
-      clip: rect( 0px, 100px, 100px, 0px );
+        position: absolute;
+        clip: rect(0px, 100px, 100px, 0px);
     }
 </style>
