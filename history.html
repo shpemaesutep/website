@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html>
 
 <head>
     <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>UTEP MAES//SHPE</title>
+    <title>UTEP SHPE//MAES</title>
+
+    <!-- Favicon (file in assets/img/) -->
+    <link rel="icon" href="/favicon.png" type="image/png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -25,199 +31,167 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
         integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+
 </head>
 
+
 <body>
+  <!-- Header -->
+  <header id="page-header"></header>
 
-    <header id="page-header">
-    </header>
+  <!-- Hero Section -->
+  <section id="history-welcome">
+    <div class="text-center text-white">
+      <h1 class="title fw-bold">Our History</h1>
+      <p class="lead text-light. fade-in-up">Celebrating decades of Hispanic excellence in STEM</p>
+    </div>
+  </section>
 
-    <section>
-        <div class="container-fluid text-center bg" id="history-welcome">
-            <h1 class="title">History</h1>
+  <!-- About Section -->
+  <section class="history-section py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold text-dark mb-3 ">What is SHPE & MAES?</h2>
+      <p class="lead text-muted mx-auto" style="max-width: 800px;">
+        The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and Engineering (MAES) are two
+        non-profit organizations dedicated to the advancement of Hispanics in STEM. Both were founded in Los Angeles,
+        California, in 1974, and have since grown into national networks of passionate professionals and students
+        empowering
+        future generations of engineers and scientists. Today, SHPE includes over 11,000 members across 44 professional
+        and
+        245 student chapters nationwide, while MAES continues to expand through more than 40 active student chapters
+        across
+        the country.
+      </p>
+
+      <p class="lead text-muted mx-auto" style="max-width: 800px;">
+        In 1977, the UTEP student chapter of SHPE was chartered alongside MAES by then-president Richard Martinez within
+        the
+        College of Engineering. Together, SHPE and MAES at UTEP have built a legacy of leadership, service, and academic
+        excellence, fostering a community that celebrates culture while advancing in technology.
+      </p>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="container my-5">
+    <div class="row text-center">
+      <div class="col-md-6 mb-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <i class="fas fa-handshake mb-3" style="font-size:2rem; color:#86dc3d;"></i>
+          <h4 class="fw-bold text-dark mb-3">Our Mission</h4>
+          <p class="text-muted">
+            To develop socially responsible STEM professionals who excel in their fields and positively impact their
+            communities through leadership, service, and innovation.
+          </p>
         </div>
-        <div class="container" id="history-container">
-            <div class="row py-3">
-                <div class="col-md-12 mt-2">
-                    <h1 class="text-utep-orange text-center">WHAT IS SHPE AND MAES?</h1>
-                    <h5>
-                        The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and
-                        Engineering (MAES) are two non-profit organizations committed to the
-                        advancement of Hispanics in STEM fields. SHPE and MAES were both founded in
-                        Los Angeles, California, in 1974. Over time, SHPE has grown to have over 11,000
-                        members affiliated with 44 professional chapters and 245 student chapters across
-                        the nation. Similarly, MAES has expanded to include 40 student chapters
-                        nationwide, with their numbers increasing every year. In 1977, the UTEP student
-                        chapter of SHPE was chartered in conjunction with MAES by the then-president
-                        Richard Martinez within the University's College of Engineering.
-                        
-                    </h5>
-                    <h3 class="text-maes-green mt-3">MISSION</h3>
-
-                    <h5>Our mission is to develop socially
-                        responsible STEM professionals who excel
-                        in their fields and positively impact our
-                        country. We strive to inspire and support
-                        individuals in becoming role models within
-                        our community, leading with expertise and
-                        dedication to create a lasting positive
-                        influence.
-                    </h5>
-                    
-                    <h3 class="text-maes-green">VISION</h3>
-                    
-                    <h5>Our vision is to be the preeminent
-                        organization that shapes socially responsible
-                        STEM professionals, empowering them to
-                        make significant contributions to our nation,
-                        and inspiring them to serve as influential role
-                        models within our community.
-                    </h5>
-                </div>
-            </div>
-            <hr />
-            <h1 class="text-utep-orange text-center">Our Demographics</h1>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <img class="img-fluid mx-auto d-block demographics-image" src="assets/img/Demographics2023.png" alt="Demographics graph">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 offset-md-2 mt-3">
-                    <img class="img-fluid mx-auto d-block internships-map" src="assets/img/past-internships.png" alt="Past Internships & Co-Ops Map">
-                </div>
-            </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="p-4 bg-light rounded shadow-sm h-100">
+          <i class="fas fa-lightbulb mb-3" style="font-size:2rem; color:#86dc3d;"></i>
+          <h4 class="fw-bold text-dark mb-3">Our Vision</h4>
+          <p class="text-muted">
+            To be a model organization cultivating future leaders in STEM and inspiring the next generation of Hispanic
+            innovators.
+          </p>
         </div>
-        <!-- <div class="container">
+      </div>
+    </div>
+  </section>
 
-            <div class="row">
-                <div class="col-md-6 px-4 py-4 offset-md-3 ">
-                    <div class="text-center bg" id="bylaws-button">
-                        <div class="container-center">
-                            <div class="center">
-                                <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                    Chapter's Bylaws
-                                </h1>
-                                <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5" href="Constitution_2023-2024.pdf">See them!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="container">
-         -->
-        <style>
-        h5 {
-            font-weight: 300;
-        }
-        #history-welcome {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/history/history.JPG");
-            height: 800px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed
-        }
-        
-        /* #history-container li {
-            font-size: 30px;
-        } */
-        #history-container .mech {
-            color: #3771CA;
-        }
-        #history-container .elec {
-            color: #FD7603;
-        }
-        #history-container .civil {
-            color: #FF0000;
-        }
-        #history-container .cs {
-            color: #FFBE00;
-        }
-        #history-container .industrial {
-            color: #7A25A6;
-        }
-        #history-container .metal {
-            color: #59B132;
-        }
-        #history-container .leader {
-            color: #1C447C;
-        }
-        
-        #history-container span {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-        
-        .demographics-text {
-            border-right: 2px solid gainsboro;
-        }
-        
-        .internships-map {
-            height: 85%;
-            width: auto;
-        }
+  <!-- Demographics Section -->
+  <section class="container my-5 text-center">
+    <h2 class="fw-bold text-dark mb-4">Our Demographics</h2>
+    <p class="text-muted mb-4">Our chapter represents diverse disciplines across the UTEP College of Engineering.</p>
+    <img src="assets/img/Demographics2023.png" class="img-fluid rounded shadow-sm mb-4" alt="Demographics 2023">
+    <img src="assets/img/past-internships.png" class="img-fluid rounded shadow-sm" alt="Internship Map">
+  </section>
 
-        #bylaws-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Comite.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        @media (max-width: 575.98px) {
-            #history-welcome {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Convvention.JPG");
-                height: 400px;
-                background-position: bottom;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: initial;
-            }
-        }
-        li {
-            font-size: 20px;
-        }
-        a {
-            font-family: 'Oswald', sans-serif;
-        }
-
-        .title {
-        font-family: 'Playfair Display', serif;
-        font-size: 5rem;        /* big size */
-        font-weight: 900;
-        color: #ffffff;         /* your accent green */
-        margin-bottom: 1rem;
-        text-align: center;   
-     }
+  <!-- Footer -->
 
 
-        </style>
-    </section>
+  <!-- Inline Styling for Page-Specific Edits -->
+  <style>
+    /* body {
+      background-color: #fafafa;
+      font-family: 'Roboto', sans-serif;
+    } */
 
-    <footer id="page-footer">
-    </footer>
+    #history-welcome {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 65vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("assets/img/2025/history/history.JPG") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      background-attachment: fixed;
+    }
 
-    <!-- Scripts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-    </style>
-    <script>
-        $("#page-header").load("header.html");
-        $("#page-footer").load("footer.html");
-    </script>
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      letter-spacing: 1px;
+      animation: fadeInUp 1.2s ease;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .history-section {
+      background: #fff;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .history-section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #00254d;
+    }
+
+    .history-section p {
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    hr {
+      width: 60%;
+      margin: 3rem auto;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 768px) {
+      #history-welcome {
+        height: 45vh;
+        background-attachment: initial;
+      }
+
+      .title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  </section>
+  <footer id="page-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $("#page-header").load("header.html");
+    $("#page-footer").load("footer.html");
+  </script>
 </body>
 
 </html>
