@@ -155,3 +155,22 @@ a {
 .card-text {
   color: #555;
 }
+#logosCollapse img {
+  max-height: 120px;
+  object-fit: contain;
+}
+#logosCollapse h6 {
+  font-weight: 600;
+  color: #041E42;
+}
+.btn-outline-primary {
+  border-color: #FF8200;
+  color: #FF8200;
+}
+.btn-outline-primary:hover {
+  background-color: #FF8200;
+  color: #fff;
+}
+.card .rounded-circle {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
