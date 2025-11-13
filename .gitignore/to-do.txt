@@ -3,3 +3,7 @@
 - fix lag on officer page
 - fix title page on phone 
 - fix fonts to flex when on another device
+- each initiatve gets a page - minerspark, - shpetinas, 
+- member of the month?
+- imbed the instagram onto the page
+- fix header

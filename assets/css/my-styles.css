@@ -185,5 +185,58 @@ a {
   animation: fadeInUp 1.2s ease forwards;
 }
 .carousel-item { transition: transform 0.6s ease-in-out; }
+/* Base animation */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Title first */
+.fade-title,
+.fade-subtitle {
+    opacity: 0;
+    animation: fadeUp 0.9s ease-out forwards;
+}
+
+/* Subtitle after title */
+.fade-title {
+    animation-delay: 0.1s;
+}
+.fade-subtitle {
+    animation-delay: 0.4s;
+}
+
+/* Cards default hidden */
+.team-card {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+/* Middle card second (after title/subtitle) */
+.middle-card {
+    animation-delay: 0.8s;
+}
+
+/* Left card third */
+.left-card {
+    animation-delay: 1.2s;
+}
+
+/* Right card last */
+.right-card {
+    animation-delay: 1.4s;
+}
+
+/* Hover effect */
+.team-card:hover {
+    transform: translateY(-8px);
+    transition: 0.3s ease;
+}
 
 
