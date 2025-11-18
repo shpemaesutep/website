@@ -656,6 +656,9 @@ progress {
     max-height: 50%;
     /* height: auto; */
 }
+.img-lead {
+    max-width: 100%;
+}
 
 .img-thumbnail {
     padding: 0.25rem;
