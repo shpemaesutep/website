@@ -652,8 +652,9 @@ progress {
 }
 
 .img-fluid {
-    max-width: 100%;
-    height: auto;
+    max-width: 50%;
+    max-height: 50%;
+    /* height: auto; */
 }
 
 .img-thumbnail {
@@ -1526,6 +1527,7 @@ progress {
     .col-xl-4 {
         flex: 0 0 auto;
         width: 33.33333333%;
+        height: 33%;
     }
     .col-xl-5 {
         flex: 0 0 auto;
