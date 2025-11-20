@@ -213,7 +213,7 @@
                 </div> -->
         </div>
         </div>
-        <!-- START: Calendar + Instagram (responsive for phones) -->
+        <!-- START: Calendar + Instagram (responsive for phones+laptops) -->
 <style>
   /* small helpers to keep embed tidy on phones */
   .join-row-card { border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
@@ -227,6 +227,17 @@
   }
   /* ensure instagram blockquote doesn't overflow inside small containers */
   blockquote.instagram-media { max-width: 100% !important; width: 100% !important; }
+#join-instagram-col .card-body {
+    padding: 0.75rem !important;
+}
+
+.instagram-embed-wrap {
+    gap: 0.5rem !important;
+}
+
+.resp-iframe {
+    aspect-ratio: 3 / 4;  /* vertical but not too tall */
+}
 
   /* extra small screens: slightly tighter padding */
   @media (max-width: 575.98px) {
