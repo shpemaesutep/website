@@ -228,43 +228,6 @@
   }
   /* ensure instagram blockquote doesn't overflow inside small containers */
   blockquote.instagram-media { max-width: 100% !important; width: 100% !important; }
-/* tightened Instagram column - paste INSIDE the existing <style> block for the Calendar+Instagram snippet */
-#join-instagram-col .card-body {
-  padding: 0.6rem !important;  /* slightly tighter than before */
-}
-
-/* small gap between content pieces */
-.instagram-embed-wrap {
-  gap: 0.5rem !important;
-}
-
-/* make the embed square-ish so it doesn't get too tall */
-.resp-iframe {
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* square — fits nicely beside calendar */
-  height: auto;
-  border: 0;
-  display: block;
-}
-
-/* limit the instagram card height so it visually matches the calendar */
-#join-instagram-col .card {
-  max-height: 640px;    /* adjust this number if you want it taller/shorter */
-  overflow: hidden;
-}
-
-/* If you're using the Instagram blockquote native embed, cap its height too */
-blockquote.instagram-media {
-  max-height: 560px;   /* ensures embed won't push the card too tall */
-  overflow: hidden;
-}
-
-/* If you use an iframe grid (SnapWidget etc.), ensure it fills the wrapper */
-#instagram-grid iframe, #instagram-single iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
 /* Slightly tighter card padding */
 #join-instagram-col .card-body { padding: 0.5rem !important; }
 
