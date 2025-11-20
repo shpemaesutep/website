@@ -265,6 +265,17 @@ blockquote.instagram-media {
   height: 100%;
   display: block;
 }
+/* Slightly tighter card padding */
+#join-instagram-col .card-body { padding: 0.5rem !important; }
+
+/* Slightly taller but not too tall portrait (less crop than 1:1) */
+.resp-iframe { aspect-ratio: 4 / 5; }
+
+/* Cap the card so it won’t exceed the calendar too much */
+#join-instagram-col .card { max-height: 640px; overflow: hidden; }
+
+/* If native blockquote used, limit its height */
+blockquote.instagram-media { max-height: 560px; overflow: hidden; }
 
   /* extra small screens: slightly tighter padding */
   @media (max-width: 575.98px) {
