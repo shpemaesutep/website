@@ -228,17 +228,62 @@
   }
   /* ensure instagram blockquote doesn't overflow inside small containers */
   blockquote.instagram-media { max-width: 100% !important; width: 100% !important; }
-/* Slightly tighter card padding */
-#join-instagram-col .card-body { padding: 0.5rem !important; }
+/* ======= PERFECT INSTAGRAM SIZING — NO CROPPING, NO DEAD SPACE ======= */
 
-/* Slightly taller but not too tall portrait (less crop than 1:1) */
-.resp-iframe { aspect-ratio: 4 / 5; }
+/* Reduce padding inside the Instagram card */
+#join-instagram-col .card-body {
+    padding: 0.75rem !important;
+}
 
-/* Cap the card so it won’t exceed the calendar too much */
-#join-instagram-col .card { max-height: 640px; overflow: hidden; }
+/* Keep internal spacing tidy */
+.instagram-embed-wrap {
+    gap: 0.65rem !important;
+}
 
-/* If native blockquote used, limit its height */
-blockquote.instagram-media { max-height: 560px; overflow: hidden; }
+/* Force Instagram blockquote embed to fit and NOT crop */
+blockquote.instagram-media {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: block !important;
+}
+
+/* If using iframe widgets (SnapWidget, LightWidget, etc.) */
+#join-instagram-col iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+}
+
+/* Responsive container that sizes itself based on content so the embed is not stretched */
+#instagram-single,
+#instagram-grid {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: visible;
+}
+
+/* The square default was cropping. 
+   This makes the card adjust naturally based on the real Instagram embed height. */
+.resp-iframe {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important;
+    border: none;
+    display: block;
+}
+
+/* Prevent the card from getting too huge (safety only, doesn't crop content) */
+#join-instagram-col .card {
+    max-height: none !important;
+    overflow: visible !important;
+}
 
   /* extra small screens: slightly tighter padding */
   @media (max-width: 575.98px) {
