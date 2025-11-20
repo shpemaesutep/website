@@ -213,6 +213,78 @@
                 </div> -->
         </div>
         </div>
+        <!-- START: Calendar + Instagram (responsive for phones) -->
+<style>
+  /* small helpers to keep embed tidy on phones */
+  .join-row-card { border-radius: 0.5rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+  .instagram-embed-wrap { width: 100%; display: flex; flex-direction: column; gap: .75rem; }
+  /* make iframes responsive and square-ish for grid widgets */
+  .resp-iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3; /* adjusts on most screens; change to 1/1 if you prefer square grid */
+    border: 0;
+  }
+  /* ensure instagram blockquote doesn't overflow inside small containers */
+  blockquote.instagram-media { max-width: 100% !important; width: 100% !important; }
+
+  /* extra small screens: slightly tighter padding */
+  @media (max-width: 575.98px) {
+    .join-row-card .card-body { padding: 0.75rem; }
+    .card-title { font-size: 1.05rem; }
+  }
+</style>
+
+<div class="container my-5">
+  <div class="row gx-3 gy-3 align-items-start">
+    <!-- LEFT: Calendar (keep or replace with your actual calendar element) -->
+    <div class="col-12 col-md-6">
+      <div class="card join-row-card h-100">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title mb-3">Upcoming Events</h5>
+
+          <!-- calendar element -->
+          <div id="join-calendar" style="flex:1 1 auto;">
+            <iframe class="resp-iframe" src="https://calendar.google.com/calendar/u/0/embed?height=600&wkst=1&ctz=America/Denver&mode=MONTH&showTitle=0&&showPrint=0&showCalendars=0&showTz=0&src=c2hwZW1hZXN1dGVwQGdtYWlsLmNvbQ&color=%23039be5&pli=1"
+                    scrolling="no" loading="lazy" title="UTEP SHPE/MAES Calendar"></iframe>
+          </div>
+
+          <div class="mt-3">
+            <a class="btn btn-outline-primary btn-sm" href="https://minetracker.utep.edu/organization/maesshpe30" target="_blank">View full schedule</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Instagram embed -->
+    <div class="col-12 col-md-6">
+      <div class="card join-row-card h-100">
+        <div class="card-body d-flex flex-column instagram-embed-wrap">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title mb-0">Explore our Instagram</h5>
+            <a target="_blank" href="https://www.instagram.com/utepshpemaes/" class="btn btn-outline-primary btn-sm">@utepshpemaes</a>
+          </div>
+
+          <!--Embedding Instagram post -->
+          <div id="instagram-single" style="flex:0 0 auto;">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DQUOJ1xjkME/?img_index=1" data-instgrm-version="14" style="background:#FFF; border:0; margin:0 auto; padding:0;">
+              <a href="https://www.instagram.com/p/DQUOJ1xjkME/?img_index=1"></a>
+            </blockquote>
+          </div>
+
+          <div class="mt-auto">
+            <p class="small text-muted mb-0">Follow for event recaps, photos, and updates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Instagram embed script  -->
+<script async defer src="//www.instagram.com/embed.js"></script>
+<!-- END: Calendar + Instagram -->
+
     </section>
 
     <footer id="page-footer">
