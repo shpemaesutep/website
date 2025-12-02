@@ -113,15 +113,13 @@
                             <h5 class="card-title mt-3">React Native Setup</h5>
                             <p class="card-text">Instructions for installing Node, Expo, and configuring the
                                 environment.</p>
-                            <a class="btn btn-outline-primary" href = "react-native-setup.html" >Access</a>
+                            <a class="btn btn-outline-primary" href="react-native-setup.html">Access</a>
                         </div>
                     </div>
                 </div>
 
 
-
-
-
+                <!-- 
 
                 <div class="col-md-4">
                     <div class="card shadow-sm border-0 text-center">
@@ -134,7 +132,139 @@
                                 onclick="accessResource('https://www.figma.com/design/MLUKUtVGirDJIF9zVOdAdl/Mobile-App-Mock?node-id=0-1&p=f&t=7K3zzJL5mApIZTq6-0', 'figma2025')">Access</button>
                         </div>
                     </div>
+                </div> -->
+                <style>
+                    /* Fullscreen overlay */
+                    #figmaOverlay {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100vw;
+                        height: 100vh;
+                        background: rgba(0, 0, 0, 0.85);
+                        backdrop-filter: blur(6px);
+                        display: none;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 2000;
+                    }
+
+                    /* Phone frame */
+                    .phone-frame {
+                        width: 320px;
+                        height: 650px;
+                        border-radius: 32px;
+                        background: #000;
+                        padding: 14px;
+                        box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    /* Inner screen */
+                    .phone-screen {
+                        width: 100%;
+                        height: 100%;
+                        background: #111;
+                        border-radius: 26px;
+                        overflow-y: auto;
+                        scrollbar-width: none;
+                        padding-top: 30px;
+                        position: relative;
+                    }
+
+                    /* Notch */
+                    .phone-notch {
+                        position: absolute;
+                        top: 8px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 110px;
+                        height: 24px;
+                        background: #000;
+                        border-radius: 14px;
+                        z-index: 10;
+                    }
+
+                    /* Close button */
+                    #closeFigma {
+                        position: absolute;
+                        top: 25px;
+                        right: 30px;
+                        background: #ffffff22;
+                        border: none;
+                        color: #fff;
+                        font-size: 1.8rem;
+                        padding: 8px 14px;
+                        border-radius: 12px;
+                        cursor: pointer;
+                    }
+
+                    #closeFigma:hover {
+                        background: #ffffff33;
+                    }
+                </style>
+
+
+                <!-- CARD -->
+                <div class="col-md-4">
+                    <div class="card shadow-sm border-0 text-center">
+                        <div class="card-body">
+
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                                style="width:40px; height:40px;">
+
+                            <h5 class="card-title mt-3">Figma Prototype</h5>
+                            <p class="card-text">Open a full-screen phone preview.</p>
+
+                            <button class="btn btn-outline-primary btn-sm" onclick="openFigma()">
+                                View
+                            </button>
+                        </div>
+                    </div>
                 </div>
+
+
+                <!-- FULLSCREEN OVERLAY -->
+                <div id="figmaOverlay" onclick="closeFigma()">
+
+                    <button id="closeFigma" onclick="closeFigma()">✕</button>
+
+                    <div class="phone-frame" onclick="event.stopPropagation()">
+                        <div class="phone-notch"></div>
+
+                        <div class="phone-screen">
+                            <img src="assets/img/2025/appdev/app_mock.jpeg" alt="Figma Preview"
+                                style="width:100%; height:auto; display:block;">
+                        </div>
+                    </div>
+
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+
+                        <div class="phone-screen">
+                            <!-- Replace with your events screenshot -->
+                            <img src="assets/img/2025/appdev/events_mock.jpeg" alt="Events Screen Preview"
+                                style="width:100%; height:auto; display:block;">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <script>
+                    function openFigma() {
+                        document.getElementById("figmaOverlay").style.display = "flex";
+                    }
+
+                    function closeFigma() {
+                        document.getElementById("figmaOverlay").style.display = "none";
+                    }
+                </script>
+
 
                 <div class="col-md-4">
                     <div class="card shadow-sm border-0 text-center">
@@ -142,8 +272,7 @@
                             <i class="bi bi-github" style="font-size: 2.5rem; color:#0d6efd;"></i>
                             <h5 class="card-title mt-3">GitHub Repository</h5>
                             <p class="card-text">View our source code, branches, and documentation.</p>
-                            <button class="btn btn-outline-primary"
-                                onclick="accessResource('https://github.com/UTEP-SHPE-MAES/appdev', 'devhub2025')">Access</button>
+                            <a class="btn btn-outline-primary" href="https://github.com/shpemaesutep/appdev">Access</a>
                         </div>
                     </div>
                 </div>
@@ -362,348 +491,395 @@
                     <div class="collapse mt-4" id="logosCollapse">
                         <div class="card card-body bg-light text-center">
 
-                            <!-- PICKMARKS -->
-                            <h6 class="fw-bold text-utep-orange mb-3">Pickmarks</h6>
+                            <h6 class="fw-bold text-utep-orange mb-3">SHPE//MAES</h6>
                             <div class="row g-4 justify-content-center">
                                 <div class="col-md-3 col-sm-6 text-center">
                                     <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Classic_Pick.svg"
+                                        <img src="assets/img/2025/appdev/utep_logos/shpemaeslogo.png"
                                             alt="Classic Pickmark" class="img-fluid mb-3">
-                                        <h6>Classic Pickmark</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Classic_Pick.svg" download
+                                        <h6>SHPE//MAES Logo</h6>
+                                        <a href="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg" download
                                             class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
                                             Download</a>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6 text-center">
+                                <!-- <div class="col-md-3 col-sm-6 text-center">
                                     <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Black.svg"
+                                        <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
                                             alt="Flat Pick Black" class="img-fluid mb-3">
                                         <h6>Flat Pick (Black)</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Black.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                        <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
+                                            download class="btn btn-outline-primary btn-sm"><i
+                                                class="bi bi-download"></i>
                                             Download</a>
                                     </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Blue.svg"
-                                            alt="Flat Pick Blue" class="img-fluid mb-3">
-                                        <h6>Flat Pick (Blue)</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Blue.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
+                                </div> -->
+                                <hr class="my-4">
+
+
+                                <!-- PICKMARKS -->
+                                <h6 class="fw-bold text-utep-orange mb-3">Pickmarks</h6>
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg"
+                                                alt="Classic Pickmark" class="img-fluid mb-3">
+                                            <h6>Classic Pickmark</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
+                                                alt="Flat Pick Black" class="img-fluid mb-3">
+                                            <h6>Flat Pick (Black)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Blue.svg"
+                                                alt="Flat Pick Blue" class="img-fluid mb-3">
+                                            <h6>Flat Pick (Blue)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Blue.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Orange.svg"
+                                                alt="Flat Pick Orange" class="img-fluid mb-3">
+                                            <h6>Flat Pick (Orange)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Orange.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Silver.svg"
+                                                alt="Flat Pick Silver" class="img-fluid mb-3">
+                                            <h6>Flat Pick (Silver)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Silver.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_White.svg"
+                                                alt="Flat Pick White" class="img-fluid mb-3">
+                                            <h6>Flat Pick (White)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_White.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Orange.svg"
-                                            alt="Flat Pick Orange" class="img-fluid mb-3">
-                                        <h6>Flat Pick (Orange)</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Orange.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
+
+                                <hr class="my-4">
+
+                                <!-- PRIMARY LOGOS -->
+                                <h6 class="fw-bold text-utep-orange mb-3">Primary Logos</h6>
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Main.svg"
+                                                alt="Primary Main" class="img-fluid mb-3">
+                                            <h6>Primary Main</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Main.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Compact.svg"
+                                                alt="Primary Compact" class="img-fluid mb-3">
+                                            <h6>Primary Compact</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Compact.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Compact_Alternate.svg"
+                                                alt="Primary Compact Alternate" class="img-fluid mb-3">
+                                            <h6>Primary Compact Alternate</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Compact_Alternate.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Centered.svg"
+                                                alt="Primary Centered" class="img-fluid mb-3">
+                                            <h6>Primary Centered</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Centered.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Centered_Stacked.svg"
+                                                alt="Primary Centered Stacked" class="img-fluid mb-3">
+                                            <h6>Primary Centered Stacked</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Centered_Stacked.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Stacked.svg"
+                                                alt="Primary Stacked" class="img-fluid mb-3">
+                                            <h6>Primary Stacked</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Stacked.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Silver.svg"
-                                            alt="Flat Pick Silver" class="img-fluid mb-3">
-                                        <h6>Flat Pick (Silver)</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Flat_Pick_Silver.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
+
+                                <hr class="my-4">
+
+                                <!-- BOXMARKS -->
+                                <h6 class="fw-bold text-utep-orange mb-3">Boxmarks</h6>
+                                <div class="row g-4 justify-content-center">
+                                    <!-- List of all Boxmark variations -->
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Black-White.svg"
+                                                alt="Boxmark Black-White" class="img-fluid mb-3">
+                                            <h6>Boxmark Black/White</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Black-White.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-Orange.svg"
+                                                alt="Boxmark Blue-Orange" class="img-fluid mb-3">
+                                            <h6>Boxmark Blue/Orange</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-Orange.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-White.svg"
+                                                alt="Boxmark Blue-White" class="img-fluid mb-3">
+                                            <h6>Boxmark Blue/White</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-White.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-Blue.svg"
+                                                alt="Boxmark Orange-Blue" class="img-fluid mb-3">
+                                            <h6>Boxmark Orange/Blue</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-Blue.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-White.svg"
+                                                alt="Boxmark Orange-White" class="img-fluid mb-3">
+                                            <h6>Boxmark Orange/White</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-White.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Silver-White.svg"
+                                                alt="Boxmark Silver-White" class="img-fluid mb-3">
+                                            <h6>Boxmark Silver/White</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Silver-White.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Blue.svg"
+                                                alt="Boxmark White-Blue" class="img-fluid mb-3">
+                                            <h6>Boxmark White/Blue</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Blue.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Orange.svg"
+                                                alt="Boxmark White-Orange" class="img-fluid mb-3">
+                                            <h6>Boxmark White/Orange</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Orange.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Silver.svg"
+                                                alt="Boxmark White-Silver" class="img-fluid mb-3">
+                                            <h6>Boxmark White/Silver</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Silver.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Pickmark_Flat_Pick_White.svg"
-                                            alt="Flat Pick White" class="img-fluid mb-3">
-                                        <h6>Flat Pick (White)</h6>
-                                        <a href="assets/img/2025/utep_logos/Pickmark_Flat_Pick_White.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
+
+                                <hr class="my-4">
+
+                                <!-- FLAT LOGOS -->
+                                <h6 class="fw-bold text-utep-orange mb-3">Flat Logos</h6>
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Black.svg"
+                                                alt="Flat Logo Black" class="img-fluid mb-3">
+                                            <h6>Flat Logo (Black)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Black.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Blue.svg"
+                                                alt="Flat Logo Blue" class="img-fluid mb-3">
+                                            <h6>Flat Logo (Blue)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Blue.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Orange.svg"
+                                                alt="Flat Logo Orange" class="img-fluid mb-3">
+                                            <h6>Flat Logo (Orange)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Orange.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Reverse.svg"
+                                                alt="Flat Logo Reverse" class="img-fluid mb-3">
+                                            <h6>Flat Logo (Reverse)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Reverse.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Silver.svg"
+                                                alt="Flat Logo Silver" class="img-fluid mb-3">
+                                            <h6>Flat Logo (Silver)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Silver.svg"
+                                                download class="btn btn-outline-primary btn-sm"><i
+                                                    class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Classic_Logo.svg"
+                                                alt="Classic Logo" class="img-fluid mb-3">
+                                            <h6>Classic Logo</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Classic_Logo.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <hr class="my-4">
+
+                                <!-- WORDMARKS -->
+                                <h6 class="fw-bold text-utep-orange mb-3">Wordmarks</h6>
+                                <div class="row g-4 justify-content-center">
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Main.svg"
+                                                alt="Wordmark Main" class="img-fluid mb-3">
+                                            <h6>Wordmark (Main)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Main.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Compact.svg"
+                                                alt="Wordmark Compact" class="img-fluid mb-3">
+                                            <h6>Wordmark (Compact)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Compact.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 text-center">
+                                        <div class="card border-0 shadow-sm p-3">
+                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Alternate.svg"
+                                                alt="Wordmark Alternate" class="img-fluid mb-3">
+                                            <h6>Wordmark (Alternate)</h6>
+                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Alternate.svg" download
+                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
+                                                Download</a>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
-
-                            <hr class="my-4">
-
-                            <!-- PRIMARY LOGOS -->
-                            <h6 class="fw-bold text-utep-orange mb-3">Primary Logos</h6>
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Main.svg" alt="Primary Main"
-                                            class="img-fluid mb-3">
-                                        <h6>Primary Main</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Main.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Compact.svg" alt="Primary Compact"
-                                            class="img-fluid mb-3">
-                                        <h6>Primary Compact</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Compact.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Compact_Alternate.svg"
-                                            alt="Primary Compact Alternate" class="img-fluid mb-3">
-                                        <h6>Primary Compact Alternate</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Compact_Alternate.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Centered.svg"
-                                            alt="Primary Centered" class="img-fluid mb-3">
-                                        <h6>Primary Centered</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Centered.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Centered_Stacked.svg"
-                                            alt="Primary Centered Stacked" class="img-fluid mb-3">
-                                        <h6>Primary Centered Stacked</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Centered_Stacked.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Primary-Stacked.svg" alt="Primary Stacked"
-                                            class="img-fluid mb-3">
-                                        <h6>Primary Stacked</h6>
-                                        <a href="assets/img/2025/utep_logos/Primary-Stacked.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <!-- BOXMARKS -->
-                            <h6 class="fw-bold text-utep-orange mb-3">Boxmarks</h6>
-                            <div class="row g-4 justify-content-center">
-                                <!-- List of all Boxmark variations -->
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Black-White.svg"
-                                            alt="Boxmark Black-White" class="img-fluid mb-3">
-                                        <h6>Boxmark Black/White</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Black-White.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Blue-Orange.svg"
-                                            alt="Boxmark Blue-Orange" class="img-fluid mb-3">
-                                        <h6>Boxmark Blue/Orange</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Blue-Orange.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Blue-White.svg"
-                                            alt="Boxmark Blue-White" class="img-fluid mb-3">
-                                        <h6>Boxmark Blue/White</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Blue-White.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Orange-Blue.svg"
-                                            alt="Boxmark Orange-Blue" class="img-fluid mb-3">
-                                        <h6>Boxmark Orange/Blue</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Orange-Blue.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Orange-White.svg"
-                                            alt="Boxmark Orange-White" class="img-fluid mb-3">
-                                        <h6>Boxmark Orange/White</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Orange-White.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_Silver-White.svg"
-                                            alt="Boxmark Silver-White" class="img-fluid mb-3">
-                                        <h6>Boxmark Silver/White</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_Silver-White.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_White-Blue.svg"
-                                            alt="Boxmark White-Blue" class="img-fluid mb-3">
-                                        <h6>Boxmark White/Blue</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_White-Blue.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_White-Orange.svg"
-                                            alt="Boxmark White-Orange" class="img-fluid mb-3">
-                                        <h6>Boxmark White/Orange</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_White-Orange.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Boxmark_White-Silver.svg"
-                                            alt="Boxmark White-Silver" class="img-fluid mb-3">
-                                        <h6>Boxmark White/Silver</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Boxmark_White-Silver.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <!-- FLAT LOGOS -->
-                            <h6 class="fw-bold text-utep-orange mb-3">Flat Logos</h6>
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Flat_Logo_Black.svg"
-                                            alt="Flat Logo Black" class="img-fluid mb-3">
-                                        <h6>Flat Logo (Black)</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Flat_Logo_Black.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Flat_Logo_Blue.svg"
-                                            alt="Flat Logo Blue" class="img-fluid mb-3">
-                                        <h6>Flat Logo (Blue)</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Flat_Logo_Blue.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Flat_Logo_Orange.svg"
-                                            alt="Flat Logo Orange" class="img-fluid mb-3">
-                                        <h6>Flat Logo (Orange)</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Flat_Logo_Orange.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Flat_Logo_Reverse.svg"
-                                            alt="Flat Logo Reverse" class="img-fluid mb-3">
-                                        <h6>Flat Logo (Reverse)</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Flat_Logo_Reverse.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Flat_Logo_Silver.svg"
-                                            alt="Flat Logo Silver" class="img-fluid mb-3">
-                                        <h6>Flat Logo (Silver)</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Flat_Logo_Silver.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/UTEP_Classic_Logo.svg" alt="Classic Logo"
-                                            class="img-fluid mb-3">
-                                        <h6>Classic Logo</h6>
-                                        <a href="assets/img/2025/utep_logos/UTEP_Classic_Logo.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <!-- WORDMARKS -->
-                            <h6 class="fw-bold text-utep-orange mb-3">Wordmarks</h6>
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Wordmark_Main.svg" alt="Wordmark Main"
-                                            class="img-fluid mb-3">
-                                        <h6>Wordmark (Main)</h6>
-                                        <a href="assets/img/2025/utep_logos/Wordmark_Main.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Wordmark_Compact.svg"
-                                            alt="Wordmark Compact" class="img-fluid mb-3">
-                                        <h6>Wordmark (Compact)</h6>
-                                        <a href="assets/img/2025/utep_logos/Wordmark_Compact.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/utep_logos/Wordmark_Alternate.svg"
-                                            alt="Wordmark Alternate" class="img-fluid mb-3">
-                                        <h6>Wordmark (Alternate)</h6>
-                                        <a href="assets/img/2025/utep_logos/Wordmark_Alternate.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-            </div>
 
 
-            <!-- More Files -->
-            <!-- <div class="col-md-6">
+                <!-- More Files -->
+                <!-- <div class="col-md-6">
                 <div class="card p-4 border-0 shadow-sm">
                     <div class="d-flex align-items-center">
                         <i class="bi bi-clipboard-data-fill me-3" style="font-size:2rem; color:#00254d;"></i>
@@ -717,10 +893,10 @@
                 </div>
             </div> -->
 
-            <!-- TEAM DIRECTORY CARD -->
+                <!-- TEAM DIRECTORY CARD -->
 
 
-        </div>
+            </div>
     </section>
 
     <!-- JS -->
