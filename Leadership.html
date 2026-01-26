@@ -1,683 +1,599 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UTEP SHPE//MAES — Official Website" />
-    <meta name="author" content="UTEP SHPE//MAES" />
-    <title>UTEP SHPE//MAES</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHPE//MAES UTEP Leadership Team">
+  <meta name="author" content="SHPE//MAES UTEP">
+  <title>Leadership | SHPE//MAES UTEP</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.png" type="image/png">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-          integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Your site CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/my-styles.css">
+  <link rel="stylesheet" href="assets/css/style-shpe.css">
 
-    <!-- Core theme CSS -->
-    <link href="assets/css/styles.css" rel="stylesheet" />
+  <style>
+    :root{
+      --shpe-blue:#041E42;
+      --utep-orange:#FF8200;
+      --shpe-green:#86DC3D;
+      --card-radius: 18px;
+    }
 
-    <!-- Custom styles -->
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
+    body { font-family: 'Roboto', sans-serif; }
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-            crossorigin="anonymous"></script>
+    .hero{
+      min-height: 60vh;
+      background:
+        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url('assets/img/2025/leadership/team.JPG') center/cover no-repeat;
+    }
 
-    <!-- Bootstrap Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    .hero-title{
+      font-family:'Playfair Display', serif;
+      letter-spacing: .5px;
+    }
 
-    <!-- Site Scripts -->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
+    .section-title{
+      font-family:'Playfair Display', serif;
+      color: var(--shpe-blue);
+    }
+
+    /* Card styling */
+    .leader-card{
+      border: 0;
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,.07);
+      transition: transform .18s ease, box-shadow .18s ease;
+      cursor: pointer;
+      height: 100%;
+    }
+    .leader-card:hover{
+      transform: translateY(-4px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.10);
+    }
+
+    .avatar-wrap{
+      padding-top: 18px;
+      display:flex;
+      justify-content:center;
+    }
+    .leader-avatar{
+      width: 150px;
+      height: 150px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 4px solid rgba(255,130,0,.15);
+      background: #f3f4f6;
+    }
+
+    .leader-name{
+      font-weight: 800;
+      margin-bottom: 2px;
+      color: var(--shpe-blue);
+    }
+    .leader-role{
+      color: #6c757d;
+      margin-bottom: 6px;
+      font-size: .95rem;
+    }
+    .leader-major{
+      color: #6c757d;
+      font-size: .9rem;
+      margin-bottom: 10px;
+    }
+
+    .leader-links a{
+      color: var(--shpe-blue);
+      font-size: 1.15rem;
+      text-decoration: none;
+    }
+    .leader-links a:hover{ color: var(--utep-orange); }
+
+    /* Reveal on scroll */
+    .reveal{
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+    .reveal.is-visible{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Modal readability */
+    .modal-title{
+      font-family:'Playfair Display', serif;
+      color: var(--shpe-blue);
+    }
+    .modal-body{
+      white-space: normal;
+      line-height: 1.6;
+    }
+    .qa-q{
+      font-weight: 700;
+      color: var(--shpe-blue);
+      margin-top: 12px;
+    }
+    .qa-a{
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    /* Small pill section labels (optional) */
+    .section-pill{
+      display:inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: .85rem;
+      background: rgba(4,30,66,.08);
+      color: var(--shpe-blue);
+    }
+  </style>
 </head>
 
 <body>
 
-    <header id="page-header">
-    </header>
-    <!-- Content -->
-    <section>
-        <div class="container-fluid text-center bg" id="eboard-welcome">
-            <h1 class="title fade-in-up">SHPE//MAES Board</h1>
+  <!-- Header -->
+  <header id="page-header"></header>
+
+  <!-- Hero -->
+  <section class="hero d-flex align-items-center text-center text-white">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold hero-title">Leadership Team</h1>
+      <p class="lead text-light mt-3 mb-0">The students behind SHPE//MAES at UTEP</p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-5 bg-white">
+    <div class="container text-center">
+      <p class="text-muted mx-auto" style="max-width:860px;">
+        Our leadership team is committed to academic excellence, professional growth, and service to the El Paso community.
+        Click on any leader to learn why they joined SHPE//MAES and their favorite memory.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sections render here -->
+  <main class="pb-5">
+    <section class="py-4">
+      <div class="container">
+        <div class="text-center mb-4">
+          <!-- <span class="section-pill">Executive Board</span> -->
+          <h2 class="section-title fw-bold mt-3">Executive Board</h2>
+          <!-- <p class="text-muted mb-0">Core officers leading the chapter</p> -->
         </div>
-        <div class="container-fluid text-center pt-3 bg-shpe-blue">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <h2 class="text-utep-orange">WHO ARE WE?</h2>
-                    <p class="text-white">
-                        We are a dedicated team of leaders from the UTEP SHPE/MAES chapter. Our mission is to foster an
-                        inclusive community where aspiring engineers and scientists can thrive.
-                        Through collaboration, guidance, and innovation, we aim to inspire positive change and empower
-                        our members to excel in their pursuits. Join us as we work together to shape a brighter future
-                        for all.
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div class="row g-4" id="exec-grid"></div>
+      </div>
     </section>
-    <div class="container-fluid bg-light-white py-5">
-        <div class="container text-center">
 
-            <!-- Executive Board Section -->
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-utep-orange">Executive Board</h2>
-                </div>
+    <section class="py-4 bg-light">
+      <div class="container">
+        <div class="text-center mb-4">
+          <!-- <span class="section-pill">Board of Directors</span> -->
+          <h2 class="section-title fw-bold mt-3">Board of Directors</h2>
+          <!-- <p class="text-muted mb-0">Directors supporting key chapter pillars</p> -->
+        </div>
+        <div class="row g-4" id="directors-grid"></div>
+      </div>
+    </section>
+
+    <section class="py-4">
+      <div class="container">
+        <div class="text-center mb-4">
+          <!-- <span class="section-pill">Board of Chairs</span> -->
+          <h2 class="section-title fw-bold mt-3">Board of Chairs</h2>
+          <!-- <p class="text-muted mb-0">Program chairs and special initiatives</p> -->
+        </div>
+        <div class="row g-4" id="chairs-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal fade" id="leaderModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="border-radius:18px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="leaderModalTitle"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="leaderModalBody"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="page-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Header/Footer includes
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+
+ 
+    const LEADERS = {
+      exec: [
+        {
+          id: "thomas",
+          name: "Thomas Del Palacio",
+          role: "President",
+          major: "Aerospace Engineering",
+          img: "assets/img/2025/leadership/Faces/thomas.JPG",
+          linkedin: "https://www.linkedin.com/in/thomasdelpalacio/",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE/MAES because I love to help others, but I stayed in SHPE/MAES because I found my familia and a place to grow both professionally and personally.",
+            "What's your favorite SHPE memory?": "My favorite SHPE/MAES memory was when peers were sharing their offers—knowing that all the hours of work resulted in a member getting an offer is the greatest feeling in the world."
+          }
+        },
+        {
+          id: "lizbeth",
+          name: "Lizbeth Licero",
+          role: "Vice-President Internal",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/lizbeth.JPG",
+          linkedin: "https://www.linkedin.com/in/licerio/",
+          qa: {
+            "Why did you join SHPE?": "I got invited to a free discada and found out a community that I really love being part of. Found my familia 🫶🏻",
+            "What's your favorite SHPE memory?": "I have several favorites, but my top choices are every single discada, the SHPEtinas conference, National Convention socials, and The Posada from 2024."
+          }
+        },
+        {
+          id: "benjamin",
+          name: "Benjamin Gurovich",
+          role: "Vice-President External",
+          major: "Computer Engineering",
+          img: "assets/img/2025/leadership/Faces/benjamin.jpeg",
+          linkedin: "https://www.linkedin.com/in/benjamin-gurovich/",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE for the opportunities given and to achieve my career goals.",
+            "What's your favorite SHPE memory?": "My favorite SHPE memory is being a freshman and learning what SHPE was all about. I instantly gained interest and became involved."
+          }
+        },
+        {
+          id: "johanna",
+          name: "Johanna Mota",
+          role: "Treasurer",
+          major: "Computer Science",
+          img: "assets/img/2025/leadership/Faces/johanna.JPG",
+          linkedin: "https://www.linkedin.com/in/johanna-mota-aguilar-7b29b6326/",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE because I wanted to expand my connections and gain a better understanding of the tech field.",
+            "What's your favorite SHPE memory?": "Last year at the National Conference when we were creating social media content for SHPE National."
+          }
+        },
+        {
+          id: "mirka",
+          name: "Mirka Hernandez",
+          role: "Secretary",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/mirka.JPG",
+          linkedin: "https://www.linkedin.com/in/mirkahernandez/",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE because I wanted friends and guidance on how to navigate university, and I stayed because I truly enjoy the supportive and welcoming community it gave me.",
+            "What's your favorite SHPE memory?": "The trips I’ve taken with them—traveling together helped me bond with friends and feel even more connected."
+          }
+        },
+        {
+          id: "jessica",
+          name: "Jessica M. Cobos",
+          role: "Student Adviser",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/Jessica.JPG",
+          linkedin: "https://www.linkedin.com/in/jessica-cobos/",
+          qa: {
+            "Why did you join SHPE?": "A friend told me about SHPE and I checked out the first general meeting in Fall 2021. I realized SHPE/MAES had opportunities that could help me land internships and scholarships.",
+            "What's your favorite SHPE memory?": "Our 'Women in STEM: It's Not in Your Head' SHPEtinas event with Dell—open, vulnerable, and comforting conversations about imposter syndrome."
+          }
+        },
+        {
+          id: "hector",
+          name: "Hector Martinez",
+          role: "Major Events Coordinator",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/hector.JPG",
+          linkedin: "https://www.linkedin.com/in/hector-martinez-parada/",
+          qa: {
+            "Why did you join SHPE?": "I first joined because of the National Convention, then realized all the tools and opportunities SHPE/MAES offers to advance academically and professionally.",
+            "What's your favorite SHPE memory?": "The end of year discada was a blast."
+          }
+        }
+      ],
+
+      directors: [
+        {
+          id: "diego",
+          name: "Diego Loya",
+          role: "Director of Membership",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/diego.JPG",
+          linkedin: "https://www.linkedin.com/in/diegoloya1/",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE to get involved around campus and make connections.",
+            "What's your favorite SHPE memory?": "My first general meeting as an officer."
+          }
+        },
+        {
+          id: "aleida",
+          name: "Aleida Holguin",
+          role: "Director of Technology",
+          major: "Computer Science",
+          img: "assets/img/2025/leadership/Faces/aleida.png",
+          linkedin: "https://www.linkedin.com/in/aleidaholguin/",
+          qa: {
+            "Why did you join SHPE?": "I wanted to join a familia where I could give back all that has been given to me and expand my network with like-minded people.",
+            "What's your favorite SHPE memory?": "Pie an officer night!!"
+          }
+        },
+        {
+          id: "aurorasofia",
+          name: "Aurorasofia Zepeda",
+          role: "Director of SHPEtinas",
+          major: "Engineering Innovation and Leadership",
+          img: "assets/img/2025/leadership/Faces/aurorasofia.JPG",
+          linkedin: "https://www.linkedin.com/in/aurorasofiazepeda/",
+          qa: {
+            "Why did you join SHPE?": "I want to make a difference in the engineering community and help open doors for growth and professional development while still celebrating our culture and values.",
+            "What's your favorite SHPE memory?": "2024 SHPEtinas Conference!"
+          }
+        },
+        {
+          id: "joseph",
+          name: "Joseph R. Guerra",
+          role: "Director of Operations",
+          major: "Engineering Innovation and Leadership",
+          img: "assets/img/2025/leadership/Faces/joseph.JPG",
+          linkedin: "https://www.linkedin.com/in/joseph-rudy-guerra/",
+          qa: {
+            "Why did you join SHPE?": "I wanted to make memories with my friends while we were all trying to develop professionally and struggle at the same time.",
+            "What's your favorite SHPE memory?": "The lawlessness of the national convention—meeting big companies while also being stressed and having fun in California."
+          }
+        },
+        {
+          id: "jolie",
+          name: "Jolie Sanchez",
+          role: "Director of Outreach",
+          major: "Aerospace Engineering",
+          img: "assets/img/2025/leadership/Faces/jolie.jpeg",
+          linkedin: "https://www.linkedin.com/in/jolie-sanchez-236720376/",
+          qa: {
+            "Why did you join SHPE?": "To be part of an organization that helps people and grow alongside its members.",
+            "What's your favorite SHPE memory?": "Going to schools to talk about STEM/SHPEMAES and seeing their faces light up."
+          }
+        },
+        {
+          id: "paola",
+          name: "Paola Marquez",
+          role: "Director of Communications",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/ana.JPG",
+          linkedin: "https://www.linkedin.com/in/anapaolamarquezhernandez/",
+          qa: {
+            "Why did you join SHPE?": "I wanted to be more involved and learn how to get ahead in my career—SHPE/MAES has been exactly that.",
+            "What's your favorite SHPE memory?": "SHPEtinas trip to Austin and touring Dell Technologies."
+          }
+        },
+        {
+          id: "victor",
+          name: "Victor Bonilla",
+          role: "Director of Community Engagement",
+          major: "Aerospace Engineering",
+          img: "assets/img/2025/leadership/Faces/victor.JPG",
+          linkedin: "https://www.linkedin.com/in/vm-bonilla/",
+          qa: {
+            "Why did you join SHPE?": "I wanted to connect with people who share my interests and goals in engineering and push each other to grow.",
+            "What's your favorite SHPE memory?": "Interviewing with Cummins at National Convention—no offer, but I was happy to have the opportunity."
+          }
+        },
+        {
+          id: "mauricio",
+          name: "Mauricio Duran",
+          role: "Director of Academics",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/mauricio.jpeg",
+          linkedin: "https://www.linkedin.com/in/mduranmend/",
+          qa: {
+            "Why did you join SHPE?": "To strengthen my leadership and communication skills while being part of a community that encourages growth.",
+            "What's your favorite SHPE memory?": "First day of national convention in Anaheim, connecting with the Board."
+          }
+        }
+      ],
+
+      chairs: [
+        {
+          id: "catherine",
+          name: "Catherine Torres",
+          role: "SHPEtinas Chair",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/catherine.JPG",
+          linkedin: "https://www.linkedin.com/in/catherine-torres-971bb2324/",
+          qa: {
+            "Why did you join SHPE?": "I liked how it involved all engineering majors and focused on both professional and social development.",
+            "What's your favorite SHPE memory?": "My first National Convention—met ambitious people, gained skills, and explored California."
+          }
+        },
+        {
+          id: "damian",
+          name: "Damian Pacha",
+          role: "Jr. Chapter Chair",
+          major: "Mechanical Engineering",
+          img: "assets/img/2025/leadership/Faces/damian.JPG",
+          linkedin: "",
+          qa: {
+            "Why did you join SHPE?": "I joined SHPE to develop connections within my department and companies—so essentially, to get a job.",
+            "What's your favorite SHPE memory?": "First general meeting Spring 2024—won a huge SHPE shirt and it was a fun intro to the community."
+          }
+        },
+        {
+          id: "rosario",
+          name: "Rosario Lara",
+          role: "Engagement Chair",
+          major: "Computer Science",
+          img: "assets/img/2025/leadership/Faces/rosario.jpeg",
+          linkedin: "https://www.linkedin.com/in/rosario-g-lara/",
+          qa: {
+            "Why did you join SHPE?": "They make me feel part of a familia and never let me down.",
+            "What's your favorite SHPE memory?": "My first photoshoot with SHPE and first general meeting."
+          }
+        },
+        {
+          id: "natalia",
+          name: "Natalia Hernandez",
+          role: "Marketing Chair",
+          major: "Civil Engineering",
+          img: "", // add when you have it
+          linkedin: "",
+          qa: {}
+        },
+        {
+          id: "steven",
+          name: "Steven Sanchez",
+          role: "Alumni Chair",
+          major: "Biomedical Engineering",
+          img: "", // add when you have it
+          linkedin: "",
+          qa: {
+            "Why did you join SHPE?": "To push opportunities to more students, especially in Biomedical Engineering, and help people succeed.",
+            "What's your favorite SHPE memory?": "Attending SHPE 2024 National Conference in Los Angeles with my friends."
+          }
+        }
+      ]
+    };
+
+    /**
+     * ===========
+     * RENDER
+     * ===========
+     */
+    function leaderCardHTML(leader){
+      const imgTag = leader.img
+        ? `<img class="leader-avatar" data-src="${leader.img}" alt="${leader.name}" loading="lazy">`
+        : `<div class="leader-avatar d-flex align-items-center justify-content-center">
+             <i class="fa-solid fa-user" style="font-size:2.2rem; color:#9ca3af;"></i>
+           </div>`;
+
+      const linkedIn = leader.linkedin
+        ? `<a href="${leader.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`
+        : ``;
+
+      return `
+        <div class="col-sm-6 col-md-4 col-lg-3 reveal">
+          <div class="leader-card p-3 text-center" data-leader-id="${leader.id}">
+            <div class="avatar-wrap">${imgTag}</div>
+            <div class="pt-3">
+              <div class="leader-name">${leader.name}</div>
+              <div class="leader-role">${leader.role}</div>
+              <div class="leader-major">${leader.major || ""}</div>
+              <div class="leader-links">${linkedIn}</div>
             </div>
-            <!-- End of Executive Board Section -->
-
-            <div class="row">
-
-                <!-- First Row -->
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="thomas">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/thomas.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Thomas Del Palacio</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">President <br>Aerospace Engineering<br><a target="_blank"
-                                href="https://www.linkedin.com/in/thomasdelpalacio/"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="lizbeth">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/lizbeth.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Lizbeth Licero</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Vice-President Internal<br>Mechanical Engineering<br><a
-                                target="_blank" href="https://www.linkedin.com/in/licerio/"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="benjamin">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/benjamin.jpeg" alt="">
-                        <h5 class="text-utep-orange pt-3">Benjamin Gurovich</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Vice-President External<br>Computer Engineering<br><a
-                                target="_blank" href="https://www.linkedin.com/in/benjamin-gurovich/"><i
-                                    class="fab fa-linkedin"></i></a></p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="johanna">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/johanna.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Johanna Mota</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Treasurer<br>Computer Science<br><a target="_blank"
-                                href="https://www.linkedin.com/in/johanna-mota-aguilar-7b29b6326/"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="mirka">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/mirka.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Mirka Hernandez</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Secretary<br>Mechanical Engineering<br><a target="_blank"
-                                href="https://www.linkedin.com/in/mirkahernandez/"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="jessica">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/Jessica.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Jessica M. Cobos</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Student Adviser<br>Mechanical Engineering<br><a target="_blank"
-                                href="https://www.linkedin.com/in/jessica-cobos/"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-md-6 col-sm-12 member">
-                    <div class="shadow-sm shadow-div" id="hector">
-                        <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/hector.JPG" alt="">
-                        <h5 class="text-utep-orange pt-3">Hector Martinez</h5>
-                        <hr class="mx-auto" />
-                        <p class="text-shpe-blue pb-5">Major Events Coordinatorr<br>Mechanical Engineering<br><a
-                                target="_blank" href="https://www.linkedin.com/in/hector-martinez-parada//"><i
-                                    class="fab fa-linkedin pb-5"></i></a></p>
-                    </div>
-                </div>
-
-                <!-- New Section: Board of Directors -->
-                <section id="board-of-directors" class="py-5">
-                    <div class="container">
-                        <h2 class="text-directors text-center">Board of Directors</h2>
-                        <div class="row">
-                            <!-- Director 1 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="diego">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/diego.JPG"
-                                        alt="">
-                                    <h5 class="text-directors pt-3">Diego Loya</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Membership<br>Mechanical
-                                        Engineering<br><a target="_blank"
-                                            href="https://www.linkedin.com/in/diegoloya1/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-
-                            <!-- Director 2 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="aleida">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/aleida.png"
-                                        alt="">
-                                    <h5 class="text-directors pt-3">Aleida Holguin</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Technology<br>Computer Science<br><a
-                                            target="_blank" href="https://www.linkedin.com/in/aleidaholguin/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-
-
-                            <!-- Director 3 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="aurorasofia">
-                                    <img class="img-eboard img-fluid"
-                                        src="assets/img/2025/leadership/Faces/aurorasofia.JPG"
-                                        alt="Director of SHPEtinas">
-                                    <h5 class="text-directors pt-3">Aurorasofia Zepeda</h5>
-                                    <p class="text-shpe-blue pb-5">Director of SHPEtinas<br>Engineering Innovation and
-                                        Leadership<br><a target="_blank"
-                                            href="https://www.linkedin.com/in/aurorasofiazepeda/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-                            <!-- Director 4 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="joseph">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/joseph.JPG"
-                                        alt="Director of Operations">
-                                    <h5 class="text-directors pt-3">Joseph R. Guerra</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Operations<br>Engineering Innovation and
-                                        Leadership<br><a target="_blank"
-                                            href="https://www.linkedin.com/in/joseph-rudy-guerra/d"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-                            <!-- Director 5 -->
-
-                            <!-- Director 6 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="jolie">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/jolie.jpeg"
-                                        alt="Director of Outreach">
-                                    <h5 class="text-directors pt-3">Jolie Sanchez</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Outreach<br>Aerospace Engineering<br><a
-                                            target="_blank"
-                                            href="https://www.linkedin.com/in/jolie-sanchez-236720376/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-                            <!-- Director 7 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="paola">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/ana.JPG"
-                                        alt="Director of Communications">
-                                    <h5 class="text-directors pt-3">Paola Marquez</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Communications<br>Mechanical
-                                        Engineering<br><a target="_blank"
-                                            href="https://www.linkedin.com/in/anapaolamarquezhernandez/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="victor">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/victor.JPG"
-                                        alt="Director of Community Engagement">
-                                    <h5 class="text-directors pt-3">Victor Bonilla</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Community Engagement<br>Aerospace
-                                        Engineering<br><a target="_blank"
-                                            href="https://www.linkedin.com/in/vm-bonilla/"><i
-                                                class="fab fa-linkedin"></i></a></p>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="mauricio">
-                                    <img class="img-eboard img-fluid"
-                                        src="assets/img/2025/leadership/Faces/mauricio.jpeg"
-                                        alt="Director of Academics">
-                                    <h5 class="text-directors pt-3">Mauricio Duran</h5>
-                                    <p class="text-shpe-blue pb-5">Director of Academics<br>Mechanical Engineering<br>
-                                        <a target="_blank" href="https://www.linkedin.com/in/mduranmend/"><i
-                                                class="fab fa-linkedin"></i>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- New Section: Board of Chairs -->
-                <section id="board-of-chairs" class="py-5">
-                    <div class="container">
-                        <h2 class="text-chairs text-center" >Board of Chairs</h2>
-                        <div class="row">
-
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="catherine">
-                                    <img class="img-eboard img-fluid"
-                                        src="assets/img/2025/leadership/Faces/catherine.JPG" alt="Mechanical Chair">
-                                    <h5 class="text-chairs pt-3">Catherine Torres</h5>
-                                    <p class="text-shpe-blue pb-5">
-                                        SHPEtinas Chair<br>
-                                        Mechanical Engineering<br>
-                                        <a target="_blank"
-                                            href="https://www.linkedin.com/in/catherine-torres-971bb2324/"><i
-                                                class="fab fa-linkedin"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Chair 5 -->
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="damian">
-                                    <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/damian.JPG"
-                                        alt="Jr. Chapter Chair">
-                                    <h5 class="text-chairs pt-3">Damian Pacha</h5>
-                                    <p class="text-shpe-blue pb-5">Jr. Chapter Chair<br>Mechanical Engineering<br>
-                                        <!-- <a target="_blank" href="https://www.linkedin.com/in/h-j-r/"><i class="fab fa-linkedin"></i></a> -->
-                                    </p>
-                                </div>
-                            </div>
-
-
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="rosario">
-                                    <img class="img-eboard img-fluid"
-                                        src="assets/img/2025/leadership/Faces/rosario.jpeg" alt="Marketing Chair">
-                                    <h5 class="text-chairs pt-3">Rosario Lara</h5>
-                                    <p class="text-shpe-blue pb-5">
-                                        Engagement Chair<br>
-                                        Computer Science<br>
-                                        <a target="_blank" href="https://www.linkedin.com/in/rosario-g-lara/"><i
-                                                class="fab fa-linkedin"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="natalia">
-                                    <!-- <img class="img-eboard img-fluid" src="" alt="Marketing Chair"> -->
-                                    <h5 class="text-chairs pt-3">Natalia Hernandez</h5>
-                                    <p class="text-shpe-blue pb-5">Marketing Chair<br>Civil Engineering<br>
-                                        <!-- <a target="_blank" href=><i
-                                                class="fab fa-linkedin"></i></a></p> -->
-                                </div>
-                            </div>
-
-                            <div class="col-md-4">
-                                <div class="shadow-sm shadow-div" id="steven">
-                                    <!-- <img class="img-eboard img-fluid" src="assets/img/2025/leadership/Faces/stevne.jpeg" alt="Marketing Chair"> -->
-                                    <h5 class="text-chairs pt-3">Steven Sanchez</h5>
-                                    <p class="text-shpe-blue pb-5">
-                                        Alumni Chair<br>
-                                        Biomedical Engineering<br>
-                                        <!-- <a target="_blank" href="https://www.linkedin.com/in/rosario-g-lara/"><i class="fab fa-linkedin"></i></a> -->
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                </section>
-
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <style>
-                    #eboard-welcome {
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/leadership/team.JPG");
-                        height: 800px;
-                        background-position: center 30%;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                        background-attachment: fixed
-                    }
-
-                    li {
-                        font-size: 20px;
-                    }
-
-                    a {
-                        font-family: 'Oswald', sans-serif;
-                    }
-
-                    .title {
-                        font-family: 'Playfair Display', serif;
-                        font-size: 5rem;
-                        /* big size */
-                        font-weight: 900;
-                        color: #ffffff;
-                        /* your accent green */
-                        margin-bottom: 1rem;
-                        text-align: center;
-                    }
-                </style>
-
-                <script>
-                    // var thomas_description = 'Why did you join SHPE?<br>What's your favorite SHPE memory?';
-                    var thomas_description = `Why did you join SHPE?
-                                      I joined SHPE/MAES because I love to help others, but I stayed in SHPE/MAES because I found my familia and a place to grow both professionally and personally.
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE/MAES memory was when peers were sharing their offers, knowing that all the hours of work resulted in a member getting an offer is the greatest feeling in the world.`;
-
-
-                    var lizbeth_description = `Why did you join SHPE?
-                                    I got invited to a free discada and found out a community that I really love being part of. Found my familia 🫶🏻
-
-                                    What's your favorite SHPE memory?
-                                      I have several favorites, but my top choices are every single discada (I have attended three in a row), the SHPEtinas conference, National Convention socials, and The Posada from 2024.
-                                      
-                                     `;
-
-                    var benjamin_description = `Why did you join SHPE?
-                                      I joined SHPE for the opportinites given and achieve my career goals.
-
-                                      What's your favorite SHPE memory?
-                                      My faviorite SHPE memory is being a freshman and learning what SHPE was all about. I instantly gained intrest and became involved since.
-                                     `;
-
-                    var johanna_description = `Why did you join SHPE?
-                                    I joined SHPE because I wanted to expand my connections and gain a better understanding of the tech field.
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memory was last year at the National Conference when we were creating social media content for SHPE National.
-                                      
-                                     `;
-
-                    var mirka_description = `Why did you join SHPE?
-                                    I joined SHPE because I wanted friends and guidance on how to navigate university, and I stayed because I truly enjoy the supportive and welcoming community it gave me. Over time, it has become a space where I can grow, feel connected, and share experiences with people who understand my journey.
-                                      
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memories are the trips I’ve taken with them, because traveling together gave me the chance to bond with friends, experience new places, and create moments that made me feel even more connected to the community.
-                                     `;
-
-                    var jessica_description = `Why did you join SHPE?
-                                         During my sophomore year, a friend told me about SHPE after his roommate from an internship recommended it to him. I decided to check it out and went to the first general meeting in Fall 2021. That’s when I realized SHPE/MAES had so many opportunities that could really help me land an internship or get scholarships.
-
-                                      What's your favorite SHPE memory?
-                                      In Fall 2023, we held one of our first SHPEtinas events at UTEP called "Women in STEM: It's Not in Your Head" with Dell. The room was packed with about 30 women, and the focus was on imposter syndrome and the struggles women face in STEM. What made it really special was how open everyone was—we shared our stories, related to each other's experiences, and had some really honest conversations. It felt personal, vulnerable, and honestly just comforting to know we've all gone through similar challenges.
-                                      
-                                     `;
-
-                    var hector_description = `Why did you join SHPE?
-                                    I first joined because of the National Convention, but I quickly realized all the tools and oportunities that the organization had to offer for me to advance and grow both academically and professionally. This made me want to be more involved, and eventually, become part of the leadership team of our chapter.
-                                      
-                                      What's your favorite SHPE memory?
-                                      The end of year discada was a blast.
-                                     `;
-
-                    var diego_description = `Why did you join SHPE?
-                                    I joined SHPE to get start getting involved around campus, and make connections
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memory is the my first general meeting as an officer
-                                      
-                                     `;
-
-                    var aurorasofia_description = `Why did you join SHPE?
-                                            I joined SHPE because I want to make a difference in the engineering community. I really want to see more Latinos in STEM and help open doors for growth and professional development while still celebrating our culture and values. SHPEtinas means a lot to me because I want to inspire and empower more Latinas to find their passions in STEM and feel confident chasing their dreams. 
-
-                                      What's your favorite SHPE memory?
-                                      2024 SHPEtinas Conference! 
-                                      
-                                     `;
-
-                    var joseph_description = `Why did you join SHPE?
-                                    I wanted to make memories with my friends; while we were all trying to develop professionally and struggle at the same time.
-
-                                    What's your favorite SHPE memory?
-                                      The lawlessness of the national convention. When we went to SHPE National in Cali last year, it's so strange getting school excused so that you can take a trip to California and have fun but also be as stressed as you've ever been while meeting some of the biggest companies in the world. 
-                                      
-                                     `;
-
-                    var mauricio_description = `Why did you join SHPE?
-                                        I joined SHPE to strengthen my leadership and communication skills while being part of a community that encourages growth. For me, it’s not only about developing professionally, but also about connecting with people who share similar goals, exchanging experiences, and learning from their journeys.
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memory is from the first day of the national convention in Anaheim, when I began connecting with the Board of that year.
-                                      
-                                     `;
-
-                    var jolie_description = `Why did you join SHPE?
-                                    To be part of an organization that helps people and be the one participating in a personal growth along its members
-
-                                      What's your favorite SHPE memory?
-                                      Going to schools talking about STEM/SHPEMAES and seeing their faces lighten up with each topic
-                                     `;
-
-                    var paola_description = `Why did you join SHPE?
-                                    I joined SHPE/MAES because I wanted to find a way to be more involved at school and to learn about how I could get ahead in my career, and that's has been exactly my experience in the org. 
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memory was the SHPEtinas trip to Austin where we got to tour Dell Technologies. We got a talk from one of Dells Thermal engineers which helped me realize what path I want to take after graduation. 
-                                     `;
-
-                    var victor_description = `Why did you join SHPE?
-                                    I joined SHPE//MAES because I wanted to connect with people who share my interests and goals in the engineering field. I believe that surrounding yourself with people who aspire to grow helps you push yourself to achieve the same or even more, and I knew this community could provide that environment for me.
-
-                                    What's your favorite SHPE memory?
-                                    When I interviewed with Cummins at the National Convention, I was especially excited since it is one of my target companies to work for. Even though I didn’t receive a job offer, I felt happy knowing I had the opportunity to interview with them.
-                                     `;
-
-                    var aleida_description = `Why did you join SHPE?
-                                    I want to join a familia where I could give back all that has been given to me. I also wanted to expand my network to like minded people who could offer guidance and opportunity to continue to learn and grow.  
-                                      
-
-                                      What's your favorite SHPE memory?
-                                    Pie an officer night !! I was not yet an officer but it was so much fun watching everyone.   
-                                     `;
-
-                    var catherine_description = `Why did you join SHPE?
-                                    Out of all the other organizations I liked how it involved all of the engineering majors and how it focused on both professional and social development. 
-
-                                      
-
-                                      What's your favorite SHPE memory?
-                                      My favorite SHPE memory has got to be my first National Convention. I got to meet a diverse amount of ambitious individuals while also gaining professional skills, and got to explore California! I loved it. 
-                             
-                                     `;
-
-                    var rosario_description = `Why did you join SHPE?
-                                        I joined them because they make me feel as part of a Familia and never lets me down
-
-                                      What's your favorite SHPE memory?
-                                      My first photoshoot with SHPE and first general meeting
-                                      
-                                     `;
-
-                    var damian_description = `Why did you join SHPE?
-                                    I joined SHPE to develop connections within my engineering department with people and companies! So essentially, I joined to get a JOB!!!!
-                                      
-
-                                      What's your favorite SHPE memory?
-                                      When I first joined SHPE at the first general meeting of the spring 2024 semester, I won a SHPE shirt that was like 4XL and was way too big on me but it was a cool little introduction to the community
-                                      
-                                     `;
-                    var steven_description = `Why did you join SHPE?
-                                    I joined SHPE to help push out the opportunities that the organization brings to more students, especially in the Biomedical Engineering program. I love helping people and making sure that everyone has equal opportunities to succeed, so I hope to push others as much as SHPE has pushed me.
-                                      
-                                      What's your favorite SHPE memory?
-                                      Attending the SHPE 2024 National Conference in Los Angeles with my friends. Meeting different people from around the country who shared the same or similar heritage with me was an amazing experience.
-                                     `;
-
-
-                    $('.shadow-div').on('click', function () {
-                        switch ($(this).attr('id')) {
-
-                            case 'thomas':
-                                $('.modal-title').text("President - Thomas Del Palacio");
-                                $('.modal-body').text(thomas_description);
-                                break;
-                            case 'lizbeth':
-                                $('.modal-title').text("Vice-President Internal - Lizbeth Licero");
-                                $('.modal-body').text(lizbeth_description);
-                                break;
-                            case 'benjamin':
-                                $('.modal-title').text("Vice-President External - Benjamin Gurovich");
-                                $('.modal-body').text(benjamin_description);
-                                break;
-                            case 'johanna':
-                                $('.modal-title').text("Treasurer - Johanna Mota");
-                                $('.modal-body').text(johanna_description);
-                                break;
-                            case 'mirka':
-                                $('.modal-title').text("Secretary - Mirka Hernandez");
-                                $('.modal-body').text(mirka_description);
-                                break;
-                            case 'jessica':
-                                $('.modal-title').text("Student Advisor - Jessica M. Cobos");
-                                $('.modal-body').text(jessica_description);
-                                break;
-                            case 'hector':
-                                $('.modal-title').text("Major Events Coordinator - Hector Martinez");
-                                $('.modal-body').text(hector_description);
-                                break;
-                            case 'diego':
-                                $('.modal-title').text("Director of Membership - Diego Loya");
-                                $('.modal-body').text(diego_description);
-                                break;
-                            case 'aurorasofia':
-                                $('.modal-title').text("Director of SHPEtinas - Aurorasofia Zepeda");
-                                $('.modal-body').text(aurorasofia_description);
-                                break;
-                            case 'joseph':
-                                $('.modal-title').text("Director of Operations - Joseph R. Guerra");
-                                $('.modal-body').text(joseph_description);
-                                break;
-                            case 'mauricio':
-                                $('.modal-title').text("Director of Academics - Mauricio Duran");
-                                $('.modal-body').text(mauricio_description);
-                                break;
-                            case 'jolie':
-                                $('.modal-title').text("Director of Outreach - Jolie Sanchez");
-                                $('.modal-body').text(jolie_description);
-                                break;
-                            case 'paola':
-                                $('.modal-title').text("Director of Communications - Paola Marquez");
-                                $('.modal-body').text(paola_description);
-                                break;
-                            case 'victor':
-                                $('.modal-title').text("Director of Community Engagement - Victor Bonillaz");
-                                $('.modal-body').text(victor_description);
-                                break;
-                            case 'aleida':
-                                $('.modal-title').text("Webmaster Chair - Aleida Holguin");
-                                $('.modal-body').text(aleida_description);
-                                break;
-                            case 'mariana':
-                                $('.modal-title').text("Marketing Chair - Mariana Lozoya");
-                                $('.modal-body').text(mariana_description);
-                                break;
-                            case 'catherine':
-                                $('.modal-title').text("SHPEtinas - Catherine Torres");
-                                $('.modal-body').text(catherine_description);
-                                break;
-                            case 'rosario':
-                                $('.modal-title').text("Engagement Chair - Rosario Lara");
-                                $('.modal-body').text(rosario_description);
-                                break;
-                            case 'damian':
-                                $('.modal-title').text("Jr. Chapter Chair - Damian Pacha");
-                                $('.modal-body').text(damian_description);
-                                break;
-                            case 'steven':
-                                $('.modal-title').text("Alumni and Graduate Chair - Steven Sanchez");
-                                $('.modal-body').text(steven_description);
-                                break;
-                        }
-                        $('#exampleModal').modal('show');
-                    })
-                </script>
-                </section>
-
-                <script>
-                    // Event handler for the 'learn-more' button click
-                    $('#learn-more').on('click', function () {
-                        // Scroll to the element with the ID 'about' with a smooth animation
-                        scrollToID("#about", 200);
-                    });
-
-                    // Function to handle smooth scrolling to a specified element
-                    function scrollToID(id, speed) {
-                        var offSet = 50; // Offset to adjust the final scroll position
-                        var targetOffset = $(id).offset().top - offSet; // Calculate the target scroll position
-                        var mainNav = $("#main-nav"); // Reference to the main navigation element
-
-                        // Animate the scroll to the target offset
-                        $("html,body").animate({
-                            scrollTop: targetOffset
-                        }, speed);
-
-                        // Check if the main navigation menu is open
-                        if (mainNav.hasClass("open")) {
-                            // Collapse the navigation menu if it is open
-                            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
-                            mainNav.removeClass("open");
-                        }
-                    }
-                </script>
-
-
-                <footer id="page-footer">
-                </footer>
-
-                <!-- Scripts -->
-                <link rel="preconnect" href="https://fonts.googleapis.com">
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-                    rel="stylesheet">
-
-                <!-- Inline CSS to import additional Google Fonts -->
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-
-                    .modal-body {
-                        white-space: pre-line;
-                    }
-                </style>
-                <script>
-                    $("#page-header").load("header.html");
-                    $("#page-footer").load("footer.html");
-                </script>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSection(gridId, leaders){
+      const grid = document.getElementById(gridId);
+      grid.innerHTML = leaders.map(leaderCardHTML).join("");
+    }
+
+    renderSection("exec-grid", LEADERS.exec);
+    renderSection("directors-grid", LEADERS.directors);
+    renderSection("chairs-grid", LEADERS.chairs);
+
+    /**
+     * ===========
+     * LAZY LOAD IMAGES + REVEAL
+     * ===========
+     */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+
+        // reveal animation
+        entry.target.classList.add("is-visible");
+
+        // image lazy load (data-src -> src)
+        const img = entry.target.querySelector("img[data-src]");
+        if(img && !img.src){
+          img.src = img.getAttribute("data-src");
+        }
+
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    /**
+     * ===========
+     * MODAL (CLICK CARD)
+     * ===========
+     */
+    const modal = new bootstrap.Modal(document.getElementById("leaderModal"));
+    const titleEl = document.getElementById("leaderModalTitle");
+    const bodyEl = document.getElementById("leaderModalBody");
+
+    // Fast lookup by id
+    const leaderMap = {};
+    [...LEADERS.exec, ...LEADERS.directors, ...LEADERS.chairs].forEach(l => leaderMap[l.id] = l);
+
+    function qaToHTML(qa){
+      const keys = qa ? Object.keys(qa) : [];
+      if(keys.length === 0){
+        return `<p class="text-muted mb-0">More info coming soon.</p>`;
+      }
+      return keys.map(q => `
+        <div class="qa-q">${q}</div>
+        <div class="qa-a">${qa[q]}</div>
+      `).join("");
+    }
+
+    document.addEventListener("click", (e) => {
+      const card = e.target.closest(".leader-card");
+      if(!card) return;
+
+      const id = card.getAttribute("data-leader-id");
+      const leader = leaderMap[id];
+      if(!leader) return;
+
+      titleEl.textContent = `${leader.role} — ${leader.name}`;
+
+      // Use innerHTML so formatting displays cleanly
+      bodyEl.innerHTML = `
+        <div class="d-flex flex-column flex-md-row gap-4 align-items-start">
+          <div style="min-width:170px;">
+            ${leader.img ? `<img src="${leader.img}" alt="${leader.name}" class="rounded-4" style="width:170px; height:170px; object-fit:cover;">` : ``}
+          </div>
+          <div class="flex-grow-1">
+            <div class="text-muted mb-2">${leader.major || ""}</div>
+            ${qaToHTML(leader.qa)}
+          </div>
+        </div>
+      `;
+
+      modal.show();
+    });
+  </script>
 
 </body>
-
 </html>

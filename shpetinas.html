@@ -1,225 +1,210 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>UTEP MAES//SHPE</title>
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <!-- Custom MAES//SHPE Styles -->
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
-    <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHPEtinas | SHPE//MAES UTEP</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Your existing styles -->
+  <link rel="stylesheet" href="assets/css/my-styles.css">
+  <link rel="stylesheet" href="assets/css/style-shpe.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Icons + Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+  <header id="page-header"></header>
 
-    <header id="page-header">
-    </header>
-    <section>
-        <div class="container-fluid text-center bg" id="history-welcome">
-            <h1 class="title">SHPEtinas</h1>
+  <!-- HERO -->
+  <section class="py-5 text-center text-white" style="
+    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    url('assets/img/2025/home/shpetinas.jpeg');
+    background-size: cover;
+    background-position: center;">
+    <div class="container py-5">
+      <h1 class="fw-bold display-4 fade-title">SHPEtinas</h1>
+      <p class="lead fade-subtitle">A community for women in engineering</p>
+    </div>
+  </section>
+
+  <!-- WHAT IS SHPETINAS -->
+  <section class="container my-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h2 class="fw-bold" style="font-family:'Playfair Display', serif; color:#041E42;">
+          What is SHPEtinas?
+        </h2>
+        <p class="text-muted mt-3" style="font-size:1.05rem; line-height:1.7;">
+          SHPEtinas is a supportive community within SHPE//MAES dedicated to empowering
+          women in STEM through mentorship, professional development, and meaningful connections.
+        </p>
+        <p class="text-muted">
+          We create spaces where women feel seen, supported, and confident —
+          whether that’s through workshops, socials, outreach, or honest conversations.
+        </p>
+      </div>
+
+      <div class="col-lg-6">
+        <img src="assets/img/2025/home/shpetinas4.jpeg"
+          class="img-fluid rounded-4 shadow-sm"
+          alt="SHPEtinas event">
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADS -->
+  <section class="container my-5">
+    <div class="text-center mb-5">
+      <h2 class="fw-bold" style="color:#fc5cff;">Meet the SHPEtinas Leads</h2>
+      <p class="text-muted">leading community, mentorship, and events</p>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <!-- LEAD CARD -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm text-center p-4 team-card">
+          <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
+            class="rounded-circle mx-auto"
+            style="width:120px; height:120px; object-fit:cover;" alt="">
+          <h5 class="mt-3 mb-0">Aleida Holguin</h5>
+          <p class="text-muted small mb-2">SHPEtinas Lead<br>Computer Science • Senior</p>
+          <a href="https://www.linkedin.com/in/aleidaholguin/" target="_blank"
+            class="text-primary" style="font-size:1.5rem;">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
-        <div class="container" id="history-container">
-            <div class="row py-3">
-                <div class="col-md-12 mt-2">
-                    <h1 class="text-utep-orange text-center">WHAT IS SHPEtinas?</h1>
-                    <h5>
-                        The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and
-                        Engineering (MAES) are two non-profit organizations committed to the
-                        advancement of Hispanics in STEM fields. SHPE and MAES were both founded in
-                        Los Angeles, California, in 1974. Over time, SHPE has grown to have over 11,000
-                        members affiliated with 44 professional chapters and 245 student chapters across
-                        the nation. Similarly, MAES has expanded to include 40 student chapters
-                        nationwide, with their numbers increasing every year. In 1977, the UTEP student
-                        chapter of SHPE was chartered in conjunction with MAES by the then-president
-                        Richard Martinez within the University's College of Engineering.
-                        
-                    </h5>
-                    <h3 class="text-maes-green mt-3">MISSION</h3>
+      </div>
 
-                    <h5>Our mission is to develop socially
-                        responsible STEM professionals who excel
-                        in their fields and positively impact our
-                        country. We strive to inspire and support
-                        individuals in becoming role models within
-                        our community, leading with expertise and
-                        dedication to create a lasting positive
-                        influence.
-                    </h5>
-                    
-                    <h3 class="text-maes-green">VISION</h3>
-                    
-                    <h5>Our vision is to be the preeminent
-                        organization that shapes socially responsible
-                        STEM professionals, empowering them to
-                        make significant contributions to our nation,
-                        and inspiring them to serve as influential role
-                        models within our community.
-                    </h5>
-                </div>
-            </div>
-            <hr />
-            <h1 class="text-utep-orange text-center">Our Demographics</h1>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <img class="img-fluid mx-auto d-block demographics-image" src="assets/img/Demographics2023.png" alt="Demographics graph">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 offset-md-2 mt-3">
-                    <img class="img-fluid mx-auto d-block internships-map" src="assets/img/past-internships.png" alt="Past Internships & Co-Ops Map">
-                </div>
-            </div>
+      <!-- DUPLICATE FOR OTHER LEADS -->
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="py-5" style="background:#F9FAFB;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Playfair Display', serif;">What We Do</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center">
+            <i class="fa-solid fa-heart mb-3" style="font-size:2rem; color:#fc5cff;"></i>
+            <h5 class="fw-bold">Community</h5>
+            <p class="text-muted">
+              Build friendships and support systems with women who understand your journey.
+            </p>
+          </div>
         </div>
-        <div class="container">
 
-            <div class="row">
-                <div class="col-md-6 px-4 py-4 offset-md-3 ">
-                    <div class="text-center bg" id="bylaws-button">
-                        <div class="container-center">
-                            <div class="center">
-                                <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                    Chapter's Bylaws
-                                </h1>
-                                <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5" href="Constitution_2023-2024.pdf">See them!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center">
+            <i class="fa-solid fa-people-arrows mb-3" style="font-size:2rem; color:#FF8200;"></i>
+            <h5 class="fw-bold">Mentorship</h5>
+            <p class="text-muted">
+              Learn from peers, upperclassmen, and professionals in STEM.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm p-4 h-100 text-center">
+            <i class="fa-solid fa-calendar-check mb-3" style="font-size:2rem; color:#041E42;"></i>
+            <h5 class="fw-bold">Events</h5>
+            <p class="text-muted">
+              Workshops, socials, outreach events, and collaborations across campus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENT GALLERY -->
+  <section class="container my-5">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Moments from SHPEtinas</h2>
+      <p class="text-muted">a glimpse into our community</p>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="assets/img/2025/home/shpetinas.jpeg" class="img-fluid rounded-3 shadow-sm">
+      </div>
+      <div class="col-md-4">
+        <img src="assets/img/2025/home/members.JPG" class="img-fluid rounded-3 shadow-sm">
+      </div>
+      <div class="col-md-4">
+        <img src="assets/img/2025/home/shpetinas4.jpeg" class="img-fluid rounded-3 shadow-sm">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / TEAM DIRECTORY -->
+  <section class="text-center my-5">
+    <button class="btn btn-primary px-4"
+      data-bs-toggle="modal"
+      data-bs-target="#shpetinasModal">
+      Meet the Full Team
+    </button>
+
+    <p class="text-muted mt-3">
+      Questions? <a href="mailto:shpemaesutep@gmail.com">Contact us</a>
+    </p>
+  </section>
+
+  <footer id="page-footer"></footer>
+
+  <!-- MODAL -->
+  <div class="modal fade" id="shpetinasModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">SHPEtinas Team</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-3">
+            <!-- TEAM MEMBER CARD -->
+            <div class="col-md-6">
+              <div class="card shadow-sm border-0 p-3 text-center">
+                <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
+                  class="rounded-circle mb-3"
+                  style="width:120px; height:120px; object-fit:cover;" alt="">
+                <h5 class="mb-0">Aleida Holguin</h5>
+                <p class="text-muted small">SHPEtinas Lead • Computer Science</p>
+              </div>
             </div>
-        <div class="container">
-        
-        <style>
-        h5 {
-            font-weight: 300;
-        }
-        #history-welcome {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            <!-- DUPLICATE AS NEEDED -->
+          </div>
+        </div>
 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/shpetinas/shpetinas2.JPG");
-            height: 800px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed
-        }
-        
-        #history-container li {
-            font-size: 30px;
-        }
-        #history-container .mech {
-            color: #3771CA;
-        }
-        #history-container .elec {
-            color: #FD7603;
-        }
-        #history-container .civil {
-            color: #FF0000;
-        }
-        #history-container .cs {
-            color: #FFBE00;
-        }
-        #history-container .industrial {
-            color: #7A25A6;
-        }
-        #history-container .metal {
-            color: #59B132;
-        }
-        #history-container .leader {
-            color: #1C447C;
-        }
-        
-        #history-container span {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-        
-        .demographics-text {
-            border-right: 2px solid gainsboro;
-        }
-        
-        .internships-map {
-            height: 85%;
-            width: auto;
-        }
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-        #bylaws-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Comite.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        @media (max-width: 575.98px) {
-            #history-welcome {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                /* background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Convvention.JPG"); */
-                height: 400px;
-                background-position: bottom;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: initial;
-            }
-        }
-          li {
-            font-size: 20px;
-        }
-        a {
-            font-family: 'Oswald', sans-serif;
-        }
-        
-        .title {
-        font-family: 'Playfair Display', serif;
-        font-size: 5rem;        /* big size */
-        font-weight: 900;
-        color: #ffffff;         /* your accent green */
-        margin-bottom: 1rem;
-        text-align: center;   
-     }
-
-        </style>
-    </section>
-
-    <footer id="page-footer">
-    </footer>
-
-    <!-- Scripts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-    </style>
-    <script>
-        $("#page-header").load("header.html");
-        $("#page-footer").load("footer.html");
-    </script>
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $("#page-header").load("header.html");
+    $("#page-footer").load("footer.html");
+  </script>
 </body>
 
 </html>
+
