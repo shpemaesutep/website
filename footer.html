@@ -1,52 +1,66 @@
-<!-- Footer-->
-<footer class="py-5 bg-dark footer-container">
-    <div class="container px-5">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="assets/img/logoWfooter.png" class="bg-transparent" width="150" height="100" alt="SHPE//MAES Logo">
-            </div>
-            <div class="col-md-4">
-                <div class="row">
-                    <h5 class="text-white text-center">Social Media</h5>
-                </div>
-                <div class="row text-center">
-                    <p>
-                        <a target="_blank" class="text-white text-center px-1" style="font-size: 40px;" href="https://www.instagram.com/utepshpemaes/"><i class="fab fa-instagram"></i></a>
-                        <a target="_blank" class="text-white text-center px-1" style="font-size: 40px;" href="https://www.facebook.com/utepmaesshpe/"><i class="fab fa-facebook-square"></i></a>
-                        <a target="_blank" class="text-white text-center px-1" style="font-size: 35px;" href="https://www.linkedin.com/company/utep-shpe-maes-engineering/mycompany/?viewAsMember=true"><i class="fa-brands fa-linkedin-in"></i></a>
-                         <!-- <a target="_blank" class="text-white text-center px-1" style="font-size: 35px;" href="https://join.slack.com/t/maesshpe/shared_invite/zt-tudkzw1z-M~TsRa_UPaGzZfm5zL87VA"><i class="fa-brands fa-slack"></i></a> -->
-                    </p>
-                </div>
-            </div>
-            
-            <div class="col-md-4 text-center">
-                <div class="row footer-contact">
-                    <h5 class="text-white">Get In Touch</h5>
-                    <p class="text-white">
-                    500 W University <br>
-                    CRBL-003, Classroom Bldg @ ACES <br>
-                    Contact Email: maesshpe@utep.edu <br>
-                    </p>
-                </div>
-                <div class="row">
+<footer class="footer">
+  <div class="container px-5">
+    <div class="row gy-4 align-items-start">
 
-                </div>
-            </div>
+      <!-- Logo + blurb -->
+      <div class="col-md-4 text-center text-md-start">
+        <img src="assets/img/logoWfooter.png"
+             alt="SHPE // MAES UTEP Logo"
+             class="footer-logo mb-3">
+
+        <p class="footer-text">
+          Society of Hispanic Professional Engineers & MAES at UTEP —
+          building community, leadership, and technical excellence.
+        </p>
+      </div>
+
+      <!-- Socials -->
+      <div class="col-md-4 text-center">
+        <h5 class="footer-title">Connect With Us</h5>
+
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/utepshpemaes/"
+             target="_blank"
+             aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.facebook.com/utepmaesshpe/"
+             target="_blank"
+             aria-label="Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/company/utep-shpe-maes-engineering/"
+             target="_blank"
+             aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-md-4 text-center text-md-end">
+        <h5 class="footer-title">Get In Touch</h5>
+
+        <p class="footer-text">
+          
+          <a href="mailto:maesshpe@utep.edu">maesshpe@utep.edu</a>
+        </p>
+      </div>
+
     </div>
+
+    <!-- Divider -->
+    <hr class="footer-divider">
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom text-center">
+      © <span id="footer-year"></span> SHPE // MAES UTEP. All rights reserved.
+    </div>
+  </div>
 </footer>
-
-<style>
-    @media (max-width: 767.98px) { 
-        .footer-container {
-            text-align: center !important;
-            margin-bottom: 10px;
-        }
-    }
-
-    @media (min-width: 768px) {
-        .footer-contact {
-            text-align: right;
-        }
-    }
-</style>
+<script>
+  document.getElementById("footer-year").textContent =
+    new Date().getFullYear();
+</script>

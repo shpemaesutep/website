@@ -142,3 +142,49 @@
     if (e.target === overlay) closeCard();
   });
 })();
+document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".shpe-navbar");
+  if (!nav) return;
+
+  // 1) Shrink on scroll
+  const onScroll = () => {
+    nav.classList.toggle("is-scrolled", window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  // 2) Active link highlight (exact match only)
+  const path = location.pathname;
+  const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
+
+  document.querySelectorAll(".shpe-navbar .nav-link").forEach(link => {
+    const href = link.getAttribute("href");
+
+    if (!href || href === "#" || href.startsWith("http")) return;
+
+    // Normalize
+    const cleanHref = href.replace("./", "");
+
+    if (cleanHref === page) {
+      link.classList.add("active");
+    } else {
+      link.classList.remove("active");
+    }
+  });
+
+  // 3) Mobile: close menu when a link is clicked
+  const collapseEl = document.getElementById("mainNavbar");
+  const toggler = document.querySelector(".navbar-toggler");
+
+  if (collapseEl && toggler) {
+    nav.addEventListener("click", (e) => {
+      const target = e.target.closest("a.nav-link, .dropdown-item");
+      if (!target) return;
+
+      // If menu is open on mobile, close it
+      const isExpanded = toggler.getAttribute("aria-expanded") === "true";
+      const isMobile = window.matchMedia("(max-width: 991px)").matches;
+      if (isMobile && isExpanded) toggler.click();
+    });
+  }
+});
