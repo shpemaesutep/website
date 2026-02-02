@@ -1,221 +1,346 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>UTEP SHPE//MAES</title>
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <!-- Custom MAES//SHPE Styles -->
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
-    <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTEP SHPE//MAES | Resources</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Fonts (match the “modern” feel you already use) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Core theme CSS -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/my-styles.css" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- JQuery + Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --utep-blue: #00254d;
+      --utep-orange: #ff8200;
+      --utep-gray: #B1B3B3;
+      --bg-soft: #F9FAFB;
+    }
+
+    /* Hero */
+    .page-hero {
+      min-height: 560px;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("assets/img/2025/resources/resources.jpeg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+
+    .page-hero .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      color: #fff;
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      margin-bottom: .75rem;
+    }
+
+    .page-hero .hero-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    /* Section title */
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--utep-blue);
+    }
+
+    .section-kicker {
+      color: #6c757d;
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Resource cards (matches your home “activity-card” vibe) */
+    .resource-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      transition: transform .25s ease, box-shadow .25s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.14);
+    }
+
+    .resource-media {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .resource-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform .35s ease;
+      opacity: .92;
+    }
+
+    .resource-card:hover .resource-media img {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    .resource-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top,
+          rgba(0, 0, 0, 0.70),
+          rgba(0, 0, 0, 0.25),
+          rgba(0, 0, 0, 0.08));
+      display: flex;
+      align-items: flex-end;
+      padding: 1.1rem;
+      gap: .75rem;
+    }
+
+    .resource-pill {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      letter-spacing: .4px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: .85rem;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .pill-orange { background: rgba(255, 130, 0, 0.35); border-color: rgba(255, 130, 0, 0.35); }
+    .pill-green  { background: rgba(134, 220, 61, 0.28); border-color: rgba(134, 220, 61, 0.28); }
+    .pill-blue   { background: rgba(0, 37, 77, 0.35); border-color: rgba(0, 37, 77, 0.35); }
+
+    .resource-body {
+      padding: 1.25rem 1.25rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .resource-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 800;
+      color: var(--utep-blue);
+      margin-bottom: .5rem;
+      font-size: 1.25rem;
+    }
+
+    .resource-text {
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+
+    /* Button style to match your home hero buttons */
+    .btn-pill-outline {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 12px 18px;
+      border: 2px solid var(--utep-blue);
+      color: var(--utep-blue);
+      background: transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      transition: all .25s ease;
+      width: fit-content;
+    }
+
+    .btn-pill-outline:hover {
+      background: var(--utep-orange);
+      border-color: var(--utep-orange);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(255, 130, 0, 0.22);
+    }
+
+    /* Layout spacing */
+    .page-wrap {
+      background: var(--bg-soft);
+    }
+
+    /* Mobile hero tweak */
+    @media (max-width: 575.98px) {
+      .page-hero {
+        min-height: 420px;
+        background-attachment: initial;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header id="page-header"></header>
 
-    <header id="page-header">
-    </header>
-
-    <section>
-        <div class="container-fluid text-center bg" id="join-welcome">
-            <h1 class="title">Resources</h1>
-        </div>
-
-
-        <div class="container">
-            <h1 class="text-utep-orange text-center ">STUDENT RESOURCES</h1>
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-6 px-4 py-4">
-                <div class="text-center bg" id="internships-button">
-                    <div class="container-center">
-                        <div class="center">
-                            <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                SUMMER 2026 TECH INTERNSHIPS
-                            </h1>
-                            <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5"
-                                href="https://github.com/SimplifyJobs/Summer2024-Internships">Apply</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6 px-4 py-4">
-                <div class="text-center bg" id="coursera-button">
-                    <div class="container-center">
-                        <div class="center">
-                            <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                FREE COURSERA COURSES
-                            </h1>
-                            <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5"
-                                href="https://www.coursera.org/career-academy/programs/career-academy-students-83fyf?authProvider=the-university-of-texas-at-el-paso">Learn</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 px-4 py-4">
-                <div class="text-center bg" id="resume-button">
-                    <div class="container-center">
-                        <div class="center">
-                            <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                RESUMÉ SAMPLES
-                            </h1>
-                            <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5"
-                                href="https://www.utep.edu/student-affairs/careers/students-alumni/sample-documents-and-resources.html">Take
-                                a Look</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-md-6 px-4 py-4">
-                <div class="text-center bg" id="bylaws-button">
-                    <div class="container-center">
-                        <div class="center">
-                            <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                Chapter's Bylaws
-                            </h1>
-                            <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5"
-                                href="Constitution_2025-2026.pdf">See them!</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        </div>
-        </div>
+  <main class="page-wrap">
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container px-4">
+        <h1 class="hero-title">Resources</h1>
+        <p class="hero-subtitle">
+          Practical links for internships, learning, and career prep.
+        </p>
+      </div>
     </section>
 
-    <footer id="page-footer">
-    </footer>
+    <!-- INTRO -->
+    <section class="py-5">
+      <div class="container px-4 px-lg-5">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Student Resources</h2>
+          <p class="section-kicker mt-2">
+            Use these to plan your next step: apply early, sharpen your skills, and keep your documents ready.
+          </p>
+        </div>
 
-    <style>
-        #join-welcome {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        <!-- CARDS -->
+        <div class="row g-4 mt-2">
 
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/2025/resources/resources.jpeg");
-            height: 700px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed
-        }
+          <!-- Internships -->
+          <div class="col-lg-6">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="assets/img/internshipbutton.jpeg" alt="Internships" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-orange"><i class="fa-solid fa-briefcase"></i> Internships</span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Summer 2026 Tech Internships</h3>
+                <p class="resource-text">
+                  A running list of internship opportunities and application links. Apply early and track deadlines.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener"
+                  href="https://github.com/SimplifyJobs/Summer2024-Internships">
+                  Apply <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
 
-        li {
-            font-size: 20px;
-        }
+          <!-- Coursera -->
+          <div class="col-lg-6">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="assets/img/courserabutton.jpg" alt="Coursera" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-green"><i class="fa-solid fa-graduation-cap"></i> Learning</span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Free Coursera Courses</h3>
+                <p class="resource-text">
+                  Use UTEP’s access to build skills in data, software, design, and professional development.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener"
+                  href="https://www.coursera.org/career-academy/programs/career-academy-students-83fyf?authProvider=the-university-of-texas-at-el-paso">
+                  Learn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
 
-        a {
-            font-family: 'Oswald', sans-serif;
-        }
+          <!-- Resume Samples -->
+          <div class="col-lg-6">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="assets/img/resumebutton.jpg" alt="Resume samples" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-blue"><i class="fa-solid fa-file-lines"></i> Career</span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Resumé Samples</h3>
+                <p class="resource-text">
+                  Examples and templates from UTEP Career Center to help you structure strong, ATS-friendly resumes.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener"
+                  href="https://www.utep.edu/student-affairs/careers/students-alumni/sample-documents-and-resources.html">
+                  Take a Look <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
 
-        @media (max-width: 575.98px) {
-            #join-welcome {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/join.JPEG");
-                height: 100%;
-                background-position: bottom;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: initial;
-            }
-        }
+          <!-- Bylaws -->
+          <div class="col-lg-6">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="assets/img/Convention24/Comite.jpeg" alt="Bylaws" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-orange"><i class="fa-solid fa-scale-balanced"></i> Chapter</span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Chapter Bylaws</h3>
+                <p class="resource-text">
+                  Chapter structure, membership guidelines, and officer responsibilities for 2025–2026.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener" href="Constitution_2025-2026.pdf">
+                  Open PDF <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
 
-        .title {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            /* big size */
-            font-weight: 900;
-            color: #ffffff;
-            /* your accent green */
-            margin-bottom: 1rem;
-            text-align: center;
-        }
+        </div>
+      </div>
+    </section>
+  </main>
 
-        #bylaws-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Comite.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+  <footer id="page-footer"></footer>
 
-        #coursera-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/courserabutton.jpg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #resume-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/resumebutton.jpg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #internships-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/internshipbutton.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-
-    <footer id="page-footer">
-    </footer>
-
-    <!-- Scripts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-    </style>
-    <script>
-        $("#page-header").load("header.html");
-        $("#page-footer").load("footer.html");
-    </script>
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
 </body>
 
 </html>
