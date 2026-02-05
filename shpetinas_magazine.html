@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHPEtinas | SHPE//MAES UTEP</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Your existing styles -->
+  <link rel="stylesheet" href="assets/css/my-styles.css">
+  <link rel="stylesheet" href="assets/css/style-shpe.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="assets/css/newsfeed.css" rel="stylesheet" >
+
+  <!-- Icons + Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<body>
+  <header id="page-header"></header>
+
+  <!-- Editorial Magazine Layout (SHPEtinas) -->
+  <main class="mag-wrap py-5">
+    <div class="container">
+
+      <!-- "Print page" frame -->
+      <section class="mag-page shadow-sm">
+        <div class="mag-inner">
+
+          <!-- Top row: title + intro -->
+          <div class="mag-top">
+            <div>
+              <h1 class="mag-title">Our SHPEtinas Essentials</h1>
+              <p class="mag-dek">
+                From mentorship to community, here are the experiences that support women in engineering at UTEP.
+              </p>
+            </div>
+          </div>
+
+          <!-- Two-column magazine grid -->
+          <div class="mag-grid">
+
+            <!-- LEFT COLUMN -->
+            <div class="mag-col-left">
+
+              <!-- Feature (like "Silky Smooth") -->
+              <article class="mag-feature">
+                <div class="mag-feature-media">
+                  <!-- Swap this with a real vertical asset if you have one -->
+                  <div class="mag-tube" aria-hidden="true"></div>
+                </div>
+
+                <div class="mag-feature-body">
+                  <h2 class="mag-h2">What is SHPEtinas?</h2>
+                  <p class="mag-p">
+                    SHPEtinas is a supportive community within SHPE//MAES dedicated to empowering women in STEM through
+                    mentorship, professional development, and meaningful connections.
+                  </p>
+                  <p class="mag-p">
+                    We create spaces where women feel seen, supported, and confident — through workshops, socials,
+                    outreach, and honest conversations.
+                  </p>
+                </div>
+              </article>
+
+              <!-- Supporting image + caption (like bathroom photo) -->
+              <figure class="mag-figure">
+                <img src="assets/img/2025/home/shpetinas4.jpeg" alt="SHPEtinas event" loading="lazy">
+                <figcaption class="mag-caption">
+                  Moments that build confidence, connection, and community.
+                </figcaption>
+              </figure>
+
+              <!-- Small body text block (like the small paragraph at bottom-left) -->
+              <section class="mag-smallcopy">
+                <p class="mag-small">
+                  <strong>Community</strong> is built in the small moments: checking in after exams, sharing internship
+                  leads, celebrating wins, and learning together. SHPEtinas exists to make sure you never have to do STEM
+                  alone.
+                </p>
+              </section>
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="mag-col-right">
+
+              <!-- Portrait -->
+              <figure class="mag-portrait">
+                <img src="assets/img/2025/home/shpetinas.jpeg" alt="SHPEtinas group photo" loading="lazy">
+                <figcaption class="mag-caption mag-caption-right">A community for women in engineering.</figcaption>
+              </figure>
+
+              <!-- Lead highlight block (like "Beauty Sleep") -->
+              <section class="mag-card">
+                <h3 class="mag-h3">Meet the SHPEtinas Leads</h3>
+
+                <div class="mag-lead">
+                  <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
+                    alt="Aleida Holguin" class="mag-avatar" loading="lazy">
+                  <div>
+                    <div class="mag-name">Aleida Holguin</div>
+                    <div class="mag-role">SHPEtinas Lead • Computer Science</div>
+                    <a class="mag-link" href="https://www.linkedin.com/in/aleidaholguin/" target="_blank" rel="noreferrer">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Duplicate this block for other leads -->
+                <!--
+                <div class="mag-lead mt-3">
+                  <img src="assets/img/your-photo.jpg" alt="Lead Name" class="mag-avatar" loading="lazy">
+                  <div>
+                    <div class="mag-name">Lead Name</div>
+                    <div class="mag-role">SHPEtinas Lead • Major</div>
+                    <a class="mag-link" href="#" target="_blank" rel="noreferrer">
+                      <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                  </div>
+                </div>
+                -->
+              </section>
+
+              <!-- Pull quote -->
+              <blockquote class="mag-quote">
+                “Community isn’t an expense, it’s an investment”
+              </blockquote>
+
+              <!-- Bottom-right: small "tool" section + rotated label (like "Grab") -->
+              <section class="mag-tool">
+                <div class="mag-rail">Do</div>
+
+                <div class="mag-tool-body">
+                  <h4 class="mag-h4">What We Do</h4>
+
+                  <ul class="mag-list">
+                    <li><strong>Community:</strong> friendships and support systems with women who understand your journey.</li>
+                    <li><strong>Mentorship:</strong> learn from peers, upperclassmen, and professionals in STEM.</li>
+                    <li><strong>Events:</strong> workshops, socials, outreach, and collaborations across campus.</li>
+                  </ul>
+
+                  <div class="mag-cta">
+                    <button class="btn btn-sm btn-outline-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#shpetinasModal">
+                      Meet the Full Team
+                    </button>
+
+                    <a class="btn btn-sm btn-primary" href="mailto:shpemaesutep@gmail.com">
+                      Contact Us
+                    </a>
+                  </div>
+
+                  <div class="mag-wave" aria-hidden="true"></div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+          <!-- Optional: compact gallery strip (keeps the magazine feel) -->
+          <section class="mag-gallery">
+            <div class="mag-gallery-title">Moments from SHPEtinas</div>
+            <div class="mag-gallery-grid">
+              <img src="assets/img/2025/home/shpetinas.jpeg" class="mag-gallery-img" alt="SHPEtinas moment" loading="lazy">
+              <img src="assets/img/2025/home/members.JPG" class="mag-gallery-img" alt="SHPEtinas moment" loading="lazy">
+              <img src="assets/img/2025/home/shpetinas4.jpeg" class="mag-gallery-img" alt="SHPEtinas moment" loading="lazy">
+            </div>
+          </section>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <!-- MODAL (kept from your file) -->
+  <div class="modal fade" id="shpetinasModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">SHPEtinas Team</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="card shadow-sm border-0 p-3 text-center">
+                <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
+                  class="rounded-circle mb-3"
+                  style="width:120px; height:120px; object-fit:cover;" alt="Aleida Holguin" loading="lazy">
+                <h5 class="mb-0">Aleida Holguin</h5>
+                <p class="text-muted small">SHPEtinas Lead • Computer Science</p>
+              </div>
+            </div>
+            <!-- DUPLICATE AS NEEDED -->
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $("#page-header").load("header.html");
+    $("#page-footer").load("footer.html");
+  </script>
+
+  <!-- Magazine CSS (scoped to this page) -->
+  <style>
+    :root{
+      --utep-blue:#041E42;
+      --utep-orange:#FF8200;
+      --ink:#111;
+      --muted:#6c757d;
+      --paper:#ffffff;
+      --page-outline:#e7e7e7;
+    }
+
+    body{
+      background:#f3f4f6;
+    }
+
+    .mag-page{
+      background:var(--paper);
+      border:1px solid var(--page-outline);
+      border-radius:10px;
+      overflow:hidden;
+    }
+
+    .mag-inner{
+      padding: clamp(18px, 3vw, 34px);
+    }
+
+    .mag-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-end;
+      gap:24px;
+      padding-bottom:16px;
+      border-bottom:1px solid #efefef;
+      margin-bottom:22px;
+    }
+
+    .mag-title{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      letter-spacing:-0.02em;
+      color:var(--utep-blue);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height:1.05;
+      margin:0;
+    }
+
+    .mag-dek{
+      margin:10px 0 0;
+      color:var(--muted);
+      max-width: 52ch;
+      font-size:1.05rem;
+      line-height:1.6;
+    }
+
+    .mag-grid{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: clamp(18px, 3vw, 34px);
+      align-items:start;
+    }
+
+    @media (max-width: 992px){
+      .mag-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* LEFT column feature */
+    .mag-feature{
+      display:grid;
+      grid-template-columns: 84px 1fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .mag-tube{
+      width:70px;
+      height:210px;
+      border-radius: 999px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.75), rgba(255,255,255,0) 45%),
+        linear-gradient(180deg, #ffd9b1, #ffb26a 40%, #ff8a1a);
+      border:1px solid rgba(0,0,0,.06);
+      box-shadow: 0 10px 25px rgba(0,0,0,.10);
+    }
+
+    .mag-h2{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      color:var(--ink);
+      margin:0 0 8px;
+      font-size:1.55rem;
+    }
+
+    .mag-p{
+      color:#3f3f3f;
+      font-size:0.98rem;
+      line-height:1.8;
+      margin:0 0 10px;
+    }
+
+    .mag-figure{
+      margin:22px 0 0;
+    }
+
+    .mag-figure img{
+      width:100%;
+      border-radius:6px;
+      display:block;
+      object-fit:cover;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .mag-caption{
+      font-size:0.85rem;
+      color:#777;
+      margin-top:10px;
+    }
+
+    .mag-smallcopy{
+      margin-top:18px;
+      border-top:1px solid #efefef;
+      padding-top:14px;
+    }
+
+    .mag-small{
+      margin:0;
+      color:#444;
+      font-size:0.9rem;
+      line-height:1.75;
+    }
+
+    /* RIGHT column */
+    .mag-portrait img{
+      width:100%;
+      border-radius:6px;
+      display:block;
+      border:1px solid rgba(0,0,0,.08);
+    }
+
+    .mag-caption-right{
+      text-align:right;
+    }
+
+    .mag-card{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px solid #efefef;
+    }
+
+    .mag-h3{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      color:var(--ink);
+      margin:0 0 12px;
+      font-size:1.25rem;
+    }
+
+    .mag-lead{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+
+    .mag-avatar{
+      width:64px;
+      height:64px;
+      border-radius:999px;
+      object-fit:cover;
+      border:1px solid rgba(0,0,0,.12);
+    }
+
+    .mag-name{
+      font-weight:700;
+      color:var(--ink);
+      line-height:1.2;
+    }
+
+    .mag-role{
+      color:#666;
+      font-size:0.9rem;
+    }
+
+    .mag-link{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      margin-top:6px;
+      text-decoration:none;
+      font-weight:600;
+      color:var(--utep-blue);
+    }
+
+    .mag-link:hover{ color: var(--utep-orange); }
+
+    .mag-quote{
+      margin:22px 0 18px;
+      font-family:'Playfair Display', serif;
+      font-style:italic;
+      font-size: clamp(1.4rem, 2.6vw, 2.05rem);
+      line-height:1.2;
+      color:var(--utep-blue);
+      border-left:3px solid var(--utep-orange);
+      padding-left:14px;
+    }
+
+    /* Bottom-right tool section */
+    .mag-tool{
+      display:grid;
+      grid-template-columns: 34px 1fr;
+      gap:12px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+
+    .mag-rail{
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-transform: uppercase;
+      letter-spacing:0.18em;
+      font-weight:700;
+      font-size:0.75rem;
+      color:#555;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-right:1px solid #efefef;
+      padding-right:8px;
+    }
+
+    .mag-tool-body{
+      padding-top:6px;
+    }
+
+    .mag-h4{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      margin:0 0 8px;
+      color:var(--ink);
+      font-size:1.1rem;
+    }
+
+    .mag-list{
+      margin:0;
+      padding-left:18px;
+      color:#444;
+      font-size:0.92rem;
+      line-height:1.75;
+    }
+
+    .mag-cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    /* simple "wire" like the bottom line art */
+    .mag-wave{
+      margin-top:14px;
+      height:28px;
+      border:1px solid rgba(0,0,0,.18);
+      border-left:none;
+      border-right:none;
+      border-top:none;
+      border-radius: 0 0 40px 40px;
+      position:relative;
+    }
+    .mag-wave::before{
+      content:"";
+      position:absolute;
+      inset:auto 10% 0 10%;
+      height:24px;
+      border:1px solid rgba(0,0,0,.18);
+      border-left:none;
+      border-right:none;
+      border-top:none;
+      border-radius: 0 0 60px 60px;
+      transform: translateY(1px);
+    }
+
+    /* Gallery strip */
+    .mag-gallery{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid #efefef;
+    }
+
+    .mag-gallery-title{
+      font-family:'Playfair Display', serif;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:12px;
+    }
+
+    .mag-gallery-grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+    }
+
+    @media (max-width: 768px){
+      .mag-gallery-grid{ grid-template-columns: 1fr; }
+    }
+
+    .mag-gallery-img{
+      width:100%;
+      height:170px;
+      object-fit:cover;
+      border-radius:6px;
+      border:1px solid rgba(0,0,0,.08);
+      display:block;
+    }
+  </style>
+</body>
+</html>

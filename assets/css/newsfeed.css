@@ -1,0 +1,68 @@
+/* Editorial Layout */
+.editorial-wrapper {
+  background: #ffffff;
+}
+
+.editorial-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #041E42;
+}
+
+.editorial-subtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+  max-width: 500px;
+}
+
+/* Blocks */
+.editorial-block {
+  max-width: 480px;
+}
+
+.editorial-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.editorial-heading-sm {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+
+.editorial-text {
+  color: #555;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* Images */
+.editorial-product-img {
+  width: 80px;
+  margin-bottom: 1rem;
+}
+
+.editorial-image-block img,
+.editorial-portrait img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.editorial-caption {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+/* Quote */
+.editorial-quote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  color: #041E42;
+  border-left: 3px solid #FF8200;
+  padding-left: 1rem;
+}
