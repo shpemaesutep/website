@@ -38,7 +38,7 @@
     <!-- Main Resources -->
     <section class="container my-5">
         <div class="text-center mb-5 fade-subtitle">
-            <h2 class="text-utep-orange" style="color: #0d6efd;">Meet the App Dev Team</h2>
+            <h2 class="text-utep-orange" style="color: #002c6e;">Meet the App Dev Team</h2>
             <p class="text-muted">Our app development team, leading the SHPE//MAES mobile app.</p>
         </div>
 
@@ -53,21 +53,21 @@
 
                     <a href="https://www.linkedin.com/in/sabina-sosa-5a2121358/" target="_blank" class="text-primary"
                         style="font-size:1.5rem;">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin" style="color: #002c6e;"></i>
                     </a>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm text-center p-4 team-card middle-card">
-                    <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG" class="rounded-circle mx-auto"
+                    <img src="assets/img/2025/leadership/Faces/Aleida-AppDev.JPG" class="rounded-circle mx-auto"
                         style="width:120px; height:120px; object-fit:cover;" alt="">
                     <h5 class="mt-3 mb-0">Aleida Holguin</h5>
                     <p class="text-muted small mb-2">Director of Technology<br>Computer Science • Senior</p>
 
                     <a href="https://www.linkedin.com/in/aleidaholguin/" target="_blank" class="text-primary"
                         style="font-size:1.5rem;">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin" style="color: #002c6e;"></i>
                     </a>
                 </div>
             </div>
@@ -81,14 +81,14 @@
 
                     <a href="https://www.linkedin.com/in/briancasio/" target="_blank" class="text-primary"
                         style="font-size:1.5rem;">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin" style="color: #002c6e;"></i>
                     </a>
                 </div>
             </div>
             <!-- CONTACT US -->
             <div class="text-center mt-4 mb-5">
                 <a href="mailto:shpemaesutep@gmail.com" class="btn btn-outline-primary btn-sm px-3">
-                    <i class="bi bi-envelope-fill me-2 "></i> Contact Us
+                    <i class="bi bi-envelope-fill me-2"></i> Contact Us
                 </a>
                 <p class="text-muted small mt-2">
                     Have any questions? We're here to help.
@@ -102,38 +102,12 @@
 
             <!-- PROJECT ACCESS HEADER -->
             <div class="text-center mb-5">
-                <h2 class="text-utep-orange">Project Access</h2>
+                <h2 class="text-utep-orange" style="color: #e05a06;">Project Access</h2>
                 <p class="text-muted">Access key development tools and platforms below.</p>
             </div>
 
             <div class="row g-4 justify-content-center">
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <i class="bi bi-terminal" style="font-size: 2.5rem; color:#FF8200;"></i>
-                            <h5 class="card-title mt-3">React Native Setup</h5>
-                            <p class="card-text">Instructions for installing Node, Expo, and configuring the
-                                environment.</p>
-                            <a class="btn btn-outline-primary" href="react-native-setup.html">Access</a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- 
-
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                style="width:40px; height:40px;">
-                            <h5 class="card-title mt-3">Figma Prototype</h5>
-                            <p class="card-text">Collaborate on our UI/UX mockups and component libraries.</p>
-                            <button class="btn btn-outline-primary"
-                                onclick="accessResource('https://www.figma.com/design/MLUKUtVGirDJIF9zVOdAdl/Mobile-App-Mock?node-id=0-1&p=f&t=7K3zzJL5mApIZTq6-0', 'figma2025')">Access</button>
-                        </div>
-                    </div>
-                </div> -->
+                <!-- Figma Styling -->
                 <style>
                     /* Fullscreen overlay */
                     #figmaOverlay {
@@ -209,20 +183,26 @@
                 </style>
 
 
-                <!-- CARD -->
+                <!-- Figma CARD -->
                 <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
+                    <div class="card shadow-sm border-0 text-center h-100">
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
 
+                            <!-- Centered Icon -->
                             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                style="width:40px; height:40px;">
+                                style="width:60px; height:60px;" class="mb-3" alt="Figma Icon">
 
-                            <h5 class="card-title mt-3">Figma Prototype</h5>
-                            <p class="card-text">Open a full-screen phone preview.</p>
+                            <h5 class="card-title">Figma Prototype</h5>
+                            <p class="card-text text-muted">
+                                Open a full-screen phone preview.
+                            </p>
 
-                            <button class="btn btn-outline-primary btn-sm" onclick="openFigma()">
-                                View
-                            </button>
+                            <div class="mt-auto">
+                                <button class="btn btn-outline-primary" onclick="openFigma()">
+                                    View
+                                </button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -268,637 +248,323 @@
 
 
                 <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
+                    <div class="card shadow-sm border-0 text-center h-100">
+                        <div class="card-body d-flex flex-column">
                             <i class="bi bi-github" style="font-size: 2.5rem; color:#0d6efd;"></i>
+
                             <h5 class="card-title mt-3">GitHub Repository</h5>
                             <p class="card-text">View our source code, branches, and documentation.</p>
-                            <a class="btn btn-outline-primary" href="https://github.com/shpemaesutep/appdev">Access</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center">
-                        <div class="card-body">
-                            <i class="bi bi-journal-text" style="font-size: 2.5rem; color:#86dc3d;"></i>
-                            <h5 class="card-title mt-3">Workshop Materials</h5>
-                            <p class="card-text">Access coding slides and demo content from our sessions.</p>
-                            <button class="btn btn-outline-primary"
-                                onclick="accessResource('workshops.html', 'appworkshop2025')">Access</button>
+                            <div class="mt-auto">
+                                <a class="btn btn-outline-primary" href="https://github.com/shpemaesutep/appdev"
+                                    target="_blank">Access</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
-    <!-- Team Documents & Branding -->
+    <div id="onboardingSetup" class="anchor-offset"></div>
+
     <section class="container my-5">
         <div class="text-center mb-4">
-            <h2 class="text-maes-green">Team Documents & Branding Materials</h2>
-            <p class="text-muted">Official documents, slide decks, and visual assets for our app.</p>
+            <h2 class="text-utep-orange" style="color: green;">New Member Setup</h2>
         </div>
 
-        <div class="row g-4">
+        <!-- Quick checklist -->
+        <!-- <div class="onboarding-callout p-4 rounded shadow-sm mb-4">
+            <div class="d-flex align-items-start">
+                <i class="bi bi-check2-circle me-3" style="font-size:1.6rem; color:#FF8200;"></i>
+                <div>
+                    <h5 class="mb-1">Quick Checklist</h5>
+                    <p class="text-muted mb-2">Do these in order (most issues happen when steps are skipped).</p>
+                    <ul class="mb-0">
+                        <li>Install <b>Git</b>, <b>Node.js (LTS)</b>, and <b>VS Code</b></li>
+                        <li>Clone the repo and run <code>npm install</code></li>
+                        <li>Start the app with <code>npx expo start</code></li>
+                        <li>Make a branch, commit, push, and open a PR</li>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
 
-            <div class="col-md-6">
-                <div class="card p-4 border-0 shadow-sm">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <i class="fa-solid fa-file-powerpoint me-3" style="font-size:2.2rem; color:#0d6efd;"></i>
-                            <div>
-                                <h5 class="mb-1">App Dev Kickoff Slides</h5>
-                                <p class="text-muted small mb-2">PDF slides from our first general meeting.</p>
-                                <a href="assets/docs/AppDevKickoff.pdf" target="_blank"
-                                    class="btn btn-outline-primary btn-sm">
-                                    <i class="fa-solid fa-up-right-from-square me-1"></i> View PDF
-                                </a>
-                            </div>
-                        </div>
+        <!-- Accordion -->
+        <div class="accordion" id="onboardingAccordion">
+
+            <!-- 1) Install Basics -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingBasics">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseBasics" aria-expanded="true" aria-controls="collapseBasics">
+                        <i class="bi bi-download me-2"></i> 1) Install the Basics (Git + Node + VS Code)
+                    </button>
+                </h2>
+
+
+                <div id="collapseBasics" class="accordion-collapse collapse show" aria-labelledby="headingBasics"
+                    data-bs-parent="#onboardingAccordion">
+
+                    <div class="accordion-body">
+                        <!-- your Step 1 content -->
+                        <ol class="mb-4">
+                            <li class="mb-3">
+                                <b>Install & Verify Git</b>
+                                <div><b>Step B — Install Git (if needed):</b></div>
+
+                                <ul class="mt-2">
+                                    <li>
+                                        <b>Mac:</b>
+                                        <ul>
+                                            <li>Run in Terminal:</li>
+                                            <div class="codebox my-2">
+                                                <code>xcode-select --install</code>
+                                            </div>
+                                            <li>This installs Apple Command Line Tools (includes Git).</li>
+                                            <li>After install, run <code>git --version</code> again to confirm.</li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="mt-3">
+                                        <b>Windows:</b>
+                                        <ul>
+                                            <li>Go to: https://git-scm.com/download/win</li>
+                                            <li>Download and run the installer</li>
+                                            <li>Keep default settings during installation</li>
+                                            <li>Restart terminal after install</li>
+                                            <li>Run <code>git --version</code> to confirm installation</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                     </div>
                 </div>
             </div>
 
-            <!-- Branding Accordion -->
-            <div class="col-md-6">
-                <div class="card p-4 border-0 shadow-sm">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-palette-fill me-3" style="font-size:2rem; color:#86dc3d;"></i>
-                            <div>
-                                <h5 class="mb-1">Branding Guide</h5>
-                                <p class="text-muted small mb-2">Colors, typography, layout system, and UI rules.</p>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse"
-                            data-bs-target="#brandingDetails">View</button>
-                    </div>
+            <!-- ) VS Code Setup -->
+            <!-- <div class="accordion-item">
+                <h2 class="accordion-header" id="headingVSCode">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseVSCode" aria-expanded="false" aria-controls="collapseVSCode">
+                        <i class="bi bi-code-slash me-2"></i> 2) VS Code Setup (Extensions + Settings)
+                    </button>
+                </h2>
+                <div id="collapseVSCode" class="accordion-collapse collapse" aria-labelledby="headingVSCode"
+                    data-bs-parent="#onboardingAccordion">
+                    <div class="accordion-body">
+                        <p class="text-muted mb-2">Install these extensions (recommended for our workflow):</p>
+                        <ul>
+                            <li><b>ESLint</b></li>
+                            <li><b>Prettier - Code formatter</b></li>
+                            <li><b>GitLens</b></li>
+                            <li><b>React Native Tools</b></li>
+                        </ul>
 
-                    <div class="collapse mt-4" id="brandingDetails">
-                        <div class="card card-body bg-light text-start" style="line-height: 1.6;">
-
-                            <!-- COLOR PALETTE -->
-                            <h5 class="fw-bold text-utep-orange mb-3">Color Palette</h5>
-                            <div class="row g-3">
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center"
-                                        style="background:#FF8200; color:#fff;">
-                                        <strong class="me-auto">UTEP Orange</strong>
-                                        <span>#FF8200</span>
-                                    </div>
-                                    <small class="text-muted">Primary — Buttons, CTAs</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center text-white"
-                                        style="background:#041E42;">
-                                        <strong class="me-auto">UTEP Blue</strong>
-                                        <span>#041E42</span>
-                                    </div>
-                                    <small class="text-muted">Secondary — Headers, nav</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center" style="background:#B1B3B3;">
-                                        <strong class="me-auto">UTEP Silver</strong>
-                                        <span>#B1B3B3</span>
-                                    </div>
-                                    <small class="text-muted">Accent — Borders, dividers</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center" style="background:#F9FAFB;">
-                                        <strong class="me-auto">Off-White</strong>
-                                        <span>#F9FAFB</span>
-                                    </div>
-                                    <small class="text-muted">Background (light mode)</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center text-white"
-                                        style="background:#0A1833;">
-                                        <strong class="me-auto">Midnight Blue</strong>
-                                        <span>#0A1833</span>
-                                    </div>
-                                    <small class="text-muted">Background (dark mode)</small>
-                                </div>
-                                <div class="col-6">
-                                    <div class="p-3 rounded d-flex align-items-center" style="background:#FFD9B3;">
-                                        <strong class="me-auto">Soft Orange Tint</strong>
-                                        <span>#FFD9B3</span>
-                                    </div>
-                                    <small class="text-muted">Highlight / hover states</small>
-                                </div>
-                            </div>
-                            <p class="mt-2"><em>Tip:</em> Use orange sparingly as a call-to-action color, let blue set
-                                the tone of trust and stability.</p>
-
-                            <hr class="my-4">
-
-                            <!-- TYPOGRAPHY -->
-                            <h5 class="fw-bold text-utep-orange mb-3">🖋 Typography</h5>
-                            <div class="mb-3">
-                                <p style="font-family:'Playfair Display', serif; font-size:36px; margin-bottom:0;">
-                                    Display — Playfair Display</p>
-                                <small class="text-muted">Used for splash screens, app name (32–40px)</small>
-                            </div>
-                            <div class="mb-3">
-                                <p
-                                    style="font-family:'Montserrat', sans-serif; font-weight:600; font-size:26px; margin-bottom:0;">
-                                    Headline — Montserrat (Tungsten alt)</p>
-                                <small class="text-muted">Page titles (24–28px)</small>
-                            </div>
-                            <div class="mb-3">
-                                <p
-                                    style="font-family:'Montserrat', sans-serif; font-weight:500; font-size:20px; margin-bottom:0;">
-                                    Subheadline — Montserrat Medium</p>
-                                <small class="text-muted">Section headers (18–20px)</small>
-                            </div>
-                            <div class="mb-3">
-                                <p style="font-family:'Inter', sans-serif; font-size:16px; margin-bottom:0;">Body —
-                                    Inter Regular</p>
-                                <small class="text-muted">Paragraphs, content (16px)</small>
-                            </div>
-                            <div class="mb-3">
-                                <p
-                                    style="font-family:'Inter', sans-serif; font-size:13px; font-weight:500; margin-bottom:0;">
-                                    Caption — Inter Medium</p>
-                                <small class="text-muted">Buttons, labels (12–14px)</small>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <!-- SPACING -->
-                            <h5 class="fw-bold text-utep-orange mb-3">Spacing & Layout</h5>
-                            <ul style="font-family:'Inter', sans-serif; font-size:15px;">
-                                <li><b>xs</b> = 4px — icons or tight spacing</li>
-                                <li><b>sm</b> = 8px — small gaps between text and icons</li>
-                                <li><b>md</b> = 16px — default padding inside cards/buttons</li>
-                                <li><b>lg</b> = 24px — section padding</li>
-                                <li><b>xl</b> = 40px — page margins / hero spacing</li>
-                            </ul>
-                            <p><em>Maintain a 4px grid and 16px corner radius for a consistent, modern feel.</em></p>
-
-                            <hr class="my-4">
-
-                            <!-- COMPONENT STYLING -->
-                            <h5 class="fw-bold text-utep-orange mb-3">Component Styling</h5>
-                            <div class="mb-3">
-                                <button class="btn"
-                                    style="background:#FF8200; color:white; border-radius:16px; padding:10px 20px;">Primary
-                                    Button</button>
-                                <button class="btn btn-outline-primary ms-2"
-                                    style="border:2px solid #041E42; color:#041E42; border-radius:16px;">Secondary
-                                    Button</button>
-                            </div>
-                            <p class="text-muted small">Hover states: darker orange (#E67200). Use soft shadows (0 2px
-                                8px rgba(0,0,0,0.1)) for depth.</p>
-                            <div class="p-3 mb-2 bg-white border rounded"
-                                style="border-radius:16px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
-                                <h6 style="color:#041E42; font-family:'Montserrat', sans-serif;">Card Title Example</h6>
-                                <p style="font-family:'Inter', sans-serif; color:#4A4A4A;">This is an example of a card
-                                    component — white background, rounded edges, subtle shadow.</p>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <!-- DARK MODE -->
-                            <h5 class="fw-bold text-utep-orange mb-3">Dark Mode</h5>
-                            <div class="p-3 rounded text-white" style="background:#0A1833;">
-                                <h6 style="color:#FF8200;">Accent: #FF8200</h6>
-                                <p style="color:#FFFFFF; margin-bottom:2px;">Text Primary: #FFFFFF</p>
-                                <p style="color:#B1B3B3;">Text Secondary: #B1B3B3</p>
-                            </div>
-                            <small class="text-muted d-block mt-2">Maintain consistent contrast ratios (WCAG AA) for
-                                accessibility.</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- UTEP LOGOS & LOCKUPS ACCORDION -->
-            <div class="col-md-6">
-                <div class="card p-4 border-0 shadow-sm">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <i class="bi bi-image me-3" style="font-size:2rem; color:#FF8200;"></i>
-                            <div>
-                                <h5 class="mb-1">UTEP Logos & Lockups</h5>
-                                <p class="text-muted small mb-2">Official logo set for SHPE//MAES branding and marketing
-                                    materials.</p>
-                            </div>
-                        </div>
-                        <button class="btn btn-outline-primary btn-sm" data-bs-toggle="collapse"
-                            data-bs-target="#logosCollapse">View</button>
-                    </div>
-
-                    <div class="collapse mt-4" id="logosCollapse">
-                        <div class="card card-body bg-light text-center">
-
-                            <h6 class="fw-bold text-utep-orange mb-3">SHPE//MAES</h6>
-                            <div class="row g-4 justify-content-center">
-                                <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/appdev/utep_logos/shpemaeslogo.png"
-                                            alt="Classic Pickmark" class="img-fluid mb-3">
-                                        <h6>SHPE//MAES Logo</h6>
-                                        <a href="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg" download
-                                            class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-3 col-sm-6 text-center">
-                                    <div class="card border-0 shadow-sm p-3">
-                                        <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
-                                            alt="Flat Pick Black" class="img-fluid mb-3">
-                                        <h6>Flat Pick (Black)</h6>
-                                        <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
-                                            download class="btn btn-outline-primary btn-sm"><i
-                                                class="bi bi-download"></i>
-                                            Download</a>
-                                    </div>
-                                </div> -->
-                                <hr class="my-4">
-
-
-                                <!-- PICKMARKS -->
-                                <h6 class="fw-bold text-utep-orange mb-3">Pickmarks</h6>
-                                <div class="row g-4 justify-content-center">
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg"
-                                                alt="Classic Pickmark" class="img-fluid mb-3">
-                                            <h6>Classic Pickmark</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Classic_Pick.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
-                                                alt="Flat Pick Black" class="img-fluid mb-3">
-                                            <h6>Flat Pick (Black)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Black.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Blue.svg"
-                                                alt="Flat Pick Blue" class="img-fluid mb-3">
-                                            <h6>Flat Pick (Blue)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Blue.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Orange.svg"
-                                                alt="Flat Pick Orange" class="img-fluid mb-3">
-                                            <h6>Flat Pick (Orange)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Orange.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Silver.svg"
-                                                alt="Flat Pick Silver" class="img-fluid mb-3">
-                                            <h6>Flat Pick (Silver)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_Silver.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_White.svg"
-                                                alt="Flat Pick White" class="img-fluid mb-3">
-                                            <h6>Flat Pick (White)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Pickmark_Flat_Pick_White.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <!-- PRIMARY LOGOS -->
-                                <h6 class="fw-bold text-utep-orange mb-3">Primary Logos</h6>
-                                <div class="row g-4 justify-content-center">
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Main.svg"
-                                                alt="Primary Main" class="img-fluid mb-3">
-                                            <h6>Primary Main</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Main.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Compact.svg"
-                                                alt="Primary Compact" class="img-fluid mb-3">
-                                            <h6>Primary Compact</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Compact.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Compact_Alternate.svg"
-                                                alt="Primary Compact Alternate" class="img-fluid mb-3">
-                                            <h6>Primary Compact Alternate</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Compact_Alternate.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Centered.svg"
-                                                alt="Primary Centered" class="img-fluid mb-3">
-                                            <h6>Primary Centered</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Centered.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Centered_Stacked.svg"
-                                                alt="Primary Centered Stacked" class="img-fluid mb-3">
-                                            <h6>Primary Centered Stacked</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Centered_Stacked.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Primary-Stacked.svg"
-                                                alt="Primary Stacked" class="img-fluid mb-3">
-                                            <h6>Primary Stacked</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Primary-Stacked.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <!-- BOXMARKS -->
-                                <h6 class="fw-bold text-utep-orange mb-3">Boxmarks</h6>
-                                <div class="row g-4 justify-content-center">
-                                    <!-- List of all Boxmark variations -->
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Black-White.svg"
-                                                alt="Boxmark Black-White" class="img-fluid mb-3">
-                                            <h6>Boxmark Black/White</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Black-White.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-Orange.svg"
-                                                alt="Boxmark Blue-Orange" class="img-fluid mb-3">
-                                            <h6>Boxmark Blue/Orange</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-Orange.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-White.svg"
-                                                alt="Boxmark Blue-White" class="img-fluid mb-3">
-                                            <h6>Boxmark Blue/White</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Blue-White.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-Blue.svg"
-                                                alt="Boxmark Orange-Blue" class="img-fluid mb-3">
-                                            <h6>Boxmark Orange/Blue</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-Blue.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-White.svg"
-                                                alt="Boxmark Orange-White" class="img-fluid mb-3">
-                                            <h6>Boxmark Orange/White</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Orange-White.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Silver-White.svg"
-                                                alt="Boxmark Silver-White" class="img-fluid mb-3">
-                                            <h6>Boxmark Silver/White</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_Silver-White.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Blue.svg"
-                                                alt="Boxmark White-Blue" class="img-fluid mb-3">
-                                            <h6>Boxmark White/Blue</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Blue.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Orange.svg"
-                                                alt="Boxmark White-Orange" class="img-fluid mb-3">
-                                            <h6>Boxmark White/Orange</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Orange.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Silver.svg"
-                                                alt="Boxmark White-Silver" class="img-fluid mb-3">
-                                            <h6>Boxmark White/Silver</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Boxmark_White-Silver.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <!-- FLAT LOGOS -->
-                                <h6 class="fw-bold text-utep-orange mb-3">Flat Logos</h6>
-                                <div class="row g-4 justify-content-center">
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Black.svg"
-                                                alt="Flat Logo Black" class="img-fluid mb-3">
-                                            <h6>Flat Logo (Black)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Black.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Blue.svg"
-                                                alt="Flat Logo Blue" class="img-fluid mb-3">
-                                            <h6>Flat Logo (Blue)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Blue.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Orange.svg"
-                                                alt="Flat Logo Orange" class="img-fluid mb-3">
-                                            <h6>Flat Logo (Orange)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Orange.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Reverse.svg"
-                                                alt="Flat Logo Reverse" class="img-fluid mb-3">
-                                            <h6>Flat Logo (Reverse)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Reverse.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Silver.svg"
-                                                alt="Flat Logo Silver" class="img-fluid mb-3">
-                                            <h6>Flat Logo (Silver)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Flat_Logo_Silver.svg"
-                                                download class="btn btn-outline-primary btn-sm"><i
-                                                    class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/UTEP_Classic_Logo.svg"
-                                                alt="Classic Logo" class="img-fluid mb-3">
-                                            <h6>Classic Logo</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/UTEP_Classic_Logo.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <hr class="my-4">
-
-                                <!-- WORDMARKS -->
-                                <h6 class="fw-bold text-utep-orange mb-3">Wordmarks</h6>
-                                <div class="row g-4 justify-content-center">
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Main.svg"
-                                                alt="Wordmark Main" class="img-fluid mb-3">
-                                            <h6>Wordmark (Main)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Main.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Compact.svg"
-                                                alt="Wordmark Compact" class="img-fluid mb-3">
-                                            <h6>Wordmark (Compact)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Compact.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 text-center">
-                                        <div class="card border-0 shadow-sm p-3">
-                                            <img src="assets/img/2025/appdev/utep_logos/Wordmark_Alternate.svg"
-                                                alt="Wordmark Alternate" class="img-fluid mb-3">
-                                            <h6>Wordmark (Alternate)</h6>
-                                            <a href="assets/img/2025/appdev/utep_logos/Wordmark_Alternate.svg" download
-                                                class="btn btn-outline-primary btn-sm"><i class="bi bi-download"></i>
-                                                Download</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <!-- More Files -->
-                <!-- <div class="col-md-6">
-                <div class="card p-4 border-0 shadow-sm">
-                    <div class="d-flex align-items-center">
-                        <i class="bi bi-clipboard-data-fill me-3" style="font-size:2rem; color:#00254d;"></i>
-                        <div>
-                            <h5 class="mb-1">UI Design Assets</h5>
-                            <p class="text-muted small mb-2">Icons, components, and exported mockups.</p>
-                            <a href="assets/branding/ui-assets.zip" class="btn btn-outline-primary btn-sm"
-                                download>Download ZIP</a>
-                        </div>
+                        <p class="text-muted mb-2">Then in VS Code:</p>
+                        <ul>
+                            <li>Enable <b>Format on Save</b></li>
+                            <li>Set <b>Prettier</b> as the default formatter</li>
+                            <li>Open the project folder (not just a single file)</li>
+                        </ul>
                     </div>
                 </div>
             </div> -->
 
-                <!-- TEAM DIRECTORY CARD -->
+            <!-- 2) GitHub Workflow -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingGitHub">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseGitHub" aria-expanded="false" aria-controls="collapseGitHub">
+                        <i class="bi bi-github me-2"></i> 2) GitHub
+                    </button>
+                </h2>
 
+                <div id="collapseGitHub" class="accordion-collapse collapse" aria-labelledby="headingGitHub"
+                    data-bs-parent="#onboardingAccordion">
+                    <div class="accordion-body">
 
+                        <ol class="mb-3">
+                            <li><b>Open VS Code</b></li>
+                            <li>
+                                In VS Code, go to <b>File → Open Folder</b> and select your <b>Desktop</b> folder.
+                            </li>
+                            <li>
+                                Open the VS Code terminal:
+                                <span class="text-muted">View → Terminal</span>
+                            </li>
+                            <li>Clone the GitHub repository:</li>
+                        </ol>
+
+                        <div class="codebox mb-3">
+                            <code>git clone https://github.com/shpemaesutep/appdev.git</code>
+                        </div>
+
+                        <ol start="5" class="mb-3">
+                            <li>Go into the project folder:</li>
+                        </ol>
+
+                        <div class="codebox mb-3">
+                            <code>cd appdev</code>
+                        </div>
+
+                        <div class="small text-muted mb-3">
+                            Make sure your terminal path ends in <code>appdev</code>. Finish the rest of your setup
+                            inside this folder.
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
+       
+           <!-- 3) Dependencies + Run -->
+<div class="accordion-item">
+  <h2 class="accordion-header" id="headingRun">
+    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#collapseRun" aria-expanded="false" aria-controls="collapseRun">
+      <i class="bi bi-terminal me-2"></i> 3) Install Dependencies + Run the App
+    </button>
+  </h2>
+
+  <div id="collapseRun" class="accordion-collapse collapse" aria-labelledby="headingRun"
+    data-bs-parent="#onboardingAccordion">
+    <div class="accordion-body">
+      <div id="onboardingRun" class="anchor-offset"></div>
+
+      <!-- IMPORTANT: be inside appdev -->
+      <div class="alert alert-secondary mb-4">
+        <b>Important:</b> Run all commands below <u>inside the</u> <code>appdev</code> folder.
+        <div class="mt-2 codebox">
+          <code>cd appdev</code>
+        </div>
+      </div>
+
+    <!-- 0) Install + Verify Node/npm -->
+<h6 class="fw-bold">0. Install & Verify Node.js (Includes npm)</h6>
+
+<p class="text-muted mb-2">
+Node.js includes npm automatically. Install it first if you don’t already have it.
+</p>
+
+<!-- MAC INSTALL -->
+<div class="mb-3">
+  <b>Mac:</b>
+  <ul class="mt-2">
+    <li>If you use Homebrew, run:</li>
+  </ul>
+  <div class="codebox mb-2">
+    <code>brew install node</code>
+  </div>
+
+  <ul>
+    <li>If you don’t have Homebrew, download Node.js (LTS) from:</li>
+  </ul>
+  <div class="small mb-2">
+    <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
+  </div>
+</div>
+
+<!-- WINDOWS INSTALL -->
+<div class="mb-3">
+  <b>Windows:</b>
+  <ul class="mt-2">
+    <li>Download the <b>LTS</b> installer from:</li>
+  </ul>
+  <div class="small mb-2">
+    <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
+  </div>
+
+  <ul>
+    <li>Run the installer and keep default settings</li>
+    <li>Restart your terminal after installation</li>
+  </ul>
+</div>
+
+<!-- VERIFY -->
+<h6 class="fw-bold mt-4">Verify Installation</h6>
+<p class="text-muted mb-2">Run these in your terminal:</p>
+
+<div class="codebox mb-3">
+  <code>node -v</code><br>
+  <code>npm -v</code>
+</div>
+
+<div class="small text-muted mb-4">
+If either command says <code>command not found</code> or is not recognized, restart your terminal and try again.
+</div>
+
+<!-- 1) Install dependencies -->
+<h6 class="fw-bold">1. Install dependencies (inside the appdev folder)</h6>
+<div class="codebox mb-3">
+  <code>npm install</code>
+</div>
+    
+      <!-- 3) Install required libraries (from RN setup doc) -->
+      <h6 class="fw-bold">2. Install required Expo libraries</h6>
+      <div class="codebox mb-3">
+        <code>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar</code>
+      </div>
+
+      <!-- 4) Start Expo -->
+      <h6 class="fw-bold">3. Start the app (Expo dev server)</h6>
+      <div class="codebox mb-3">
+        <code>npx expo start</code>
+      </div>
+
+      <p class="text-muted mb-2">Run on:</p>
+      <ul class="mb-3">
+        <li>
+          <b>Phone:</b> install <b>Expo Go</b>, then scan the QR code
+        </li>
+        <li>
+          <b>iOS Simulator (Mac):</b> install Xcode + iOS Simulator (Xcode → Settings/Preferences → Components)
+        </li>
+        <li>
+          <b>Android Emulator (Windows):</b> install Android Studio → Device Manager → create a virtual device
+        </li>
+      </ul>
+
+      <div class="alert alert-info mb-0">
+        If Expo gets stuck or errors persist, try clearing cache:
+        <div class="codebox mt-2">
+          <code>npx expo start -c</code>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+            
+            <!-- 6) Optional: EAS -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEAS">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEAS" aria-expanded="false" aria-controls="collapseEAS">
+                        <i class="bi bi-cloud-arrow-up me-2"></i> Optional: Build Tools (EAS CLI)
+                    </button>
+                </h2>
+                <div id="collapseEAS" class="accordion-collapse collapse" aria-labelledby="headingEAS"
+                    data-bs-parent="#onboardingAccordion">
+                    <div class="accordion-body">
+                        <p class="text-muted mb-2">Only install this if you’re helping generate builds
+                            (iOS/Android).
+                        </p>
+                        <div class="codebox">
+                            <code>npm install -g eas-cli</code><br>
+                            <code>eas --version</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /accordion -->
     </section>
+    <!-- ============================= -->
+    <!-- END NEW MEMBER SETUP          -->
+    <!-- ============================= -->
+
+    </div>
 
     <!-- JS -->
     <script>
