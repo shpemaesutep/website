@@ -417,125 +417,160 @@
                 </div>
             </div>
 
-       
-           <!-- 3) Dependencies + Run -->
-<div class="accordion-item">
-  <h2 class="accordion-header" id="headingRun">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-      data-bs-target="#collapseRun" aria-expanded="false" aria-controls="collapseRun">
-      <i class="bi bi-terminal me-2"></i> 3) Install Dependencies + Run the App
-    </button>
-  </h2>
 
-  <div id="collapseRun" class="accordion-collapse collapse" aria-labelledby="headingRun"
-    data-bs-parent="#onboardingAccordion">
-    <div class="accordion-body">
-      <div id="onboardingRun" class="anchor-offset"></div>
+            <!-- 3) Dependencies + Run -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingRun">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseRun" aria-expanded="false" aria-controls="collapseRun">
+                        <i class="bi bi-terminal me-2"></i> 3) Install Dependencies + Run the App
+                    </button>
+                </h2>
 
-      <!-- IMPORTANT: be inside appdev -->
-      <div class="alert alert-secondary mb-4">
-        <b>Important:</b> Run all commands below <u>inside the</u> <code>appdev</code> folder.
-        <div class="mt-2 codebox">
-          <code>cd appdev</code>
-        </div>
-      </div>
+                <div id="collapseRun" class="accordion-collapse collapse" aria-labelledby="headingRun"
+                    data-bs-parent="#onboardingAccordion">
+                    <div class="accordion-body">
+                        <div id="onboardingRun" class="anchor-offset"></div>
 
-    <!-- 0) Install + Verify Node/npm -->
-<h6 class="fw-bold">0. Install & Verify Node.js (Includes npm)</h6>
+                        <!-- IMPORTANT: be inside appdev -->
+                        <div class="alert alert-secondary mb-4">
+                            <b>Important:</b> Run all commands below <u>inside the</u> <code>appdev</code> folder.
+                            <div class="mt-2 codebox">
+                                <code>cd appdev</code>
+                            </div>
+                        </div>
 
-<p class="text-muted mb-2">
-Node.js includes npm automatically. Install it first if you don’t already have it.
-</p>
+                        <!-- 0) Install + Verify Node/npm -->
+                        <h6 class="fw-bold">0. Install & Verify Node.js (Includes npm)</h6>
 
-<!-- MAC INSTALL -->
-<div class="mb-3">
-  <b>Mac:</b>
-  <ul class="mt-2">
-    <li>If you use Homebrew, run:</li>
-  </ul>
-  <div class="codebox mb-2">
-    <code>brew install node</code>
-  </div>
+                        <p class="text-muted mb-2">
+                            Node.js includes npm automatically. Install it first if you don’t already have it.
+                        </p>
 
-  <ul>
-    <li>If you don’t have Homebrew, download Node.js (LTS) from:</li>
-  </ul>
-  <div class="small mb-2">
-    <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
-  </div>
-</div>
+                        <!-- MAC INSTALL -->
+                        <div class="mb-3">
+                            <b>Mac:</b>
+                            <ul class="mt-2">
+                                <li>If you use Homebrew, run:</li>
+                            </ul>
+                            <div class="codebox mb-2">
+                                <code>brew install node</code>
+                            </div>
 
-<!-- WINDOWS INSTALL -->
-<div class="mb-3">
-  <b>Windows:</b>
-  <ul class="mt-2">
-    <li>Download the <b>LTS</b> installer from:</li>
-  </ul>
-  <div class="small mb-2">
-    <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
-  </div>
+                            <ul>
+                                <li>If you don’t have Homebrew, download Node.js (LTS) from:</li>
+                            </ul>
+                            <div class="small mb-2">
+                                <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
+                            </div>
+                        </div>
 
-  <ul>
-    <li>Run the installer and keep default settings</li>
-    <li>Restart your terminal after installation</li>
-  </ul>
-</div>
+                        <!-- WINDOWS INSTALL -->
+                        <div class="mb-3">
+                            <b>Windows:</b>
+                            <ul class="mt-2">
+                                <li>Download the <b>LTS</b> installer from:</li>
+                            </ul>
+                            <div class="small mb-2">
+                                <a href="https://nodejs.org" target="_blank">https://nodejs.org</a>
+                            </div>
 
-<!-- VERIFY -->
-<h6 class="fw-bold mt-4">Verify Installation</h6>
-<p class="text-muted mb-2">Run these in your terminal:</p>
+                            <ul>
+                                <li>Run the installer and keep default settings</li>
+                                <li>Restart your terminal after installation</li>
+                            </ul>
+                        </div>
 
-<div class="codebox mb-3">
-  <code>node -v</code><br>
-  <code>npm -v</code>
-</div>
+                        <!-- VERIFY -->
+                        <h6 class="fw-bold mt-4">Verify Installation</h6>
+                        <p class="text-muted mb-2">Run these in your terminal:</p>
 
-<div class="small text-muted mb-4">
-If either command says <code>command not found</code> or is not recognized, restart your terminal and try again.
-</div>
+                        <div class="codebox mb-3">
+                            <code>node -v</code><br>
+                            <code>npm -v</code>
+                        </div>
 
-<!-- 1) Install dependencies -->
-<h6 class="fw-bold">1. Install dependencies (inside the appdev folder)</h6>
-<div class="codebox mb-3">
-  <code>npm install</code>
-</div>
-    
-      <!-- 3) Install required libraries (from RN setup doc) -->
-      <h6 class="fw-bold">2. Install required Expo libraries</h6>
-      <div class="codebox mb-3">
-        <code>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar</code>
-      </div>
+                        <div class="small text-muted mb-4">
+                            If either command says <code>command not found</code> or is not recognized, restart your
+                            terminal and try again.
+                        </div>
 
-      <!-- 4) Start Expo -->
-      <h6 class="fw-bold">3. Start the app (Expo dev server)</h6>
-      <div class="codebox mb-3">
-        <code>npx expo start</code>
-      </div>
+                        <!-- 1) Install dependencies -->
+                        <h6 class="fw-bold">1. Install dependencies (inside the appdev folder)</h6>
+                        <div class="codebox mb-3">
+                            <code>npm install</code>
+                        </div>
 
-      <p class="text-muted mb-2">Run on:</p>
-      <ul class="mb-3">
-        <li>
-          <b>Phone:</b> install <b>Expo Go</b>, then scan the QR code
-        </li>
-        <li>
-          <b>iOS Simulator (Mac):</b> install Xcode + iOS Simulator (Xcode → Settings/Preferences → Components)
-        </li>
-        <li>
-          <b>Android Emulator (Windows):</b> install Android Studio → Device Manager → create a virtual device
-        </li>
-      </ul>
+                        <!-- 3) Install required libraries (from RN setup doc) -->
+                        <!-- 2) Install required Expo libraries -->
+                        <h6 class="fw-bold">2. Install required Expo libraries</h6>
 
-      <div class="alert alert-info mb-0">
-        If Expo gets stuck or errors persist, try clearing cache:
-        <div class="codebox mt-2">
-          <code>npx expo start -c</code>
-        </div>
-      </div>
+                        <div class="alert alert-warning mb-3">
+                            <b>Important:</b> Run these commands inside the <code>appdev</code> folder in your VS Code
+                            terminal.
+                        </div>
 
-    </div>
-  </div>
-</div>
-            
+                        <p class="text-muted mb-2">Core navigation + Expo setup:</p>
+                        <div class="codebox mb-3">
+                            <code>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler react-native-reanimated</code>
+                        </div>
+
+                        <p class="text-muted mb-2">Push notifications support:</p>
+                        <div class="codebox mb-3">
+                            <code>npx expo install expo-notifications expo-device</code>
+                        </div>
+
+                        <p class="text-muted mb-2">Local storage (AsyncStorage):</p>
+                        <div class="codebox mb-3">
+                            <code>npx expo install @react-native-async-storage/async-storage</code>
+                        </div>
+
+                        <p class="text-muted mb-2">UI enhancements (icons, gradients, fonts, splash, images):</p>
+                        <div class="codebox mb-3">
+                            <code>npx expo install @expo/vector-icons expo-linear-gradient expo-splash-screen expo-image expo-font</code>
+                        </div>
+
+                        <p class="text-muted mb-2">Web support (if running on web):</p>
+                        <div class="codebox mb-4">
+                            <code>npx expo install react-native-web react-dom</code>
+                        </div>
+
+                        <div class="small text-muted mb-4">
+                            Only run these once after cloning the repo or when adding new features.
+                        </div>
+
+                        <!-- 4) Start Expo -->
+                        <h6 class="fw-bold">3. Start the app (Expo dev server)</h6>
+                        <div class="codebox mb-3">
+                            <code>npx expo start</code>
+                        </div>
+
+                        <p class="text-muted mb-2">Run on:</p>
+                        <ul class="mb-3">
+                            <li>
+                                <b>Phone:</b> install <b>Expo Go</b>, then scan the QR code
+                            </li>
+                            <li>
+                                <b>iOS Simulator (Mac):</b> install Xcode + iOS Simulator (Xcode → Settings/Preferences
+                                → Components)
+                            </li>
+                            <li>
+                                <b>Android Emulator (Windows):</b> install Android Studio → Device Manager → create a
+                                virtual device
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info mb-0">
+                            If Expo gets stuck or errors persist, try clearing cache:
+                            <div class="codebox mt-2">
+                                <code>npx expo start -c</code>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
             <!-- 6) Optional: EAS -->
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingEAS">
