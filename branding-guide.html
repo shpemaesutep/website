@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHPE/MAES App Branding Guide</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap');
+
+        :root {
+            --primary-orange: #D25100;
+            --primary-navy: #002649;
+            --secondary-navy: #0B1F3A;
+            --accent-blue: #3B82F6;
+            
+            --bg-light: #F5F5F5;
+            --bg-card: #F1F6FA;
+            --white: #FFFFFF;
+            
+            --text-dark: #333333;
+            --text-muted: #666666;
+            --text-light: #9CA3AF;
+            
+            --border-light: #DCE7F0;
+            --border-dark: #E0E0E0;
+
+            --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            color: var(--primary-navy);
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0, 38, 73, 0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .section-title {
+            color: var(--primary-navy);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--bg-light);
+            padding-bottom: 15px;
+        }
+
+        /* Color Palette Grid */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .color-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .color-swatch {
+            height: 120px;
+            width: 100%;
+        }
+
+        .color-info {
+            padding: 15px;
+            background: var(--white);
+        }
+
+        .color-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 0 0 5px 0;
+            color: var(--primary-navy);
+        }
+
+        .color-hex {
+            font-family: monospace;
+            color: var(--text-muted);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Utilities for Swatches */
+        .bg-orange { background-color: var(--primary-orange); }
+        .bg-navy { background-color: var(--primary-navy); }
+        .bg-navy-light { background-color: var(--secondary-navy); }
+        .bg-blue { background-color: var(--accent-blue); }
+        .bg-card-blue { background-color: var(--bg-card); }
+        .bg-gray { background-color: var(--bg-light); }
+        .bg-text { background-color: var(--text-dark); }
+        .bg-muted { background-color: var(--text-muted); }
+
+        /* Typography */
+        .type-sample {
+            margin-bottom: 30px;
+        }
+        
+        .type-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--primary-orange);
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .font-primary { font-family: var(--font-family); }
+        
+        .type-h1 { font-size: 34px; font-weight: 900; color: var(--primary-navy); margin: 0; }
+        .type-h2 { font-size: 26px; font-weight: 800; color: var(--primary-navy); margin: 0; }
+        .type-h3 { font-size: 20px; font-weight: 700; color: var(--primary-navy); margin: 0; }
+        .type-body { font-size: 16px; font-weight: 400; color: var(--text-dark); margin: 0; }
+        .type-small { font-size: 14px; font-weight: 500; color: var(--text-muted); margin: 0; }
+        .type-button { font-size: 16px; font-weight: 800; color: var(--white); background: var(--primary-orange); padding: 10px 20px; border-radius: 8px; display: inline-block;}
+
+        /* UI Elements */
+        .ui-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .ui-card {
+            background: var(--bg-card);
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 6px 12px rgba(0, 38, 73, 0.08);
+        }
+
+        .pill {
+            display: inline-block;
+            background: rgba(210, 81, 0, 0.1);
+            color: var(--primary-orange);
+            font-weight: 800;
+            font-size: 12px;
+            padding: 6px 12px;
+            border-radius: 99px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .btn-modern {
+            background: var(--primary-orange);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 100px;
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 15px rgba(210, 81, 0, 0.3);
+        }
+
+        .btn-modern:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(210, 81, 0, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+    <div style="padding:20px;">
+  <a href="appdev.html" 
+     style="
+        display:inline-block;
+        background:#D25100;
+        color:white;
+        padding:10px 18px;
+        border-radius:8px;
+        text-decoration:none;
+        font-weight:700;
+     ">
+     ← Back to App Dev
+  </a>
+</div>
+
+    <div class="container">
+        <header>
+            <h1>Brand & Design System</h1>
+            <p class="subtitle">A cool, cohesive, modern design language for the SHPE/MAES App.</p>
+        </header>
+
+        <section class="section">
+            <h2 class="section-title">Color Palette</h2>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-swatch bg-orange"></div>
+                    <div class="color-info">
+                        <p class="color-name">SHPE Orange (Primary)</p>
+                        <p class="color-hex">#D25100</p>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch bg-navy"></div>
+                    <div class="color-info">
+                        <p class="color-name">Deep Navy (Headers)</p>
+                        <p class="color-hex">#002649</p>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch bg-navy-light"></div>
+                    <div class="color-info">
+                        <p class="color-name">Soft Navy (Icons/Tabs)</p>
+                        <p class="color-hex">#0B1F3A</p>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch bg-blue"></div>
+                    <div class="color-info">
+                        <p class="color-name">Action Blue (Highlights)</p>
+                        <p class="color-hex">#3B82F6</p>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch bg-card-blue"></div>
+                    <div class="color-info">
+                        <p class="color-name">Ice Blue (Cards)</p>
+                        <p class="color-hex">#F1F6FA</p>
+                    </div>
+                </div>
+                <div class="color-card">
+                    <div class="color-swatch bg-gray"></div>
+                    <div class="color-info">
+                        <p class="color-name">Light Gray (Background)</p>
+                        <p class="color-hex">#F5F5F5</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Typography</h2>
+            <p style="margin-bottom: 30px; color: var(--text-muted);">
+                <strong>Primary Font:</strong> Inter (or System UI on iOS). Uses distinct weights to create hierarchy.
+            </p>
+
+            <div class="type-sample">
+                <span class="type-label">Screen Title (Size: 34, Weight: 900)</span>
+                <p class="type-h1 font-primary">Home Dashboard</p>
+            </div>
+
+            <div class="type-sample">
+                <span class="type-label">Section Header (Size: 26, Weight: 800)</span>
+                <p class="type-h2 font-primary">Upcoming Events</p>
+            </div>
+
+            <div class="type-sample">
+                <span class="type-label">Card Title (Size: 20, Weight: 700)</span>
+                <p class="type-h3 font-primary">General Meeting</p>
+            </div>
+
+            <div class="type-sample">
+                <span class="type-label">Body Text (Size: 16, Weight: 400)</span>
+                <p class="type-body font-primary">Join us for our first general body meeting of the semester. Food will be provided!</p>
+            </div>
+
+            <div class="type-sample">
+                <span class="type-label">Subtext / Details (Size: 14, Weight: 500)</span>
+                <p class="type-small font-primary">Oct 12 • ECE Room 310</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">UI Components & Shapes</h2>
+            
+            <div class="ui-grid">
+                <!-- Example Card -->
+                <div class="ui-card">
+                    <span class="pill">Event</span>
+                    <h3 class="type-h3" style="margin-bottom: 10px;">Modern Squircle Card</h3>
+                    <p class="type-body" style="color: var(--text-muted); margin-bottom: 20px;">Use a border radius of <code>20px</code> for large cards, and <code>16px</code> for smaller inner components. Use <code>#F1F6FA</code> as the background and apply a soft shadow.</p>
+                    
+                    <button class="btn-modern">Primary Action</button>
+                </div>
+
+                <!-- Guidance notes -->
+                <div>
+                    <h3 class="type-h3" style="margin-bottom: 15px;">Design Rules</h3>
+                    <ul class="type-body" style="color: var(--text-muted); padding-left: 20px;">
+                        <li style="margin-bottom: 10px;"><strong>Borders:</strong> When placing cards on white or gray backgrounds, use a subtle 1px border (<code>#DCE7F0</code>) to give it a crisp edge.</li>
+                        <li style="margin-bottom: 10px;"><strong>Shadows:</strong> Use soft, colored shadows rather than harsh black. For example, a shadow for a navy card should have a hint of navy in the RGB value.</li>
+                        <li style="margin-bottom: 10px;"><strong>Spacing:</strong> Use generous whitespace padding (usually 16px to 24px inside cards).</li>
+                        <li><strong>Highlights:</strong> Reserve the SHPE Orange specifically for interactive elements (buttons, active tabs, unread badges) to draw the user's eye.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>

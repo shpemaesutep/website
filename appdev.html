@@ -101,168 +101,182 @@
             </div>
 
             <!-- PROJECT ACCESS HEADER -->
-            <div class="text-center mb-5">
+            <!-- <div class="text-center mb-5">
                 <h2 class="text-utep-orange" style="color: #e05a06;">Project Access</h2>
                 <p class="text-muted">Access key development tools and platforms below.</p>
+                <div class="container my-5 text-center"> -->
+            <div class="container my-5 text-center">
+                <h3 style="color:#002649; font-weight:800;">Developer Resources</h3>
+
+                <div class="d-flex justify-content-center gap-3 flex-wrap mt-4">
+                    <a href="branding-guide.html" class="appdev-btn btn-primary-appdev">
+                        Branding Guide
+                    </a>
+
+                    <a href="app_structure.html" class="appdev-btn btn-outline-appdev">
+                        App Structure Guide
+                    </a>
+                </div>
             </div>
+        </div>
 
-            <div class="row g-4 justify-content-center">
-                <!-- Figma Styling -->
-                <style>
-                    /* Fullscreen overlay */
-                    #figmaOverlay {
-                        position: fixed;
-                        top: 0;
-                        left: 0;
-                        width: 100vw;
-                        height: 100vh;
-                        background: rgba(0, 0, 0, 0.85);
-                        backdrop-filter: blur(6px);
-                        display: none;
-                        align-items: center;
-                        justify-content: center;
-                        z-index: 2000;
-                    }
+        <div class="row g-4 justify-content-center">
+            <!-- Figma Styling -->
+            <style>
+                /* Fullscreen overlay */
+                #figmaOverlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: rgba(0, 0, 0, 0.85);
+                    backdrop-filter: blur(6px);
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 2000;
+                }
 
-                    /* Phone frame */
-                    .phone-frame {
-                        width: 320px;
-                        height: 650px;
-                        border-radius: 32px;
-                        background: #000;
-                        padding: 14px;
-                        box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
-                        position: relative;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
+                /* Phone frame */
+                .phone-frame {
+                    width: 320px;
+                    height: 650px;
+                    border-radius: 32px;
+                    background: #000;
+                    padding: 14px;
+                    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
 
-                    /* Inner screen */
-                    .phone-screen {
-                        width: 100%;
-                        height: 100%;
-                        background: #111;
-                        border-radius: 26px;
-                        overflow-y: auto;
-                        scrollbar-width: none;
-                        padding-top: 30px;
-                        position: relative;
-                    }
+                /* Inner screen */
+                .phone-screen {
+                    width: 100%;
+                    height: 100%;
+                    background: #111;
+                    border-radius: 26px;
+                    overflow-y: auto;
+                    scrollbar-width: none;
+                    padding-top: 30px;
+                    position: relative;
+                }
 
-                    /* Notch */
-                    .phone-notch {
-                        position: absolute;
-                        top: 8px;
-                        left: 50%;
-                        transform: translateX(-50%);
-                        width: 110px;
-                        height: 24px;
-                        background: #000;
-                        border-radius: 14px;
-                        z-index: 10;
-                    }
+                /* Notch */
+                .phone-notch {
+                    position: absolute;
+                    top: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 110px;
+                    height: 24px;
+                    background: #000;
+                    border-radius: 14px;
+                    z-index: 10;
+                }
 
-                    /* Close button */
-                    #closeFigma {
-                        position: absolute;
-                        top: 25px;
-                        right: 30px;
-                        background: #ffffff22;
-                        border: none;
-                        color: #fff;
-                        font-size: 1.8rem;
-                        padding: 8px 14px;
-                        border-radius: 12px;
-                        cursor: pointer;
-                    }
+                /* Close button */
+                #closeFigma {
+                    position: absolute;
+                    top: 25px;
+                    right: 30px;
+                    background: #ffffff22;
+                    border: none;
+                    color: #fff;
+                    font-size: 1.8rem;
+                    padding: 8px 14px;
+                    border-radius: 12px;
+                    cursor: pointer;
+                }
 
-                    #closeFigma:hover {
-                        background: #ffffff33;
-                    }
-                </style>
+                #closeFigma:hover {
+                    background: #ffffff33;
+                }
+            </style>
 
 
-                <!-- Figma CARD -->
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center h-100">
-                        <div class="card-body d-flex flex-column justify-content-center align-items-center">
+            <!-- Figma CARD -->
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 text-center h-100">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
 
-                            <!-- Centered Icon -->
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
-                                style="width:60px; height:60px;" class="mb-3" alt="Figma Icon">
+                        <!-- Centered Icon -->
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg"
+                            style="width:60px; height:60px;" class="mb-3" alt="Figma Icon">
 
-                            <h5 class="card-title">Figma Prototype</h5>
-                            <p class="card-text text-muted">
-                                Open a full-screen phone preview.
-                            </p>
+                        <h5 class="card-title">Figma Prototype</h5>
+                        <p class="card-text text-muted">
+                            Open a full-screen phone preview.
+                        </p>
 
-                            <div class="mt-auto">
-                                <button class="btn btn-outline-primary" onclick="openFigma()">
-                                    View
-                                </button>
-                            </div>
-
+                        <div class="mt-auto">
+                            <button class="btn btn-outline-primary" onclick="openFigma()">
+                                View
+                            </button>
                         </div>
-                    </div>
-                </div>
 
-
-                <!-- FULLSCREEN OVERLAY -->
-                <div id="figmaOverlay" onclick="closeFigma()">
-
-                    <button id="closeFigma" onclick="closeFigma()">✕</button>
-
-                    <div class="phone-frame" onclick="event.stopPropagation()">
-                        <div class="phone-notch"></div>
-
-                        <div class="phone-screen">
-                            <img src="assets/img/2025/appdev/app_mock.jpeg" alt="Figma Preview"
-                                style="width:100%; height:auto; display:block;">
-                        </div>
-                    </div>
-
-                    <div class="phone-frame">
-                        <div class="phone-notch"></div>
-
-                        <div class="phone-screen">
-                            <!-- Replace with your events screenshot -->
-                            <img src="assets/img/2025/appdev/events_mock.jpeg" alt="Events Screen Preview"
-                                style="width:100%; height:auto; display:block;">
-                        </div>
-                    </div>
-                </div>
-
-
-
-
-                <script>
-                    function openFigma() {
-                        document.getElementById("figmaOverlay").style.display = "flex";
-                    }
-
-                    function closeFigma() {
-                        document.getElementById("figmaOverlay").style.display = "none";
-                    }
-                </script>
-
-
-                <div class="col-md-4">
-                    <div class="card shadow-sm border-0 text-center h-100">
-                        <div class="card-body d-flex flex-column">
-                            <i class="bi bi-github" style="font-size: 2.5rem; color:#0d6efd;"></i>
-
-                            <h5 class="card-title mt-3">GitHub Repository</h5>
-                            <p class="card-text">View our source code, branches, and documentation.</p>
-
-                            <div class="mt-auto">
-                                <a class="btn btn-outline-primary" href="https://github.com/shpemaesutep/appdev"
-                                    target="_blank">Access</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
+
+
+            <!-- FULLSCREEN OVERLAY -->
+            <div id="figmaOverlay" onclick="closeFigma()">
+
+                <button id="closeFigma" onclick="closeFigma()">✕</button>
+
+                <div class="phone-frame" onclick="event.stopPropagation()">
+                    <div class="phone-notch"></div>
+
+                    <div class="phone-screen">
+                        <img src="assets/img/2025/appdev/app_mock.jpeg" alt="Figma Preview"
+                            style="width:100%; height:auto; display:block;">
+                    </div>
+                </div>
+
+                <div class="phone-frame">
+                    <div class="phone-notch"></div>
+
+                    <div class="phone-screen">
+                        <!-- Replace with your events screenshot -->
+                        <img src="assets/img/2025/appdev/events_mock.jpeg" alt="Events Screen Preview"
+                            style="width:100%; height:auto; display:block;">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <script>
+                function openFigma() {
+                    document.getElementById("figmaOverlay").style.display = "flex";
+                }
+
+                function closeFigma() {
+                    document.getElementById("figmaOverlay").style.display = "none";
+                }
+            </script>
+
+
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 text-center h-100">
+                    <div class="card-body d-flex flex-column">
+                        <i class="bi bi-github" style="font-size: 2.5rem; color:#0d6efd;"></i>
+
+                        <h5 class="card-title mt-3">GitHub Repository</h5>
+                        <p class="card-text">View our source code, branches, and documentation.</p>
+
+                        <div class="mt-auto">
+                            <a class="btn btn-outline-primary" href="https://github.com/shpemaesutep/appdev"
+                                target="_blank">Access</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -503,14 +517,14 @@
 
                         <!-- 3) Install required libraries (from RN setup doc) -->
                         <!-- 2) Install required Expo libraries -->
-                        <h6 class="fw-bold">2. Install required Expo libraries</h6>
+                        <!-- <h6 class="fw-bold">2. Install required Expo libraries</h6>
 
                         <div class="alert alert-warning mb-3">
                             <b>Important:</b> Run these commands inside the <code>appdev</code> folder in your VS Code
                             terminal.
-                        </div>
+                        </div> -->
 
-                        <p class="text-muted mb-2">Core navigation + Expo setup:</p>
+                        <!-- <p class="text-muted mb-2">Core navigation + Expo setup:</p>
                         <div class="codebox mb-3">
                             <code>npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar react-native-gesture-handler react-native-reanimated</code>
                         </div>
@@ -528,6 +542,8 @@
                         <p class="text-muted mb-2">UI enhancements (icons, gradients, fonts, splash, images):</p>
                         <div class="codebox mb-3">
                             <code>npx expo install @expo/vector-icons expo-linear-gradient expo-splash-screen expo-image expo-font</code>
+                           <code> npx expo install expo-linear-gradient expo-image expo-haptics expo-symbols expo-web-browser @expo/vector-icons </code>
+
                         </div>
 
                         <p class="text-muted mb-2">Web support (if running on web):</p>
@@ -535,12 +551,27 @@
                             <code>npx expo install react-native-web react-dom</code>
                         </div>
 
-                        <div class="small text-muted mb-4">
-                            Only run these once after cloning the repo or when adding new features.
+                        <p class="text-muted mb-2">Firebase for flappy game leaderboard</p>
+                        <div class="codebox mb-4">
+                            <code>npm install firebase</code>
                         </div>
 
+                        <p class="text-muted mb-2">Web support (if running on web):</p>
+                        <div class="codebox mb-4">
+                            <code>npm install @react-native-async-storage/async-storage</code>
+                        </div>
+
+                        <p class="text-muted mb-2">Web support (if running on web):</p>
+                        <div class="codebox mb-4">
+                            <code>npx expo install expo-notifications expo-device</code>
+                        </div>
+
+                        <div class="small text-muted mb-4">
+                            Only run these once after cloning the repo or when adding new features.
+                        </div> -->
+
                         <!-- 4) Start Expo -->
-                        <h6 class="fw-bold">3. Start the app (Expo dev server)</h6>
+                        <h6 class="fw-bold">2. Start the app (Expo dev server)</h6>
                         <div class="codebox mb-3">
                             <code>npx expo start</code>
                         </div>
@@ -684,3 +715,72 @@
 </body>
 
 </html>
+
+<style>
+    .guide-frame {
+        width: 100%;
+        height: 900px;
+        /* adjust if you want */
+        border: 1px solid #e5e7eb;
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .guide-toolbar {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 14px;
+    }
+
+
+    .appdev-btn {
+        display: inline-block;
+        padding: 14px 26px;
+        border-radius: 999px;
+        font-weight: 800;
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.2s ease;
+        letter-spacing: 0.3px;
+    }
+
+    .btn-primary-appdev {
+        background: #D25100;
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(210, 81, 0, 0.3);
+    }
+
+    .btn-primary-appdev:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(210, 81, 0, 0.4);
+    }
+
+    .btn-outline-appdev {
+        border: 2px solid #002649;
+        color: #002649;
+        background: transparent;
+    }
+
+    .btn-outline-appdev:hover {
+        background: #002649;
+        color: #ffffff;
+    }
+
+    .structure-image {
+        display: block;
+        width: 100%;
+        max-width: 650px;
+        /* controls how big it can get */
+        height: auto;
+        margin: 30px auto;
+        /* centers it */
+        border-radius: 16px;
+        border: 1px solid var(--border-light);
+        box-shadow: 0 10px 30px rgba(0, 38, 73, 0.12);
+    }
+</style>
+</style>
