@@ -2,339 +2,314 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About UTEP SHPE//MAES" />
-    <meta name="author" content="UTEP SHPE//MAES" />
-    <title>About | UTEP SHPE//MAES</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About SHPE and MAES at UTEP, history, mission, vision, and the six pillars of our chapter">
+  <meta name="author" content="UTEP SHPE//MAES">
+  <title>About | UTEP SHPE//MAES</title>
 
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.png" type="image/png">
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/design-tokens.css" rel="stylesheet" />
+  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/my-styles.css" rel="stylesheet" />
+
+  <style>
+    /* ── About intro text ─────────────────────────────────────── */
+    .about-intro-text {
+      font-family: var(--font-body);
+      font-size: var(--text-body-lg);
+      line-height: 1.75;
+      color: var(--text-primary);
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Who Are We feature box ───────────────────────────────── */
+    .about-feature {
+      background: var(--surface-soft);
+      border: 1px solid rgba(4, 30, 66, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-feature-title {
+      font-family: var(--font-display);
+      color: var(--color-navy);
+      font-size: clamp(1.6rem, 2.5vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .about-feature-title i { color: var(--color-navy); margin-right: 0.4rem; }
+    .about-feature p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── Mission / Vision grid ────────────────────────────────── */
+    .mission-vision {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2.5rem;
+    }
+    .mission-vision > div {
+      border-top: 3px solid rgba(4, 30, 66, 0.12);
+      padding-top: 1.25rem;
+    }
+    .mission-vision h3 {
+      font-family: var(--font-ui);
+      font-size: 1.25rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .mission-vision h3 i { margin-right: 0.45rem; }
+    .mission-vision h3.mission-head { color: var(--color-orange); }
+    .mission-vision h3.mission-head i { color: var(--color-orange); }
+    .mission-vision h3.vision-head { color: var(--color-green-text); }
+    .mission-vision h3.vision-head i { color: var(--color-green); }
+    .mission-vision p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── 6 Pillars grid ───────────────────────────────────────── */
+    .pillars-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .pillar-card {
+      background: var(--surface-default);
+      border: 1px solid rgba(4, 30, 66, 0.08);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      padding: 1.5rem;
+      text-align: center;
+      transition: var(--transition-card);
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .pillar-card i {
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+    .pillar-card:nth-child(3n+1) i { color: var(--color-orange); }
+    .pillar-card:nth-child(3n+2) i { color: var(--color-green); }
+    .pillar-card:nth-child(3n)   i { color: var(--color-navy); }
+    .pillar-card h4 {
+      font-family: var(--font-display);
+      color: var(--color-navy);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .pillar-card p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-size: var(--text-ui);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Demographics images ──────────────────────────────────── */
+    .demographics-images {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .demographics-images img {
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      height: auto;
+      width: 100%;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 767.98px) {
+      .mission-vision,
+      .pillars-grid,
+      .demographics-images {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </head>
 
 <body>
-    <header id="page-header"></header>
+  <header id="page-header"></header>
 
-    <main>
-        <section id="about-hero">
-            <div class="container text-center text-white">
-                <h1>Our History</h1>
-                <p>Celebrating decades of Hispanic excellence in STEM</p>
-            </div>
-        </section>
+  <main id="main-content">
 
-        <section class="about-copy">
-            <div class="container">
-                <h2>What is SHPE &amp; MAES?</h2>
+    <!-- HERO -->
+    <section class="inner-hero inner-hero--reverse" aria-label="About page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">About Us</p>
+          <h1 class="inner-hero__title">Our History &amp; Mission</h1>
+          <p class="inner-hero__subtitle">Celebrating decades of Hispanic excellence in STEM, from El Paso to the nation.</p>
+        </div>
+        <div class="inner-hero__visual" aria-hidden="true">
+          <img class="inner-hero__img" src="assets/img/2025/history/history.JPG" alt="" loading="eager">
+        </div>
+      </div>
+    </section>
 
-                <p>
-                    The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and Engineering (MAES)
-                    are two non-profit organizations dedicated to the advancement of Hispanics in STEM. Both were founded
-                    in Los Angeles, California, in 1974, and have since grown into national networks of passionate
-                    professionals and students empowering future generations of engineers and scientists. Today, SHPE
-                    includes over 11,000 members across 44 professional and 245 student chapters nationwide, while MAES
-                    continues to expand through more than 40 active student chapters across the country.
-                </p>
+    <!-- WHAT IS SHPE & MAES -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-pill reveal" data-anim="fade">Who We Are</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">What is SHPE &amp; MAES?</h2>
+        </div>
+        <p class="about-intro-text text-center reveal" data-delay="200">
+          The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and Engineering (MAES)
+          are two non-profit organizations dedicated to the advancement of Hispanics in STEM. Both were founded
+          in Los Angeles, California, in 1974, and have since grown into national networks of passionate
+          professionals and students empowering future generations of engineers and scientists. Today, SHPE
+          includes over 11,000 members across 44 professional and 245 student chapters nationwide, while MAES
+          continues to expand through more than 40 active student chapters across the country.
+        </p>
 
-                <div class="about-feature">
-                    <h2 class="about-feature-title">
-                        <i class="fas fa-user-friends"></i>
-                        Who Are We
-                    </h2>
-                    <p>
-                        SHPE (Society of Hispanic Professional Engineers) and MAES (Latinos in Science and Engineering)
-                        are national non-profit organizations dedicated to the advancement of Hispanics in STEM. Both were
-                        founded in Los Angeles, California, in 1974, and together at UTEP, we continue to foster
-                        innovation, leadership, and cultural pride in engineering.
-                    </p>
-                </div>
+        <div class="about-feature mt-5 reveal" data-delay="150">
+          <h3 class="about-feature-title">
+            <i class="fas fa-user-friends"></i> Who Are We
+          </h3>
+          <p>
+            SHPE (Society of Hispanic Professional Engineers) and MAES (Latinos in Science and Engineering)
+            are national non-profit organizations dedicated to the advancement of Hispanics in STEM. Both were
+            founded in Los Angeles, California, in 1974, and together at UTEP, we continue to foster
+            innovation, leadership, and cultural pride in engineering.
+          </p>
+        </div>
 
-                <div class="mission-vision">
-                    <div>
-                        <h3>
-                            <i class="fas fa-handshake"></i>
-                            Our Mission
-                        </h3>
-                        <p>
-                            Engage UTEP and El Paso students through academic, leadership, professional, and service
-                            opportunities in support of their growth as STEM professionals.
-                        </p>
-                    </div>
+        <div class="mission-vision mt-5">
+          <div class="reveal" data-anim="slide-left" data-delay="100">
+            <h3 class="mission-head">
+              <i class="fas fa-handshake"></i> Our Mission
+            </h3>
+            <p>
+              Engage UTEP and El Paso students through academic, leadership, professional, and service
+              opportunities in support of their growth as STEM professionals.
+            </p>
+          </div>
 
-                    <div>
-                        <h3>
-                            <i class="fas fa-lightbulb"></i>
-                            Our Vision
-                        </h3>
-                        <p>
-                            To be the model organization that develops socially responsible STEM professionals who make a
-                            lasting impact and serve as role models within their communities.
-                        </p>
-                    </div>
-                </div>
+          <div class="reveal" data-anim="slide-right" data-delay="200">
+            <h3 class="vision-head">
+              <i class="fas fa-lightbulb"></i> Our Vision
+            </h3>
+            <p>
+              To be the model organization that develops socially responsible STEM professionals who make a
+              lasting impact and serve as role models within their communities.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <section class="pillars-section">
-                    <h2 class="pillars-title">Our 6 Pillars</h2>
-                    <div class="pillars-grid">
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <h4>Academic Development</h4>
-                            <p>Supporting students with resources and mentorship to excel academically.</p>
-                        </article>
+    <!-- 6 PILLARS -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Foundation</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Our 6 Pillars</h2>
+          <p class="section-subtitle reveal" data-delay="200">The commitments that shape every program we offer</p>
+        </div>
 
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-users"></i>
-                            <h4>Chapter Development</h4>
-                            <p>Building community and inclusivity through events that strengthen chapter culture.</p>
-                        </article>
+        <div class="pillars-grid">
+          <article class="pillar-card reveal" data-delay="100">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <h4>Academic Development</h4>
+            <p>Supporting students with resources and mentorship to excel academically.</p>
+          </article>
 
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-hands-helping"></i>
-                            <h4>Community Outreach</h4>
-                            <p>Giving back to El Paso through volunteering and STEM education initiatives.</p>
-                        </article>
+          <article class="pillar-card reveal" data-delay="150">
+            <i class="fa-solid fa-users"></i>
+            <h4>Chapter Development</h4>
+            <p>Building community and inclusivity through events that strengthen chapter culture.</p>
+          </article>
 
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <h4>Leadership Development</h4>
-                            <p>Providing opportunities for members to grow into confident, capable leaders.</p>
-                        </article>
+          <article class="pillar-card reveal" data-delay="200">
+            <i class="fa-solid fa-hands-helping"></i>
+            <h4>Community Outreach</h4>
+            <p>Giving back to El Paso through volunteering and STEM education initiatives.</p>
+          </article>
 
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-briefcase"></i>
-                            <h4>Professional Development</h4>
-                            <p>Connecting students to industry professionals and career resources.</p>
-                        </article>
+          <article class="pillar-card reveal" data-delay="250">
+            <i class="fa-solid fa-chart-line"></i>
+            <h4>Leadership Development</h4>
+            <p>Providing opportunities for members to grow into confident, capable leaders.</p>
+          </article>
 
-                        <article class="pillar-card">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            <h4>Technical Development</h4>
-                            <p>Cultivating technical skills through workshops, coding projects, and innovation labs.</p>
-                        </article>
-                    </div>
-                </section>
+          <article class="pillar-card reveal" data-delay="300">
+            <i class="fa-solid fa-briefcase"></i>
+            <h4>Professional Development</h4>
+            <p>Connecting students to industry professionals and career resources.</p>
+          </article>
 
-                <section class="demographics-section">
-                    <h2>Our Demographics</h2>
-                    <p>Our chapter represents diverse disciplines across the UTEP College of Engineering.</p>
-                    <div class="demographics-images">
-                        <img src="assets/img/Demographics2023.png" alt="SHPE//MAES demographics">
-                        <img src="assets/img/past-internships.png" alt="SHPE//MAES past internships">
-                    </div>
-                </section>
-            </div>
-        </section>
-    </main>
+          <article class="pillar-card reveal" data-delay="350">
+            <i class="fa-solid fa-laptop-code"></i>
+            <h4>Technical Development</h4>
+            <p>Cultivating technical skills through workshops, coding projects, and innovation labs.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <footer id="page-footer"></footer>
+    <!-- DEMOGRAPHICS -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Chapter Stats</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Our Demographics</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Our chapter represents diverse disciplines across the UTEP College of Engineering.
+          </p>
+        </div>
 
-    <style>
-        #about-hero {
-            min-height: 390px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background:
-                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                url("assets/img/2025/history/history.JPG") center 42% / cover no-repeat;
-        }
+        <div class="demographics-images">
+          <img src="assets/img/Demographics2023.png" alt="SHPE//MAES 2023 member demographics by major" loading="lazy" class="reveal" data-anim="slide-left" data-delay="100">
+          <img src="assets/img/past-internships.png" alt="Map showing where SHPE//MAES members have completed internships" loading="lazy" class="reveal" data-anim="slide-right" data-delay="200">
+        </div>
+      </div>
+    </section>
 
-        #about-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
+  </main>
 
-        #about-hero p {
-            font-size: clamp(1.1rem, 2vw, 1.45rem);
-            margin-bottom: 0;
-        }
+  <footer id="page-footer"></footer>
 
-        .about-copy {
-            background: #fff;
-            padding: 2rem 0 4.5rem;
-        }
-
-        .about-copy .container {
-            max-width: 1180px;
-        }
-
-        .about-copy h2 {
-            color: #ff8200;
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(2rem, 3vw, 2.6rem);
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            margin: 0 0 0.75rem;
-            text-align: center;
-            text-transform: uppercase;
-        }
-
-        .about-copy h3 {
-            color: #86dc3d;
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.7rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            margin: 1.35rem 0 0.35rem;
-            text-transform: uppercase;
-        }
-
-        .about-copy p,
-        .pillar-card p,
-        .demographics-section p {
-            color: #1f2937;
-            font-family: 'Roboto', sans-serif;
-            font-size: 1.05rem;
-            line-height: 1.45;
-            margin-bottom: 0;
-        }
-
-        .about-feature {
-            background: #f9fafb;
-            border: 1px solid rgba(4, 30, 66, 0.08);
-            border-radius: 14px;
-            margin: 2.5rem auto 0;
-            max-width: 900px;
-            padding: 1.75rem;
-            text-align: center;
-        }
-
-        .about-feature .about-feature-title {
-            color: #041e42;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.8rem, 3vw, 2.3rem);
-            text-transform: none;
-        }
-
-        .about-feature i {
-            color: #041e42;
-            margin-right: 0.4rem;
-        }
-
-        .mission-vision {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            margin-top: 2.5rem;
-        }
-
-        .mission-vision > div {
-            border-top: 3px solid #e5e7eb;
-            padding-top: 1rem;
-        }
-
-        .mission-vision h3 i {
-            color: #ff8200;
-            margin-right: 0.45rem;
-        }
-
-        .mission-vision > div:nth-child(2) h3 i {
-            color: #86dc3d;
-        }
-
-        .pillars-section,
-        .demographics-section {
-            margin-top: 3.5rem;
-            text-align: center;
-        }
-
-        .pillars-title,
-        .demographics-section h2 {
-            color: #041e42;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(1.9rem, 3vw, 2.4rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-transform: none;
-        }
-
-        .pillars-grid {
-            display: grid;
-            gap: 1.25rem;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .pillar-card {
-            background: #fff;
-            border: 1px solid rgba(4, 30, 66, 0.08);
-            border-radius: 14px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-            padding: 1.5rem;
-        }
-
-        .pillar-card i {
-            color: #ff8200;
-            font-size: 2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .pillar-card:nth-child(2n) i {
-            color: #86dc3d;
-        }
-
-        .pillar-card:nth-child(3n) i {
-            color: #041e42;
-        }
-
-        .pillar-card h4 {
-            color: #041e42;
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .demographics-section p {
-            margin-bottom: 1.5rem;
-        }
-
-        .demographics-images {
-            display: grid;
-            gap: 1.25rem;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .demographics-images img {
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            height: auto;
-            width: 100%;
-        }
-
-        @media (max-width: 767.98px) {
-            #about-hero {
-                min-height: 300px;
-                background-position: center;
-            }
-
-            .about-copy {
-                padding: 1.75rem 0 3rem;
-            }
-
-            .mission-vision,
-            .pillars-grid,
-            .demographics-images {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-
-    <script>
-        $(function () {
-            $("#page-header").load("header.html");
-            $("#page-footer").load("footer.html");
-        });
-    </script>
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
 </body>
 
 </html>

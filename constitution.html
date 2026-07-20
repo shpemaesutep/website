@@ -1,228 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <title>UTEP MAES//SHPE</title>
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <!-- Custom MAES//SHPE Styles -->
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
-    <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UTEP SHPE//MAES chapter constitution, bylaws, mission, vision, and member demographics">
+  <meta name="author" content="UTEP SHPE//MAES">
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <title>Constitution | UTEP SHPE//MAES</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/design-tokens.css" rel="stylesheet" />
+  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/my-styles.css" rel="stylesheet" />
+
+  <style>
+    /* PDF embed, constrain height on large screens */
+    .pdf-frame {
+      width: 100%;
+      min-height: 500px;
+      height: clamp(420px, 60vh, 700px);
+      border: 1px solid rgba(4, 30, 66, 0.1);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Mission / Vision split */
+    .mv-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 2rem;
+    }
+    .mv-card {
+      background: var(--surface-soft);
+      border: 1px solid rgba(4, 30, 66, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+    }
+    .mv-card h3 {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .mv-card.mission h3 { color: var(--color-orange); }
+    .mv-card.vision  h3 { color: var(--color-green-text); }
+    .mv-card p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* Demographics images */
+    .demographics-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .demographics-grid img {
+      width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 767.98px) {
+      .mv-grid,
+      .demographics-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </head>
 
 <body>
 
-    <header id="page-header">
-    </header>
+  <header id="page-header"></header>
 
-    <section>
-        <div class="container-fluid text-center bg" id="history-welcome">
-            <h1 class="title">CONSTITUTION</h1>
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="inner-hero inner-hero--centered" aria-label="Constitution page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Governance</p>
+          <h1 class="inner-hero__title">Constitution &amp; Bylaws</h1>
+          <p class="inner-hero__subtitle">Chapter governance documents, mission, vision, and member demographics for the 2025–2026 year.</p>
         </div>
-        <div class="container" id="history-container">
-<iframe 
-    src="/assets/img/2025/constitution/Constitution_2025-2026.pdf" 
-    width="100%" 
-    height="600px">
-</iframe>            <div class="row py-3">
-                <div class="col-md-12 mt-2">
-                    <h1 class="text-utep-orange text-center">WHAT IS SHPE AND MAES?</h1>
-                    <h5>
-                        The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and
-                        Engineering (MAES) are two non-profit organizations committed to the
-                        advancement of Hispanics in STEM fields. SHPE and MAES were both founded in
-                        Los Angeles, California, in 1974. Over time, SHPE has grown to have over 11,000
-                        members affiliated with 44 professional chapters and 245 student chapters across
-                        the nation. Similarly, MAES has expanded to include 40 student chapters
-                        nationwide, with their numbers increasing every year. In 1977, the UTEP student
-                        chapter of SHPE was chartered in conjunction with MAES by the then-president
-                        Richard Martinez within the University's College of Engineering.
-                        
-                    </h5>
-                    <h3 class="text-maes-green mt-3">MISSION</h3>
-
-                    <h5>Our mission is to develop socially
-                        responsible STEM professionals who excel
-                        in their fields and positively impact our
-                        country. We strive to inspire and support
-                        individuals in becoming role models within
-                        our community, leading with expertise and
-                        dedication to create a lasting positive
-                        influence.
-                    </h5>
-                    
-                    <h3 class="text-maes-green">VISION</h3>
-                    
-                    <h5>Our vision is to be the preeminent
-                        organization that shapes socially responsible
-                        STEM professionals, empowering them to
-                        make significant contributions to our nation,
-                        and inspiring them to serve as influential role
-                        models within our community.
-                    </h5>
-                </div>
-            </div>
-            <hr />
-            <h1 class="text-utep-orange text-center">Our Demographics</h1>
-            <div class="row mt-3">
-                <div class="col-md-12">
-                    <img class="img-fluid mx-auto d-block demographics-image" src="assets/img/Demographics2023.png" alt="Demographics graph">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-8 offset-md-2 mt-3">
-                    <img class="img-fluid mx-auto d-block internships-map" src="assets/img/past-internships.png" alt="Past Internships & Co-Ops Map">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-
-            <div class="row">
-                <div class="col-md-6 px-4 py-4 offset-md-3 ">
-                    <div class="text-center bg" id="bylaws-button">
-                        <div class="container-center">
-                            <div class="center">
-                                <h1 class="fw-bolder" style="padding-top: 25%; color: white;">
-                                    Chapter's Bylaws
-                                </h1>
-                                <a target="_blank" class="btn btn-outline-light btn-lg px-4 mb-5" href="Constitution_2025-2026.pdf">See them!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <div class="container">
-        
-        <style>
-        h5 {
-            font-weight: 300;
-        }
-        #history-welcome {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/history/history.JPG");
-            height: 800px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed
-        }
-        
-        /* #history-container li {
-            font-size: 30px;
-        } */
-        #history-container .mech {
-            color: #3771CA;
-        }
-        #history-container .elec {
-            color: #FD7603;
-        }
-        #history-container .civil {
-            color: #FF0000;
-        }
-        #history-container .cs {
-            color: #FFBE00;
-        }
-        #history-container .industrial {
-            color: #7A25A6;
-        }
-        #history-container .metal {
-            color: #59B132;
-        }
-        #history-container .leader {
-            color: #1C447C;
-        }
-        
-        #history-container span {
-            padding-top: 8px;
-            padding-bottom: 8px;
-        }
-        
-        .demographics-text {
-            border-right: 2px solid gainsboro;
-        }
-        
-        .internships-map {
-            height: 85%;
-            width: auto;
-        }
-
-        #bylaws-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Comite.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        
-        @media (max-width: 575.98px) {
-            #history-welcome {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Convvention.JPG");
-                height: 400px;
-                background-position: bottom;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: initial;
-            }
-        }
-        li {
-            font-size: 20px;
-        }
-        a {
-            font-family: 'Oswald', sans-serif;
-        }
-
-        .title {
-        font-family: 'Playfair Display', serif;
-        font-size: 5rem;        /* big size */
-        font-weight: 900;
-        color: #ffffff;         /* your accent green */
-        margin-bottom: 1rem;
-        text-align: center;   
-     }
-
-
-        </style>
+      </div>
     </section>
 
-    <footer id="page-footer">
-    </footer>
+    <!-- PDF EMBED -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-pill reveal" data-anim="fade">Document</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">2025–2026 Constitution</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            View the full chapter constitution below, or download the PDF.
+          </p>
+        </div>
 
-    <!-- Scripts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-    </style>
-    <script>
-        $("#page-header").load("header.html");
-        $("#page-footer").load("footer.html");
-    </script>
+        <iframe
+          class="pdf-frame"
+          src="/assets/img/2025/constitution/Constitution_2025-2026.pdf"
+          title="SHPE//MAES UTEP Constitution 2025–2026"
+          loading="lazy">
+          <p>Your browser cannot display PDFs.
+            <a href="Constitution_2025-2026.pdf" target="_blank" rel="noopener noreferrer">Download the PDF</a>
+            instead.
+          </p>
+        </iframe>
+
+        <div class="text-center mt-4">
+          <a href="Constitution_2025-2026.pdf" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fa-solid fa-file-pdf"></i> Open Full PDF
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS SHPE & MAES -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">About</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100" style="color: var(--color-orange);">What is SHPE and MAES?</h2>
+        </div>
+
+        <p class="reveal" data-delay="150" style="font-family: var(--font-body); font-size: var(--text-body-lg); line-height: 1.8; color: var(--text-primary); max-width: 860px; margin: 0 auto 2rem;">
+          The Society of Hispanic Professional Engineers (SHPE) and Latinos in Science and Engineering (MAES)
+          are two non-profit organizations committed to the advancement of Hispanics in STEM fields. SHPE and MAES were
+          both founded in Los Angeles, California, in 1974. Over time, SHPE has grown to have over 11,000 members
+          affiliated with 44 professional chapters and 245 student chapters across the nation. Similarly, MAES has
+          expanded to include 40 student chapters nationwide, with their numbers increasing every year. In 1977, the
+          UTEP student chapter of SHPE was chartered in conjunction with MAES by the then-president Richard Martinez
+          within the University's College of Engineering.
+        </p>
+
+        <div class="mv-grid">
+          <div class="mv-card mission reveal" data-anim="slide-left" data-delay="100">
+            <h3><i class="fas fa-handshake me-2" aria-hidden="true"></i>Mission</h3>
+            <p>
+              Our mission is to develop socially responsible STEM professionals who excel in their fields and
+              positively impact our country. We strive to inspire and support individuals in becoming role models
+              within our community, leading with expertise and dedication to create a lasting positive influence.
+            </p>
+          </div>
+
+          <div class="mv-card vision reveal" data-anim="slide-right" data-delay="200">
+            <h3><i class="fas fa-lightbulb me-2" aria-hidden="true"></i>Vision</h3>
+            <p>
+              Our vision is to be the preeminent organization that shapes socially responsible STEM professionals,
+              empowering them to make significant contributions to our nation, and inspiring them to serve as
+              influential role models within our community.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMOGRAPHICS -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Chapter Stats</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100" style="color: var(--color-orange);">Our Demographics</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Our chapter represents diverse disciplines across the UTEP College of Engineering.
+          </p>
+        </div>
+
+        <div class="demographics-grid">
+          <img
+            class="reveal" data-anim="slide-left" data-delay="100"
+            src="assets/img/Demographics2023.png"
+            alt="SHPE//MAES 2023 member demographics by engineering major"
+            loading="lazy">
+          <img
+            class="reveal" data-anim="slide-right" data-delay="200"
+            src="assets/img/past-internships.png"
+            alt="Map of past SHPE//MAES member internships and co-ops"
+            loading="lazy">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
 </body>
 
 </html>

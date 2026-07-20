@@ -1,33 +1,43 @@
-<!-- Favicon and theme color (loaded globally on all pages) -->
+<!-- Skip link, satisfies WCAG 2.4.1 -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- Favicon / theme (injected on every page via this partial) -->
 <link rel="icon" href="/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/favicon.png">
-<meta name="theme-color" content="#00254d">
+<meta name="theme-color" content="#041E42">
 
-<nav class="navbar navbar-expand-lg fixed-top shpe-navbar">
+<nav class="navbar navbar-light navbar-expand-lg fixed-top shpe-navbar" aria-label="Main navigation">
   <div class="container px-4">
-    <a class="navbar-brand d-flex align-items-center" href="index.html" aria-label="SHPE // MAES Home">
+
+    <!-- Brand / logo -->
+    <a class="navbar-brand" href="index.html" aria-label="SHPE // MAES, go to homepage">
       <img
         src="assets/img/websiteHeader.png"
-        alt="SHPE // MAES"
+        alt="SHPE // MAES UTEP"
         class="navbar-logo"
         loading="eager"
+        width="auto"
+        height="44"
       >
     </a>
 
+    <!-- Mobile toggle -->
     <button
-      class="navbar-toggler"
+      class="navbar-toggler border-0 p-2"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#mainNavbar"
       aria-controls="mainNavbar"
       aria-expanded="false"
-      aria-label="Toggle navigation"
+      aria-label="Toggle navigation menu"
     >
-      <span class="navbar-toggler-icon"></span>
+      <i class="fa-solid fa-bars nav-hamburger-icon" aria-hidden="true"></i>
     </button>
 
+    <!-- Links -->
     <div class="collapse navbar-collapse" id="mainNavbar">
-      <ul class="navbar-nav ms-auto align-items-lg-center">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+
         <li class="nav-item">
           <a class="nav-link" href="history.html">About</a>
         </li>
@@ -36,10 +46,54 @@
           <a class="nav-link" href="Leadership.html">Leadership</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="join.html">Join</a>
+        <!-- Programs dropdown -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="programsDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Programs
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="programsDropdown">
+            <li>
+              <a class="dropdown-item" href="appdev2.html">
+                <i class="fa-solid fa-mobile-screen-button fa-fw me-2 nav-icon-green" aria-hidden="true"></i>App Dev
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="shpetinas.html">
+                <i class="fa-solid fa-star fa-fw me-2 nav-icon-pink" aria-hidden="true"></i>SHPEtinas
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="minerspark.html">
+                <i class="fa-solid fa-flask fa-fw me-2 nav-icon-orange" aria-hidden="true"></i>MinerSpark
+              </a>
+            </li>
+          </ul>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="resources.html">Resources</a>
+        </li>
+
+        <!-- Divider -->
+        <li class="nav-item nav-divider d-none d-lg-block" aria-hidden="true"></li>
+
+        <!-- Join CTA -->
+        <li class="nav-item">
+          <a class="btn-nav-cta" href="join.html">
+            Join <i class="fa-solid fa-arrow-right fa-sm ms-1" aria-hidden="true"></i>
+          </a>
+        </li>
+
       </ul>
     </div>
+
   </div>
 </nav>

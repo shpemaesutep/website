@@ -1,569 +1,96 @@
-body {
-    padding-top: 125px;
-}
+/* ─────────────────────────────────────────────────────────────────────────────
+   my-styles.css — thin global utilities
+   All component styles are in components.css.
+   Load order: styles.css → design-tokens.css → components.css → my-styles.css
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Base font resets ──────────────────────────────────────── */
 
 li {
-    font-family: 'Oswald', sans-serif;
+  font-family: var(--font-ui, 'Oswald', sans-serif);
 }
 
 p,
-a,
-i,
 span {
-    font-family: 'Roboto', sans-serif;
-}
-
-a:hover {
-    cursor: pointer;
-}
-
-.text-utep-orange {
-    color: #FF8200;
-}
-
-.text-chairs {
-    color: rgb(32, 129, 171);
-}
-
-.text-directors {
-    color: green;
-}
-
-.text-maes-green {
-    color: #86dc3d;
-}
-
-.text-shpe-blue {
-    color: #89939e;
-}
-
-.home-first-slide-span {
-    font-family: 'Oswald', sans-serif;
-}
-
-.profile-image {
-    border-radius: 5px;
-}
-
-#members-container .profile-image {
-    height: 200px;
-    width: 200px;
-}
-
-.member :hover {
-    cursor: pointer;
-}
-
-.nav-item :hover {
-    color: #FF8200 !important;
-}
-
-.bg-shpe-blue {
-    background-color: #151d26;
+  font-family: var(--font-body, 'Roboto', sans-serif);
 }
 
 a {
-    color: inherit;
+  font-family: var(--font-body, 'Roboto', sans-serif);
+  color: inherit;
 }
 
-.fa-linkedin {
-    font-size: 25px;
+a:hover {
+  cursor: pointer;
 }
 
-.bg-light-white {
-    background-color: #ffffff;
+ul, ol, li {
+  font-family: inherit;
+  font-size:   inherit;
+  line-height: inherit;
 }
 
-.exception {
-    background-color: transparent !important; /* Make sure this exception takes precedence */
+/* ─── Color utilities ───────────────────────────────────────── */
+
+.text-utep-orange { color: var(--color-orange, #FF8200); }
+.text-maes-green  { color: var(--color-green,  #86DC3D); }
+
+/* ─── Bootstrap card fixes ──────────────────────────────────── */
+
+/* Fix the retired #00254d value — card titles should be navy */
+.card-title {
+  color: var(--color-navy, #041E42);
 }
 
-.register-button {
-    color: #0d6efd !important;
+.card-text {
+  color: var(--text-muted, #6C757D);
 }
 
-.rounded-photo {
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.center-image {
-    position: relative;
-    text-align: center;
-}
-
-.center-image img {
-    max-width: 100%;
-    max-height: 100%;
-    vertical-align: middle;
-}
-/* Sponsor Section Layout */
-.sponsor-marquee {
-  display: flex;
-  gap: 2rem;
-  overflow: hidden;
-  padding: 0.75rem 0 2.25rem;
-  position: relative;
-}
-
-.sponsor-marquee::before,
-.sponsor-marquee::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 90px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.sponsor-marquee::before {
-  left: 0;
-  background: linear-gradient(90deg, #f8f9fa 0%, rgba(248,249,250,0) 100%);
-}
-
-.sponsor-marquee::after {
-  right: 0;
-  background: linear-gradient(270deg, #f8f9fa 0%, rgba(248,249,250,0) 100%);
-}
-
-.sponsor-logos {
-  animation: sponsor-scroll 28s linear infinite;
-  display: flex;
-  flex: 0 0 auto;
-  gap: 2rem;
-  min-width: max-content;
-}
-
-.sponsor-marquee:hover .sponsor-logos {
-  animation-play-state: paused;
-}
-
-/* Sponsor Card */
-.sponsor-card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #fff;
-  padding: 10px 14px;          /* ↓ tighter padding */
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  min-width: 140px;            /* ↓ smaller width */
-  min-height: 70px;            /* ↓ MUCH smaller height */
-}
-
-.sponsor-card:hover {
-  transform: translateY(-4px);   /* no scale */
-  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
-}
-/* Sponsor Logos */
-.sponsor-card img {
-  max-width: 120px;
-  max-height: 45px;
-  object-fit: contain;
-  display: block;
-}
-
-@keyframes sponsor-scroll {
-  from {
-    transform: translateX(calc(-100% - 2rem));
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sponsor-marquee {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .sponsor-logos {
-    animation: none;
-    flex-wrap: wrap;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  .sponsor-logos[aria-hidden="true"] {
-    display: none;
-  }
-}
-/* Pillar Cards */
+/* Remove default border and add design-system hover */
 .card {
+  border: 1px solid var(--border-subtle, rgba(4,30,66,0.06));
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg, 0 8px 28px rgba(0,0,0,0.09));
 }
 
-.card-title {
-  color: #00254d !important;
-}
-
-.card-text {
-  color: #555;
-}
-#logosCollapse img {
-  max-height: 120px;
-  object-fit: contain;
-}
-#logosCollapse h6 {
-  font-weight: 600;
-  color: #041E42;
-}
-.btn-outline-primary {
-  border-color: #FF8200;
-  color: #FF8200;
-}
-.btn-outline-primary:hover {
-  background-color: #FF8200;
-  color: #fff;
-}
 .card .rounded-circle {
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-/* --- Fade-in animation --- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
+
+/* Bootstrap outline button overrides */
+.btn-outline-primary {
+  border-color: var(--color-orange, #FF8200);
+  color: var(--color-orange, #FF8200);
 }
 
-.fade-in-up {
-  opacity: 0;
-  animation: fadeInUp 1.2s ease forwards;
-}
-.carousel-item { transition: transform 0.6s ease-in-out; }
-/* Base animation */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.btn-outline-primary:hover {
+  background-color: var(--color-orange, #FF8200);
+  color: #fff;
 }
 
-/* Title first */
-.fade-title,
-.fade-subtitle {
-    opacity: 0;
-    animation: fadeUp 0.9s ease-out forwards;
-}
-
-/* Subtitle after title */
-.fade-title {
-    animation-delay: 0.1s;
-}
-.fade-subtitle {
-    animation-delay: 0.4s;
-}
-
-/* Cards default hidden */
-.team-card {
-    opacity: 0;
-    animation: fadeUp 1s ease-out forwards;
-}
-
-/* Middle card second (after title/subtitle) */
-.middle-card {
-    animation-delay: 0.8s;
-}
-
-/* Left card third */
-.left-card {
-    animation-delay: 1.2s;
-}
-
-/* Right card last */
-.right-card {
-    animation-delay: 1.4s;
-}
-
-/* Hover effect */
-.team-card:hover {
-    transform: translateY(-8px);
-    transition: 0.3s ease;
-}
-.footer {
-  background: #0f172a;
-  color: #e5e7eb;
-  padding: 2.5rem 0 1.5rem; /* tighter vertically */
-}
-
-
-.footer-logo {
-  width: 90px;   /* try 90–120px */
-  height: auto;
-  margin-bottom: 0.75rem;
-}
-
-
-.footer-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  color: #ffffff;
-   margin-bottom: 0.5rem;
-}
-
-.footer-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-}
-
-.footer-text a {
-  color: #86dc3d;
-  text-decoration: none;
-}
-
-.footer-text a:hover {
-  text-decoration: underline;
-}
-
-/* Social icons */
-.footer-socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-}
-
-.footer-socials a {
-  font-size: 1.6rem;
-  color: #e5e7eb;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.footer-socials a:hover {
-  color: #86dc3d;
-  transform: translateY(-3px);
-}
-
-/* Divider */
-.footer-divider {
-  border: none;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin: 1.5rem 0 1rem;
-}
-
-/* Bottom bar */
-.footer-bottom {
-  font-size: 0.85rem;
-  color: #9ca3af;
-}
-
-/* Mobile tweaks */
-@media (max-width: 767px) {
-  .footer {
-    text-align: center;
-  }
-
-  .footer-socials {
-    justify-content: center;
-  }
-}
-/* ===== SHPE // MAES NAVBAR (clean + tighter + glass) ===== */
-
-:root{
-  --nav-bg: rgba(248, 249, 250, 0.80);
-  --nav-bg-solid: rgba(248, 249, 250, 0.94);
-  --nav-shadow: 0 4px 14px rgba(0,0,0,0.08);
-  --nav-shadow-strong: 0 8px 22px rgba(0,0,0,0.14);
-  --nav-blue: #00254d;
-  --nav-orange: #ff8200;
-}
-
-.shpe-navbar{
-  background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--nav-shadow);
-  transition: background 220ms ease, box-shadow 220ms ease;
-  border-bottom: 1px solid rgba(0,0,0,0.04); /* subtle edge, no extra height */
-}
-
-/* Tighten the vertical space (this is what removes the bottom “white gap”) */
-.shpe-navbar .container{
-  padding-top: 4px;
-  padding-bottom: 4px;
-  transition: padding 220ms ease;
-}
-
-/* Logo */
-.navbar-logo{
-  height: 48px;
-  width: auto;
-  transition: height 220ms ease, transform 220ms ease;
-}
-.navbar-logo:hover{ transform: scale(1.02); }
-
-/* Links */
-.shpe-navbar .nav-link{
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  color: var(--nav-blue);
-  position: relative;
-  padding: 0.5rem 1rem;  /* tighter than before */
-  background: transparent !important;
-}
-
-/* Hover underline animation */
-.shpe-navbar .nav-link::after{
-  content: "";
-  position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 6px;
-  height: 2px;
-  background: var(--nav-orange);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease;
-  border-radius: 2px;
-  opacity: 0.9;
-}
-
-.shpe-navbar .nav-link:hover{
-  color: var(--nav-orange);
-}
-.shpe-navbar .nav-link:hover::after{
-  transform: scaleX(1);
-}
-
-/* Active state */
-.shpe-navbar .nav-link.active{
-  color: var(--nav-blue);
-  font-weight: 600;
-}
-.shpe-navbar .nav-link.active::after{
-  transform: scaleX(1);
-}
-
-/* Dropdown */
-.dropdown-menu{
-  border-radius: 14px;
-  border: none;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  padding: 0.5rem;
-}
-.dropdown-item{
-  font-family: 'Oswald', sans-serif;
-  font-size: 0.92rem;
-  border-radius: 10px;
-  padding: 0.55rem 0.8rem;
-}
-.dropdown-item:hover{
-  background: #f1f3f5;
-  color: var(--nav-blue);
-}
-
-/* Shrink-on-scroll (only works if you toggle .is-scrolled via JS) */
-.shpe-navbar.is-scrolled{
-  background: var(--nav-bg-solid);
-  box-shadow: var(--nav-shadow-strong);
-}
-.shpe-navbar.is-scrolled .container{
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-.shpe-navbar.is-scrolled .navbar-logo{
-  height: 42px;
-}
-
-/* Mobile collapse panel */
-@media (max-width: 991px){
-  .navbar-collapse{
-    background: rgba(248, 249, 250, 0.96);
-    padding: 1rem;
-    border-radius: 0 0 16px 16px;
-    box-shadow: 0 12px 26px rgba(0,0,0,0.10);
-  }
-
-  .navbar-logo{
-    height: 44px;
-  }
-
-  .shpe-navbar .nav-link::after{
-    left: 0.75rem;
-    right: 0.75rem;
-    bottom: 6px;
-  }
-}
-
-/* Match this to your final navbar height */
-body{
-  padding-top: 72px;
-}
-
-
-body { padding-top: 92px; }
-
-
-
-  :root{
-    --navy:#041E42;
-    --orange:#FF8200;
-    --green:#86dc3d;
-    --soft:#F9FAFB;
-    --muted:#6c757d;
-  }
-
-  .section-title{
-    font-family:'Playfair Display', serif;
-    color:var(--navy);
-    letter-spacing:.2px;
-  }
-
-  .section-sub{
-    max-width: 820px;
-  }
-
-  .soft-panel{
-    background: var(--soft);
-    border: 1px solid rgba(4,30,66,.06);
-    border-radius: 16px;
-    padding: 24px;
-  }
-
-  .people-card .row-item{
-    padding: .65rem 0;
-  }
-
-  .icon-link{
-    color: #8a8f98;
-    font-size: 1.25rem;
-    transition: transform .15s ease, color .15s ease;
-  }
-  .icon-link:hover{
-    color: var(--navy);
-    transform: translateY(-1px);
-  }
-
+/* Card list alignment */
 .card ul {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  padding-left: 1.2rem;
 }
 
 .card ul li {
-  margin-bottom: .35rem;
-}
-ul, ol, li{
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  margin-bottom: 0.35rem;
 }
 
-.card ul{
-  margin-bottom: 0;
-  padding-left: 1.2rem; /* consistent indent */
-}
-:root{
-  --bs-body-font-family: 'Oswald', sans-serif;
+/* ─── People row items ──────────────────────────────────────── */
+
+.people-card .row-item {
+  padding: 0.65rem 0;
 }
 
+/* ─── FA sizing fix ─────────────────────────────────────────── */
+
+.fa-linkedin {
+  font-size: 1.5rem;
+}

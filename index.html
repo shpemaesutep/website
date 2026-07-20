@@ -1,572 +1,265 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>UTEP SHPE//MAES</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="UTEP SHPE//MAES, advancing Hispanic engineers and scientists at the University of Texas at El Paso since 1977." />
+  <meta name="author" content="UTEP SHPE//MAES" />
+  <title>UTEP SHPE//MAES</title>
 
-    <!-- Favicon (file in assets/img/) -->
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap"
-        rel="stylesheet">
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="assets/css/styles.css" rel="stylesheet" />
-    <!-- Custom MAES//SHPE Styles -->
-    <link href="assets/css/my-styles.css" rel="stylesheet" />
-    <!-- JQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js "></script>
-    <!-- Core theme JS-->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- CSS load order -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/design-tokens.css" rel="stylesheet" />
+  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/my-styles.css" rel="stylesheet" />
+  <link href="assets/css/home.css" rel="stylesheet" />
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </head>
 
 <body>
 
-    <header id="page-header">
-    </header>
+  <header id="page-header"></header>
 
-    <!-- Content -->
-    <section>
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
+  <main id="main-content">
 
-                <div class="carousel-item active">
-                    <div class="container-fluid text-center bg" id="home-welcome">
-                        <br><br>
-                        <div class="container-center">
-                            <div class="center">
-                                <img class="img-eboard img-lead fade-in-up" src="assets/img/2025/home/logoneon8.png"
-                                    alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 1, HERO
+         ════════════════════════════════════════════════════════ -->
+    <section class="home-hero" aria-labelledby="hero-headline">
 
-                <div class="carousel-item">
-                    <div class=" container-fluid text-center bg" id="second-slide">
-                        <br><br>
-                        <div class="container-center">
-                            <div class="center">
-                                <h1 class="title">Leadership Team</h1>
-                                <a class="btn btn-outline-light btn-lg px-4 mb-5" href="Leadership.html">Meet the
-                                    Team</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container home-hero__inner">
 
-                <div class="carousel-item">
-                    <div class="container-fluid text-center bg" id="third-slide">
-                        <br><br>
-                        <div class="container-center">
-                            <div class="center">
-                                <h1 class="title">Become a Member</h1>
-                                <a class="btn btn-outline-light btn-lg px-4 mb-5" href="join.html">Join SHPE//MAES</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Text -->
+        <div class="home-hero__text">
+          <p class="home-hero__eyebrow">Est. 1977 &nbsp;·&nbsp; UTEP El Paso</p>
 
+          <h1 class="home-hero__headline" id="hero-headline">
+            Building the Next<br>
+            Generation of<br>
+            <span class="home-hero__accent">Hispanic Engineers</span>
+          </h1>
 
+          <p class="home-hero__body">
+            SHPE//MAES at UTEP is a student chapter committed to academic excellence,
+            professional growth, and community, empowering students through every stage
+            of their engineering journey.
+          </p>
+
+          <div class="home-hero__ctas">
+            <a href="join.html" class="btn-primary">Become a Member</a>
+            <a href="#programs" class="btn-ghost">Explore Programs</a>
+          </div>
+
+          <div class="home-hero__stats" aria-label="Chapter highlights">
+            <div class="home-hero__stat">
+              <span class="home-hero__stat-num">1977</span>
+              <span class="home-hero__stat-label">Founded<br>at UTEP</span>
             </div>
+            <div class="home-hero__stat-divider" aria-hidden="true"></div>
+            <div class="home-hero__stat">
+              <span class="home-hero__stat-num">11K+</span>
+              <span class="home-hero__stat-label">SHPE Members<br>Nationwide</span>
+            </div>
+            <div class="home-hero__stat-divider" aria-hidden="true"></div>
+            <div class="home-hero__stat">
+              <span class="home-hero__stat-num">6</span>
+              <span class="home-hero__stat-label">Pillars of<br>Growth</span>
+            </div>
+          </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <!-- Visual: photo mosaic -->
+        <div class="home-hero__visual">
+          <div class="home-hero__mosaic-wrap">
+            <div class="home-hero__mosaic">
+              <img
+                class="home-hero__mosaic-main"
+                src="assets/img/2025/home/home2.jpeg"
+                alt="SHPE MAES UTEP members at the 2025 SHPE National Convention"
+                loading="eager">
+              <img
+                class="home-hero__mosaic-sm"
+                src="assets/img/2025/home/members.JPG"
+                alt=""
+                loading="lazy">
+              <img
+                class="home-hero__mosaic-sm"
+                src="assets/img/Convention24/Comite.jpeg"
+                alt=""
+                loading="lazy">
+            </div>
+            <div class="home-hero__mosaic-badge" aria-hidden="true">
+              <i class="fa-solid fa-location-dot fa-sm" aria-hidden="true"></i>
+              SHPE 2025 National Convention
+            </div>
+          </div>
         </div>
 
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         PHOTO FILMSTRIP, shows real member photos
+         aria-hidden: decorative, duplicate info lives in programs
+         ════════════════════════════════════════════════════════ -->
+    <div class="photo-strip" aria-hidden="true">
+      <div class="photo-strip__track">
+        <img class="photo-strip__img" src="assets/img/2025/home/home2.jpeg"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/slide2.JPG"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/shpetinas.jpeg"    alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/members.JPG"       alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/shpetinas4.jpeg"   alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/appdev.jpg"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/Convention24/Comite.jpeg"    alt="" loading="lazy">
+      </div>
+      <!-- Duplicate strip for seamless loop -->
+      <div class="photo-strip__track" aria-hidden="true">
+        <img class="photo-strip__img" src="assets/img/2025/home/home2.jpeg"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/slide2.JPG"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/shpetinas.jpeg"    alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/members.JPG"       alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/shpetinas4.jpeg"   alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/2025/home/appdev.jpg"        alt="" loading="lazy">
+        <img class="photo-strip__img" src="assets/img/Convention24/Comite.jpeg"    alt="" loading="lazy">
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 2, IMPACT STATS
+         ════════════════════════════════════════════════════════ -->
+    <section class="home-impact" aria-labelledby="impact-heading">
+      <div class="container">
+
+        <span class="home-impact__eyebrow reveal" data-anim="fade">By the Numbers</span>
+        <h2 class="home-impact__title reveal" data-delay="100" id="impact-heading">
+          Our Reach and Impact
+        </h2>
+
+        <div class="home-impact__grid">
+
+          <div class="home-impact__stat reveal" data-anim="fade" data-delay="100">
+            <span class="home-impact__num home-impact__num--orange">1977</span>
+            <span class="home-impact__stat-label">Year our UTEP chapter was founded by Richard Martinez</span>
+          </div>
+
+          <div class="home-impact__stat reveal" data-anim="fade" data-delay="200">
+            <span class="home-impact__num home-impact__num--white">11K+</span>
+            <span class="home-impact__stat-label">SHPE members across 289 chapters nationwide</span>
+          </div>
+
+          <div class="home-impact__stat reveal" data-anim="fade" data-delay="300">
+            <span class="home-impact__num home-impact__num--green">40+</span>
+            <span class="home-impact__stat-label">Active MAES student chapters across the country</span>
+          </div>
+
+          <div class="home-impact__stat reveal" data-anim="fade" data-delay="400">
+            <span class="home-impact__num home-impact__num--orange">6</span>
+            <span class="home-impact__stat-label">Pillars of academic, professional, and leadership growth</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4, UPCOMING EVENTS
+         ════════════════════════════════════════════════════════ -->
+    <section class="section" id="events" aria-labelledby="events-heading">
+      <div class="container">
+
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Calendar</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100" id="events-heading">Upcoming Events</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Stay connected with everything happening at UTEP SHPE//MAES.
+          </p>
+        </div>
+
+        <div class="calendar-wrapper reveal" data-delay="300">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&mode=MONTH&showTitle=0&showPrint=0&showCalendars=0&showTz=0&src=c2hwZW1hZXN1dGVwQGdtYWlsLmNvbQ&color=%23039be5"
+            title="UTEP SHPE//MAES Events Calendar"
+            aria-label="Google Calendar showing UTEP SHPE//MAES upcoming events"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5, SPONSORS
+         ════════════════════════════════════════════════════════ -->
+    <section class="section section--soft" id="sponsors" aria-labelledby="sponsors-heading">
+
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Partners</span>
+          <h2 class="section-title section-title--sm mt-3 reveal" data-delay="100" id="sponsors-heading">Our Sponsors</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Thank you for investing in the next generation of Hispanic engineers.
+          </p>
+        </div>
+      </div>
+
+      <div class="sponsor-marquee" role="marquee" aria-label="Scrolling list of sponsor logos">
+        <div class="sponsor-logos">
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/apple.jpg"             alt="Apple"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/bloomberg.png"         alt="Bloomberg"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/freeport.png"          alt="Freeport-McMoRan"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/nvidia.png"            alt="NVIDIA"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/cummins.png"           alt="Cummins"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/blueorigin.png"        alt="Blue Origin"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/ExxonMobil.png"        alt="ExxonMobil"></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/texas-instruments.png" alt="Texas Instruments"></div>
+        </div>
+
+        <!-- Duplicate strip, aria-hidden so screen readers don't read logos twice -->
+        <div class="sponsor-logos" aria-hidden="true">
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/apple.jpg"             alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/bloomberg.png"         alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/freeport.png"          alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/nvidia.png"            alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/cummins.png"           alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/blueorigin.png"        alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/ExxonMobil.png"        alt=""></div>
+          <div class="sponsor-card"><img src="assets/img/2025/sponsors/texas-instruments.png" alt=""></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer id="page-footer"></footer>
+
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
 
-
-
-
-        <section class="py-3 text-center">
-            <div class="container">
-                <h2 class="fw-bold mb-4" style="color:#041E42; font-family:'Playfair Display', serif;">What We've Been
-                    Up To!
-                </h2>
-                <p class="text-muted">Stay updated with the latest news, events, and achievements from our SHPE/MAES
-                    community.</p>
-            </div>
-        </section>
-
-        <section class="container my-5">
-            <div class="row g-4">
-
-                <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="activity-card shadow-sm h-76" id="app-dev">
-                        <!-- Image -->
-                        <div class="activity-image">
-                            <img src="assets/img/2025/home/appdev.jpg" alt="Mobile App Development Workshop"
-                                loading="lazy" />
-                            <span class="activity-tag tag-green">App Dev</span>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="activity-content">
-                            <h5 class="activity-title">Mobile App Development</h5>
-
-                            <p class="activity-description">
-                                Learn how to design, build, and deploy mobile applications.
-                            </p>
-
-                            <!-- <a href="appdev2.html" class="read-more-btn">
-                                Learn More<span></span> -->
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-xl-4 col-md-6 col-sm-12">
-                    <div class="activity-card shadow-sm h-76">
-
-                        <!-- Image -->
-                        <div class="activity-image">
-                            <img src="assets/img/2025/home/shpetinas.jpeg" alt="Mobile App Development Workshop"
-                                loading="lazy" />
-                            <span class="activity-tag tag-pink">SHPEtinas</span>
-                        </div>
-
-                        <!-- Content -->
-                        <div class="activity-content">
-
-
-                            <h5 class="activity-title">
-                                All About SHPEtinas
-                            </h5>
-
-                            <p class="activity-description">
-                                Join a Community of women in Engineering and engage in mentorship, community and events!
-                            </p>
-
-                            <!-- <a href="shpetinas.html" class="read-more-btn">
-                                Learn More
-                            </a> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="activity-card shadow-sm h-100">
-
-                        <div class="activity-image">
-                            <img src="assets/img/2025/home/members.JPG" alt="App Dev Program" loading="lazy" />
-                            <span class="activity-tag tag-orange">MinerSpark</span>
-                        </div>
-
-                        <div class="activity-content">
-                            <h5 class="activity-title">MinerSpark</h5>
-
-                            <p class="activity-description">
-                                Learn how to do literature reviews, do your own research and present at the end of the
-                                year ceremony
-                            </p>
-
-                            <!-- <a href="minerspark.html" class="read-more-btn">
-                                Learn More
-                            </a> -->
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-        </section>
-
-
-
-
-        <section class="bg-light py-5 border-bottom" id="events">
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h2 class="fw-bolder" style="color: #00254d;">Upcoming Events</h2>
-                </div>
-                <div id="calendar">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <iframe
-                                src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FDenver&mode=MONTH&showTitle=0&&showPrint=0&showCalendars=0&showTz=0&src=c2hwZW1hZXN1dGVwQGdtYWlsLmNvbQ&color=%23039be5"
-                                style="border-width:0" width="100%" height="600"
-                                title="UTEP SHPE//MAES Calendar"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pillars Section -->
-
-
-        <section class="bg-light py-3 border-bottom " id="sponsors">
-            <div class="container  px-4">
-                <div class="text-center mb-3">
-                    <h4 class="fw-bold" style="color:#00254d; font-family:'Playfair Display', serif;">
-                        Our Sponsors
-                    </h4>
-                    <p class="text-muted mb-0">Thank you for your support</p>
-                </div>
-
-                <div class="sponsor-marquee">
-                    <div class="sponsor-logos">
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/apple.jpg" alt="Apple">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/bloomberg.png" alt="Bloomberg">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/freeport.png" alt="Freeport-McMoRan">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/nvidia.png" alt="NVIDIA">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/cummins.png" alt="Cummins">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/blueorigin.png" alt="Blue Origin">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/ExxonMobil.png" alt="ExxonMobil">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/texas-instruments.png" alt="Texas Instruments">
-                        </div>
-                    </div>
-
-                    <div class="sponsor-logos" aria-hidden="true">
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/apple.jpg" alt="">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/bloomberg.png" alt="">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/freeport.png" alt="">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/nvidia.png" alt="">
-                        </div>
-
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/cummins.png" alt="">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/blueorigin.png" alt="">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/ExxonMobil.png" alt="">
-                        </div>
-                        <div class="sponsor-card">
-                            <img src="assets/img/2025/sponsers/texas-instruments.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <style>
-            .btn {
-                font-family: 'Playfair Display', serif;
-                font-size: 1.5rem;
-                /* larger text */
-                font-weight: 700;
-                padding: 16px 48px;
-                /* bigger button */
-                border-radius: 50px;
-                border: 3px solid #fff;
-                background: rgba(255, 255, 255, 0.1);
-                color: #fff;
-                display: inline-block;
-                /* ensures it stays centered */
-                margin: 20px auto;
-                /* space + centering */
-                transition: all 0.3s ease;
-            }
-
-            .btn:hover {
-                background: #86dc3d;
-                color: #00254d;
-                border-color: #86dc3d;
-                transform: translateY(-4px);
-                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-            }
-
-            .title {
-                font-family: 'Playfair Display', serif;
-                font-size: 4rem;
-                /* big size */
-                font-weight: 700;
-                color: #ffffff;
-                /* your accent green */
-                margin-bottom: 1rem;
-            }
-
-
-            .subtitle {
-                font-family: 'Playfair Display', serif;
-                font-size: 1.5rem;
-                font-weight: 400;
-                color: #fff;
-            }
-
-            .center-image {
-                position: relative;
-                text-align: center;
-            }
-
-            .center-image img {
-                max-width: 100%;
-                max-height: 100%;
-                vertical-align: middle;
-            }
-
-            .border-container {
-                border: 1px solid rgb(255, 255, 255);
-                border-radius: 5px;
-                padding-top: 50px;
-                padding-bottom: 50px;
-
-            }
-
-            .container-center {
-                height: 400px;
-                position: relative;
-            }
-
-            .center {
-                margin: 0;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -ms-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-            }
-
-            .card-img-top {
-                width: 100%;
-                height: 15vw;
-                object-fit: cover;
-            }
-
-            /* #home-welcome {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/Convention24/Convvention.JPG");
-                height: 600px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            } */
-            #home-welcome {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/2025/home/home2.jpeg");
-                height: 600px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #second-slide {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/2025/home/slide2.JPG");
-                height: 600px;
-                background-position: center 30%;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #third-slide {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/2025/home/members.JPG");
-                height: 600px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #fourth-slide {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/2025/home/shpetinas4.jpeg");
-                height: 600px;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            li {
-                font-size: 20px;
-            }
-
-            a {
-                font-family: 'Oswald', sans-serif;
-            }
-
-            /* Card wrapper */
-            .activity-card {
-                max-width: 400px;
-                /* try 300–340px */
-                /* margin: 0 auto;     centers inside column */
-                background: #fff;
-                border-radius: 10px;
-                overflow: hidden;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-            }
-
-            .activity-card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-            }
-
-            /* Image section */
-            .activity-image {
-                position: relative;
-                height: 220px;
-                overflow: hidden;
-            }
-
-            .activity-image img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-
-            /* Floating tag */
-            .activity-tag {
-                position: absolute;
-                top: 16px;
-                right: 16px;
-                /* background: #0d6efd; */
-                color: #fff;
-                padding: 6px 14px;
-                font-size: 0.8rem;
-                border-radius: 999px;
-                font-weight: 600;
-            }
-
-            .tag-orange {
-                background: #ff8200;
-            }
-
-            .tag-pink {
-                background: #fc5cff;
-            }
-
-            .tag-green {
-                background: #86dc3d;
-            }
-
-            /* Content */
-            .activity-content {
-                padding: 1rem;
-            }
-
-            .activity-date {
-                font-size: 0.9rem;
-                color: #6c757d;
-                margin-bottom: 0.5rem;
-            }
-
-            .activity-title {
-                font-family: 'Playfair Display', serif;
-                color: #00254d;
-                margin-bottom: 0.75rem;
-            }
-
-            .activity-description {
-                color: #555;
-                font-size: 0.95rem;
-                line-height: 1.6;
-            }
-
-            /* Tag pills */
-            .activity-tags {
-                margin-top: 1rem;
-            }
-
-            .activity-tags span {
-                display: inline-block;
-                background: #f1f3f5;
-                color: #333;
-                padding: 6px 12px;
-                border-radius: 999px;
-                font-size: 0.75rem;
-                margin-right: 6px;
-                margin-bottom: 6px;
-            }
-
-            /* Read More */
-            .read-more-btn {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                margin-top: 1.5rem;
-                font-family: 'Playfair Display', serif;
-                font-weight: 600;
-                text-decoration: none;
-                color: #00254d;
-                transition: color 0.25s ease;
-            }
-
-            .read-more-btn span {
-                font-size: 1.4rem;
-                transition: transform 0.25s ease;
-            }
-
-            .read-more-btn:hover {
-                color: #ff8200;
-            }
-
-            .read-more-btn:hover span {
-                transform: translateX(6px);
-            }
-        </style>
-
-
-
-        <footer id="page-footer"></footer>
-
-        <!-- Scripts -->
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $(function () {
-                $("#page-header").load("header.html");
-                $("#page-footer").load("footer.html");
-            });
-        </script>
-        <script src="assets/js/activity-expand.js"></script>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-        </style>
 </body>
-
 </html>

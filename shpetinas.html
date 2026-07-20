@@ -4,189 +4,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHPEtinas, a community empowering women in engineering at SHPE//MAES UTEP">
   <title>SHPEtinas | SHPE//MAES UTEP</title>
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-  <!-- Your existing styles -->
-  <link rel="stylesheet" href="assets/css/my-styles.css">
-  <link rel="stylesheet" href="assets/css/style-shpe.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-
-  <!-- Icons + Fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&family=Playfair+Display:wght@700&display=swap"
-    rel="stylesheet">
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/design-tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/my-styles.css">
+
+  <style>
+    .team-card {
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border-radius: var(--radius-xl);
+    }
+    .team-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-xl);
+    }
+    .gallery-img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease;
+    }
+    .gallery-img:hover { transform: scale(1.02); }
+  </style>
 </head>
 
 <body>
   <header id="page-header"></header>
 
-  <!-- HERO -->
-  <section class="py-5 text-center text-white" style="
-    background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('assets/img/2025/home/shpetinas.jpeg');
-    background-size: cover;
-    background-position: center;">
-    <div class="container py-5">
-      <h1 class="fw-bold display-4 fade-title">SHPEtinas</h1>
-      <p class="lead fade-subtitle">A community for women in engineering</p>
-    </div>
-  </section>
+  <main id="main-content">
 
-  <!-- WHAT IS SHPETINAS -->
-  <section class="container my-5">
-    <div class="row align-items-center g-5">
-      <div class="col-lg-6">
-        <h2 class="fw-bold" style="font-family:'Playfair Display', serif; color:#041E42;">
-          What is SHPEtinas?
-        </h2>
-        <p class="text-muted mt-3" style="font-size:1.05rem; line-height:1.7;">
-          SHPEtinas is a supportive community within SHPE//MAES dedicated to empowering
-          women in STEM through mentorship, professional development, and meaningful connections.
-        </p>
-        <p class="text-muted">
-          We create spaces where women feel seen, supported, and confident —
-          whether that’s through workshops, socials, outreach, or honest conversations.
-        </p>
-      </div>
-
-      <div class="col-lg-6">
-        <img src="assets/img/2025/home/shpetinas4.jpeg"
-          class="img-fluid rounded-4 shadow-sm"
-          alt="SHPEtinas event">
-      </div>
-    </div>
-  </section>
-
-  <!-- LEADS -->
-  <section class="container my-5">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold" style="color:#fc5cff;">Meet the SHPEtinas Leads</h2>
-      <p class="text-muted">leading community, mentorship, and events</p>
-    </div>
-
-    <div class="row g-4 justify-content-center">
-      <!-- LEAD CARD -->
-      <div class="col-md-4">
-        <div class="card border-0 shadow-sm text-center p-4 team-card">
-          <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
-            class="rounded-circle mx-auto"
-            style="width:120px; height:120px; object-fit:cover;" alt="">
-          <h5 class="mt-3 mb-0">Aleida Holguin</h5>
-          <p class="text-muted small mb-2">SHPEtinas Lead<br>Computer Science • Senior</p>
-          <a href="https://www.linkedin.com/in/aleidaholguin/" target="_blank"
-            class="text-primary" style="font-size:1.5rem;">
-            <i class="fab fa-linkedin"></i>
-          </a>
+    <!-- HERO -->
+    <section class="inner-hero inner-hero--shpetinas" aria-label="SHPEtinas page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Programs</p>
+          <h1 class="inner-hero__title">SHPEtinas</h1>
+          <p class="inner-hero__subtitle">A community for women in engineering, built on mentorship, connection, and confidence in STEM.</p>
+        </div>
+        <div class="inner-hero__visual" aria-hidden="true">
+          <img class="inner-hero__img" src="assets/img/2025/shpetinas/shpetinas.JPG" alt="" loading="eager">
         </div>
       </div>
+    </section>
 
-      <!-- DUPLICATE FOR OTHER LEADS -->
-    </div>
-  </section>
-
-  <!-- WHAT WE DO -->
-  <section class="py-5" style="background:#F9FAFB;">
-    <div class="container">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold" style="font-family:'Playfair Display', serif;">What We Do</h2>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm p-4 h-100 text-center">
-            <i class="fa-solid fa-heart mb-3" style="font-size:2rem; color:#fc5cff;"></i>
-            <h5 class="fw-bold">Community</h5>
-            <p class="text-muted">
-              Build friendships and support systems with women who understand your journey.
+    <!-- WHAT IS SHPETINAS -->
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal" data-anim="slide-left">
+            <span class="section-pill">About</span>
+            <h2 class="section-title mt-3">What is SHPEtinas?</h2>
+            <p class="mt-3" style="font-family: var(--font-body); font-size: var(--text-body-lg); line-height: 1.7; color: var(--text-primary);">
+              SHPEtinas is a supportive community within SHPE//MAES dedicated to empowering
+              women in STEM through mentorship, professional development, and meaningful connections.
+            </p>
+            <p style="font-family: var(--font-body); line-height: 1.7; color: var(--text-muted);">
+              We create spaces where women feel seen, supported, and confident , 
+              whether that's through workshops, socials, outreach, or honest conversations.
             </p>
           </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm p-4 h-100 text-center">
-            <i class="fa-solid fa-people-arrows mb-3" style="font-size:2rem; color:#FF8200;"></i>
-            <h5 class="fw-bold">Mentorship</h5>
-            <p class="text-muted">
-              Learn from peers, upperclassmen, and professionals in STEM.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm p-4 h-100 text-center">
-            <i class="fa-solid fa-calendar-check mb-3" style="font-size:2rem; color:#041E42;"></i>
-            <h5 class="fw-bold">Events</h5>
-            <p class="text-muted">
-              Workshops, socials, outreach events, and collaborations across campus.
-            </p>
+          <div class="col-lg-6 reveal" data-anim="slide-right" data-delay="150">
+            <img src="assets/img/2025/home/shpetinas4.jpeg"
+              class="w-100 rounded-4 shadow-sm"
+              style="height: 480px; object-fit: cover;"
+              alt="SHPEtinas members at an event"
+              loading="lazy">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- EVENT GALLERY -->
-  <section class="container my-5">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold">Moments from SHPEtinas</h2>
-      <p class="text-muted">a glimpse into our community</p>
-    </div>
+    <!-- WHAT WE DO -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Programs</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">What We Do</h2>
+          <p class="section-subtitle reveal" data-delay="200">Building community, mentorship, and professional growth for women in STEM</p>
+        </div>
 
-    <div class="row g-3">
-      <div class="col-md-4">
-        <img src="assets/img/2025/home/shpetinas.jpeg" class="img-fluid rounded-3 shadow-sm">
+        <div class="row g-4">
+          <div class="col-md-4 reveal" data-delay="100">
+            <div class="feature-card p-4 h-100 text-center">
+              <i class="fa-solid fa-heart mb-3" style="font-size: 2rem; color: #FC5CFF;"></i>
+              <h5 class="fw-bold mb-2" style="font-family: var(--font-display); color: var(--color-navy);">Community</h5>
+              <p class="text-muted mb-0">
+                Build friendships and support systems with women who understand your journey.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal" data-delay="200">
+            <div class="feature-card p-4 h-100 text-center">
+              <i class="fa-solid fa-people-arrows mb-3" style="font-size: 2rem; color: var(--color-orange);"></i>
+              <h5 class="fw-bold mb-2" style="font-family: var(--font-display); color: var(--color-navy);">Mentorship</h5>
+              <p class="text-muted mb-0">
+                Learn from peers, upperclassmen, and professionals in STEM.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal" data-delay="300">
+            <div class="feature-card p-4 h-100 text-center">
+              <i class="fa-solid fa-calendar-check mb-3" style="font-size: 2rem; color: var(--color-navy);"></i>
+              <h5 class="fw-bold mb-2" style="font-family: var(--font-display); color: var(--color-navy);">Events</h5>
+              <p class="text-muted mb-0">
+                Workshops, socials, outreach events, and collaborations across campus.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4">
-        <img src="assets/img/2025/home/members.JPG" class="img-fluid rounded-3 shadow-sm">
-      </div>
-      <div class="col-md-4">
-        <img src="assets/img/2025/home/shpetinas4.jpeg" class="img-fluid rounded-3 shadow-sm">
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT / TEAM DIRECTORY -->
-  <section class="text-center my-5">
-    <button class="btn btn-primary px-4"
-      data-bs-toggle="modal"
-      data-bs-target="#shpetinasModal">
-      Meet the Full Team
-    </button>
+    <!-- LEADS -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Leadership</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100" style="color: #FC5CFF;">Meet the SHPEtinas Leads</h2>
+          <p class="section-subtitle reveal" data-delay="200">Leading community, mentorship, and events</p>
+        </div>
 
-    <p class="text-muted mt-3">
-      Questions? <a href="mailto:shpemaesutep@gmail.com">Contact us</a>
-    </p>
-  </section>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="100">
+            <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
+              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                style="width:120px;height:120px;background:var(--surface-muted);">
+                <i class="fa-solid fa-user fa-2x text-muted"></i>
+              </div>
+              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
+              <p class="text-muted small mt-1 mb-2">SHPEtinas Lead · Add Major · Add Year</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="200">
+            <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
+              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                style="width:120px;height:120px;background:var(--surface-muted);">
+                <i class="fa-solid fa-user fa-2x text-muted"></i>
+              </div>
+              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
+              <p class="text-muted small mt-1 mb-2">SHPEtinas Lead · Add Major · Add Year</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-5">
+          <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#shpetinasModal">
+            Meet the Full Team
+          </button>
+          <p class="text-muted mt-3" style="font-family: var(--font-body);">
+            Questions? <a href="mailto:shpemaesutep@gmail.com" style="color: var(--color-orange);">Contact us</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT GALLERY -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-pill reveal" data-anim="fade">Gallery</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Moments from SHPEtinas</h2>
+          <p class="section-subtitle reveal" data-delay="200">A glimpse into our community</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4 reveal" data-delay="100">
+            <img src="assets/img/2025/home/shpetinas.jpeg"
+              class="gallery-img"
+              alt="SHPEtinas event"
+              loading="lazy">
+          </div>
+          <div class="col-md-4 reveal" data-delay="200">
+            <img src="assets/img/2025/home/members.JPG"
+              class="gallery-img"
+              alt="SHPE//MAES members"
+              loading="lazy">
+          </div>
+          <div class="col-md-4 reveal" data-delay="300">
+            <img src="assets/img/2025/home/shpetinas4.jpeg"
+              class="gallery-img"
+              alt="SHPEtinas community"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <footer id="page-footer"></footer>
 
   <!-- MODAL -->
-  <div class="modal fade" id="shpetinasModal" tabindex="-1" aria-hidden="true">
+  <div class="modal fade" id="shpetinasModal" tabindex="-1"
+    aria-labelledby="shpetinasModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
+      <div class="modal-content" style="border-radius: var(--radius-xl);">
         <div class="modal-header">
-          <h5 class="modal-title">SHPEtinas Team</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <h5 class="modal-title" id="shpetinasModalLabel"
+            style="font-family: var(--font-display); color: var(--color-navy);">
+            SHPEtinas Team
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
 
         <div class="modal-body">
           <div class="row g-3">
-            <!-- TEAM MEMBER CARD -->
             <div class="col-md-6">
               <div class="card shadow-sm border-0 p-3 text-center">
-                <img src="assets/img/2025/leadership/Faces/aleidadev5.JPEG"
-                  class="rounded-circle mb-3"
-                  style="width:120px; height:120px; object-fit:cover;" alt="">
-                <h5 class="mb-0">Aleida Holguin</h5>
-                <p class="text-muted small">SHPEtinas Lead • Computer Science</p>
+                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
+                  style="width:120px;height:120px;background:var(--surface-muted);">
+                  <i class="fa-solid fa-user fa-2x text-muted"></i>
+                </div>
+                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
+                <p class="text-muted small mb-0">SHPEtinas Lead · Add Major</p>
               </div>
             </div>
-            <!-- DUPLICATE AS NEEDED -->
+            <div class="col-md-6">
+              <div class="card shadow-sm border-0 p-3 text-center">
+                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
+                  style="width:120px;height:120px;background:var(--surface-muted);">
+                  <i class="fa-solid fa-user fa-2x text-muted"></i>
+                </div>
+                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
+                <p class="text-muted small mb-0">SHPEtinas Lead · Add Major</p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -200,11 +262,13 @@
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
   <script>
-    $("#page-header").load("header.html");
-    $("#page-footer").load("footer.html");
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
   </script>
 </body>
 
 </html>
-

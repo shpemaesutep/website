@@ -1,0 +1,252 @@
+/*
+ * design-tokens.css — UTEP SHPE//MAES
+ *
+ * Design token layer. All CSS custom properties for the site.
+ * Load this BEFORE my-styles.css and styles.css.
+ * Do not add visual rules here — only custom property declarations.
+ *
+ * Source of truth: docs/DESIGN_SYSTEM.md §23
+ */
+
+:root {
+
+  /* ─── BRAND COLORS ─────────────────────────────────────── */
+  --color-navy:             #041E42;
+  --color-orange:           #FF8200;
+  --color-green:            #86DC3D;
+
+  /* ─── INTERACTIVE STATES ────────────────────────────────── */
+  --color-orange-hover:     #E67200;
+  --color-orange-active:    #C86000;
+  --color-orange-text:      #C86000;
+  --color-orange-tint:      rgba(255, 130, 0, 0.08);
+  --color-navy-hover:       #062B5F;
+  --color-navy-light:       #143B6B;
+  --color-navy-tint:        rgba(4, 30, 66, 0.05);
+  --color-green-text:       #5B9E1A;
+  --color-green-dark:       #3D7010;
+  --color-green-tint:       rgba(134, 220, 61, 0.12);
+
+  /* ─── SURFACES ──────────────────────────────────────────── */
+  --surface-default:        #FFFFFF;
+  --surface-soft:           #F9FAFB;
+  --surface-muted:          #F3F4F6;
+  --surface-dark:           #0F172A;
+  --surface-navy:           #041E42;
+  --surface-overlay:        rgba(0, 0, 0, 0.50);
+  --surface-overlay-light:  rgba(0, 0, 0, 0.35);
+  --surface-overlay-heavy:  rgba(0, 0, 0, 0.65);
+
+  /* ─── TEXT ──────────────────────────────────────────────── */
+  --text-primary:           #1F2937;
+  --text-secondary:         #374151;
+  --text-muted:             #6C757D;
+  --text-placeholder:       #9CA3AF;
+  --text-on-dark:           #F9FAFB;
+  --text-on-dark-muted:     #CBD5E1;
+  --text-on-dark-accent:    #86DC3D;
+  --text-disabled:          #D1D5DB;
+
+  /* ─── BORDERS ────────────────────────────────────────────── */
+  --border-subtle:          rgba(4, 30, 66, 0.06);
+  --border-default:         rgba(4, 30, 66, 0.14);
+  --border-strong:          rgba(4, 30, 66, 0.28);
+  --border-dark:            rgba(255, 255, 255, 0.10);
+
+  /* ─── FOCUS ──────────────────────────────────────────────── */
+  --focus-ring:             0 0 0 3px rgba(255, 130, 0, 0.40);
+  --focus-ring-navy:        0 0 0 3px rgba(4, 30, 66, 0.30);
+  --focus-ring-white:       0 0 0 3px rgba(255, 255, 255, 0.40);
+
+  /* ─── TAG COLORS ─────────────────────────────────────────── */
+  --tag-green:              #86DC3D;   /* App Dev */
+  --tag-pink:               #FC5CFF;   /* SHPEtinas */
+  --tag-orange:             #FF8200;   /* MinerSpark */
+
+  /* ─── TYPOGRAPHY ─────────────────────────────────────────── */
+  --font-display:           'Playfair Display', Georgia, serif;
+  --font-ui:                'Oswald', 'Arial Narrow', sans-serif;
+  --font-body:              'Roboto', system-ui, sans-serif;
+
+  /* fluid type scale — use as font-size values */
+  --text-display:           clamp(3.25rem, 6vw,   5rem);     /* carousel hero */
+  --text-h1:                clamp(2.5rem,  5vw,   3.75rem);  /* page hero h1  */
+  --text-h2:                clamp(1.85rem, 3vw,   2.5rem);   /* narrative h2  */
+  --text-h2-ui:             clamp(1.5rem,  2.5vw, 2rem);     /* functional h2 */
+  --text-h3:                1.5rem;
+  --text-h4:                1.1rem;
+  --text-body-lg:           1.0625rem;
+  --text-body:              1rem;
+  --text-small:             0.875rem;
+  --text-ui:                0.9rem;
+  --text-ui-sm:             0.8rem;
+
+  /* ─── SPACING ────────────────────────────────────────────── */
+  --space-1:    0.25rem;   /*  4px */
+  --space-2:    0.5rem;    /*  8px */
+  --space-3:    0.75rem;   /* 12px */
+  --space-4:    1rem;      /* 16px */
+  --space-5:    1.25rem;   /* 20px */
+  --space-6:    1.5rem;    /* 24px */
+  --space-7:    2rem;      /* 32px */
+  --space-8:    2.5rem;    /* 40px */
+  --space-9:    3rem;      /* 48px */
+  --space-10:   4rem;      /* 64px */
+  --space-11:   5rem;      /* 80px */
+  --space-12:   6rem;      /* 96px */
+  --space-13:   8rem;      /* 128px */
+
+  /* section vertical rhythm — use as padding-block */
+  --section-padding-y:    clamp(3rem, 8vw,   5rem);    /* 48px → 80px */
+  --hero-padding-y:       clamp(5rem, 12vw,  8rem);    /* 80px → 128px */
+
+  /* ─── GRID ───────────────────────────────────────────────── */
+  --container-max:          1280px;
+  --container-narrow:       760px;
+  --container-wide:         1400px;
+  --container-px:           clamp(1rem, 4vw, 2rem);
+
+  /* ─── ELEVATION ──────────────────────────────────────────── */
+  --shadow-xs:   0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-sm:   0 2px 8px rgba(0, 0, 0, 0.07);
+  --shadow-md:   0 4px 16px rgba(0, 0, 0, 0.08);
+  --shadow-lg:   0 8px 28px rgba(0, 0, 0, 0.09);
+  --shadow-xl:   0 14px 44px rgba(0, 0, 0, 0.11);
+
+  /* focus rings as box-shadow values */
+  --shadow-focus:       0 0 0 3px rgba(255, 130, 0, 0.40);
+  --shadow-focus-navy:  0 0 0 3px rgba(4, 30, 66, 0.30);
+  --shadow-focus-white: 0 0 0 3px rgba(255, 255, 255, 0.40);
+
+  /* ─── BORDER RADIUS ──────────────────────────────────────── */
+  --radius-xs:    4px;
+  --radius-sm:    8px;
+  --radius-md:    12px;
+  --radius-lg:    16px;
+  --radius-xl:    18px;
+  --radius-2xl:   24px;
+  --radius-pill:  9999px;
+
+  /* ─── MOTION ─────────────────────────────────────────────── */
+  --duration-instant:   80ms;
+  --duration-fast:      150ms;
+  --duration-default:   200ms;
+  --duration-medium:    300ms;
+  --duration-slow:      500ms;
+  --duration-slower:    700ms;
+  --duration-slowest:   1200ms;
+
+  --ease-linear:  linear;
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0.0, 0, 0.2, 1);
+  --ease-in-out:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* shorthand transition bundles */
+  --transition-card:
+    transform        var(--duration-default) var(--ease-out),
+    box-shadow       var(--duration-default) var(--ease-out);
+
+  --transition-nav:
+    background-color var(--duration-default) var(--ease-in-out),
+    box-shadow       var(--duration-default) var(--ease-in-out),
+    padding          var(--duration-default) var(--ease-in-out);
+
+  --transition-color:
+    color            var(--duration-default) var(--ease-in-out),
+    background-color var(--duration-default) var(--ease-in-out),
+    border-color     var(--duration-default) var(--ease-in-out);
+
+  /* ─── NAVBAR ─────────────────────────────────────────────── */
+  --nav-height:          68px;
+  --nav-height-scrolled: 56px;
+  --nav-height-mobile:   64px;
+  --nav-bg:              rgba(248, 249, 250, 0.82);
+  --nav-bg-scrolled:     rgba(248, 249, 250, 0.96);
+
+  /* ─── BOOTSTRAP OVERRIDES ────────────────────────────────── */
+  /* These repoint Bootstrap's own tokens to our design system values. */
+  --bs-body-font-family:   var(--font-body);
+  --bs-body-color:         var(--text-primary);
+  --bs-body-line-height:   1.75;
+  --bs-border-radius:      var(--radius-sm);
+  --bs-border-radius-lg:   var(--radius-lg);
+  --bs-border-radius-xl:   var(--radius-xl);
+  --bs-link-color:         var(--color-navy);
+  --bs-link-hover-color:   var(--color-orange);
+}
+
+/*
+ * ─── ANIMATIONS ──────────────────────────────────────────────────────────────
+ *
+ * Merged from my-styles.css: fadeInUp + fadeUp are identical.
+ * Canonical name is now "fade-up". Both old names are kept as aliases
+ * until every page is migrated to the new class names.
+ */
+
+@keyframes fade-up {
+  from {
+    opacity:   0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity:   1;
+    transform: translateY(0);
+  }
+}
+
+/* legacy aliases — remove once pages are updated */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes sponsor-scroll {
+  from { transform: translateX(calc(-100% - 2rem)); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/*
+ * ─── REDUCED MOTION ──────────────────────────────────────────────────────────
+ *
+ * Strip all motion for users who prefer reduced motion.
+ * This block is intentionally here in the token file so it applies globally
+ * before any component overrides.
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration:   0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration:  0.01ms !important;
+    scroll-behavior:      auto !important;
+  }
+
+  /* sponsor marquee fallback: static wrap instead of scrolling */
+  .sponsor-logos {
+    animation: none !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+
+  .sponsor-logos[aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* reveal fallback: always visible */
+  .reveal {
+    opacity:    1 !important;
+    transform:  none !important;
+    transition: none !important;
+  }
+}

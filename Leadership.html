@@ -3,13 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SHPE//MAES UTEP Leadership Team">
+  <meta name="description" content="SHPE//MAES UTEP Leadership Team, meet the executive board, directors, and chairs">
   <meta name="author" content="SHPE//MAES UTEP">
   <link rel="icon" href="/favicon.png" type="image/png">
   <title>Leadership | SHPE//MAES UTEP</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.png" type="image/png">
 
   <!-- Bootstrap & Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,204 +14,94 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <!-- Your site CSS -->
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
   <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/design-tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/my-styles.css">
-  <link rel="stylesheet" href="assets/css/style-shpe.css">
 
   <style>
-    :root{
-      --shpe-blue:#041E42;
-      --utep-orange:#FF8200;
-      --shpe-green:#86DC3D;
-      --card-radius: 18px;
-    }
 
-    body { font-family: 'Roboto', sans-serif; }
-
-    .hero{
-      min-height: 60vh;
-      background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url('assets/img/2025/leadership/team.JPG') center/cover no-repeat;
+    /* Modal Q&A */
+    .modal-leader-title {
+      font-family: var(--font-display);
+      color: var(--color-navy);
+      font-size: 1.25rem;
     }
-
-    .hero-title{
-      font-family:'Playfair Display', serif;
-      letter-spacing: .5px;
-    }
-
-    .section-title{
-      font-family:'Playfair Display', serif;
-      color: var(--shpe-blue);
-    }
-
-    /* Card styling */
-    .leader-card{
-      border: 0;
-      border-radius: var(--card-radius);
-      overflow: hidden;
-      background: #fff;
-      box-shadow: 0 10px 30px rgba(0,0,0,.07);
-      transition: transform .18s ease, box-shadow .18s ease;
-      cursor: pointer;
-      height: 100%;
-    }
-    .leader-card:hover{
-      transform: translateY(-4px);
-      box-shadow: 0 14px 40px rgba(0,0,0,.10);
-    }
-
-    .avatar-wrap{
-      padding-top: 18px;
-      display:flex;
-      justify-content:center;
-    }
-    .leader-avatar{
-      width: 150px;
-      height: 150px;
-      border-radius: 999px;
-      object-fit: cover;
-      border: 4px solid rgba(255,130,0,.15);
-      background: #f3f4f6;
-    }
-
-    .leader-name{
-      font-weight: 800;
-      margin-bottom: 2px;
-      color: var(--shpe-blue);
-    }
-    .leader-role{
-      color: #6c757d;
-      margin-bottom: 6px;
-      font-size: .95rem;
-    }
-    .leader-major{
-      color: #6c757d;
-      font-size: .9rem;
-      margin-bottom: 10px;
-    }
-
-    .leader-links a{
-      color: var(--shpe-blue);
-      font-size: 1.15rem;
-      text-decoration: none;
-    }
-    .leader-links a:hover{ color: var(--utep-orange); }
-
-    /* Reveal on scroll */
-    .reveal{
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .5s ease, transform .5s ease;
-    }
-    .reveal.is-visible{
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Modal readability */
-    .modal-title{
-      font-family:'Playfair Display', serif;
-      color: var(--shpe-blue);
-    }
-    .modal-body{
-      white-space: normal;
-      line-height: 1.6;
-    }
-    .qa-q{
+    .qa-q {
+      font-family: var(--font-ui);
       font-weight: 700;
-      color: var(--shpe-blue);
-      margin-top: 12px;
+      color: var(--color-navy);
+      margin-top: 1rem;
+      font-size: var(--text-ui);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .qa-a{
-      color: #333;
-      margin-bottom: 8px;
-    }
-
-    /* Small pill section labels (optional) */
-    .section-pill{
-      display:inline-block;
-      padding: 6px 14px;
-      border-radius: 999px;
-      font-weight: 700;
-      font-size: .85rem;
-      background: rgba(4,30,66,.08);
-      color: var(--shpe-blue);
+    .qa-a {
+      font-family: var(--font-body);
+      color: var(--text-primary);
+      line-height: 1.65;
+      margin-bottom: 0.25rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
   <header id="page-header"></header>
 
-  <!-- Hero -->
-  <section class="hero d-flex align-items-center text-center text-white">
-    <div class="container py-5">
-      <h1 class="display-4 fw-bold hero-title">Leadership Team</h1>
-      <p class="lead text-light mt-3 mb-0">The students behind SHPE//MAES at UTEP</p>
+  <main id="main-content">
+
+    <!-- HERO, full-bleed group photo with title overlay -->
+    <div class="team-photo-band team-photo-band--hero" role="banner" aria-label="Leadership page header">
+      <img class="team-photo-band__img" src="assets/img/2025/leadership/team.JPG"
+        alt="SHPE//MAES UTEP Leadership Team 2025–2026" loading="eager">
+      <div class="team-photo-band__overlay">
+        <p class="team-photo-band__eyebrow">Meet the Team</p>
+        <h1 class="team-photo-band__title">Leadership Team</h1>
+        <p class="team-photo-band__sub">Click any leader below to learn why they joined SHPE//MAES and their favorite memory.</p>
+      </div>
     </div>
-  </section>
 
-  <!-- Intro -->
-  <section class="py-5 bg-white">
-    <div class="container text-center">
-      <p class="text-muted mx-auto" style="max-width:860px;">
-        Our leadership team is committed to academic excellence, professional growth, and service to the El Paso community.
-        Click on any leader to learn why they joined SHPE//MAES and their favorite memory.
-      </p>
-    </div>
-  </section>
-
-  <!-- Sections render here -->
-  <main class="pb-5">
-    <section class="py-4">
+    <!-- EXECUTIVE BOARD -->
+    <section class="section section--soft">
       <div class="container">
-        <div class="text-center mb-4">
-          <!-- <span class="section-pill">Executive Board</span> -->
-          <h2 class="section-title fw-bold mt-3">Executive Board</h2>
-          <!-- <p class="text-muted mb-0">Core officers leading the chapter</p> -->
-        </div>
-        <div class="row g-4" id="exec-grid"></div>
+        <h2 class="board-section-title reveal" data-delay="50">Executive Board</h2>
+        <div class="row g-3 mt-4" id="exec-grid"></div>
       </div>
     </section>
 
-    <section class="py-4 bg-light">
+    <!-- BOARD OF DIRECTORS -->
+    <section class="section">
       <div class="container">
-        <div class="text-center mb-4">
-          <!-- <span class="section-pill">Board of Directors</span> -->
-          <h2 class="section-title fw-bold mt-3">Board of Directors</h2>
-          <!-- <p class="text-muted mb-0">Directors supporting key chapter pillars</p> -->
-        </div>
-        <div class="row g-4" id="directors-grid"></div>
+        <h2 class="board-section-title reveal" data-delay="50">Board of Directors</h2>
+        <div class="row g-3 mt-4" id="directors-grid"></div>
       </div>
     </section>
 
-    <section class="py-4">
+    <!-- BOARD OF CHAIRS -->
+    <section class="section section--soft">
       <div class="container">
-        <div class="text-center mb-4">
-          <!-- <span class="section-pill">Board of Chairs</span> -->
-          <h2 class="section-title fw-bold mt-3">Board of Chairs</h2>
-          <!-- <p class="text-muted mb-0">Program chairs and special initiatives</p> -->
-        </div>
-        <div class="row g-4" id="chairs-grid"></div>
+        <h2 class="board-section-title reveal" data-delay="50">Board of Chairs</h2>
+        <div class="row g-3 mt-4" id="chairs-grid"></div>
       </div>
     </section>
+
   </main>
 
-  <!-- Modal -->
+  <!-- Leader Modal -->
   <div class="modal fade" id="leaderModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content" style="border-radius:18px;">
+      <div class="modal-content" style="border-radius: var(--radius-xl);">
         <div class="modal-header">
-          <h5 class="modal-title" id="leaderModalTitle"></h5>
+          <h5 class="modal-leader-title" id="leaderModalTitle"></h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="leaderModalBody"></div>
+        <div class="modal-body" id="leaderModalBody" style="line-height: 1.65;"></div>
       </div>
     </div>
   </div>
@@ -226,13 +113,14 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Header/Footer includes
     $(function () {
       $("#page-header").load("header.html");
       $("#page-footer").load("footer.html");
     });
 
- 
+    /* ===================================================
+       LEADER DATA
+       =================================================== */
     const LEADERS = {
       exec: [
         {
@@ -244,7 +132,7 @@
           linkedin: "https://www.linkedin.com/in/thomasdelpalacio/",
           qa: {
             "Why did you join SHPE?": "I joined SHPE/MAES because I love to help others, but I stayed in SHPE/MAES because I found my familia and a place to grow both professionally and personally.",
-            "What's your favorite SHPE memory?": "My favorite SHPE/MAES memory was when peers were sharing their offers—knowing that all the hours of work resulted in a member getting an offer is the greatest feeling in the world."
+            "What's your favorite SHPE memory?": "My favorite SHPE/MAES memory was when peers were sharing their offers, knowing that all the hours of work resulted in a member getting an offer is the greatest feeling in the world."
           }
         },
         {
@@ -255,7 +143,7 @@
           img: "assets/img/2025/leadership/Faces/lizbeth.JPG",
           linkedin: "https://www.linkedin.com/in/licerio/",
           qa: {
-            "Why did you join SHPE?": "I got invited to a free discada and found out a community that I really love being part of. Found my familia 🫶🏻",
+            "Why did you join SHPE?": "I got invited to a free discada and found out a community that I really love being part of. Found my familia.",
             "What's your favorite SHPE memory?": "I have several favorites, but my top choices are every single discada, the SHPEtinas conference, National Convention socials, and The Posada from 2024."
           }
         },
@@ -292,7 +180,7 @@
           linkedin: "https://www.linkedin.com/in/mirkahernandez/",
           qa: {
             "Why did you join SHPE?": "I joined SHPE because I wanted friends and guidance on how to navigate university, and I stayed because I truly enjoy the supportive and welcoming community it gave me.",
-            "What's your favorite SHPE memory?": "The trips I’ve taken with them—traveling together helped me bond with friends and feel even more connected."
+            "What's your favorite SHPE memory?": "The trips I've taken with them, traveling together helped me bond with friends and feel even more connected."
           }
         },
         {
@@ -304,7 +192,7 @@
           linkedin: "https://www.linkedin.com/in/jessica-cobos/",
           qa: {
             "Why did you join SHPE?": "A friend told me about SHPE and I checked out the first general meeting in Fall 2021. I realized SHPE/MAES had opportunities that could help me land internships and scholarships.",
-            "What's your favorite SHPE memory?": "Our 'Women in STEM: It's Not in Your Head' SHPEtinas event with Dell—open, vulnerable, and comforting conversations about imposter syndrome."
+            "What's your favorite SHPE memory?": "Our 'Women in STEM: It's Not in Your Head' SHPEtinas event with Dell, open, vulnerable, and comforting conversations about imposter syndrome."
           }
         },
         {
@@ -367,7 +255,7 @@
           linkedin: "https://www.linkedin.com/in/joseph-rudy-guerra/",
           qa: {
             "Why did you join SHPE?": "I wanted to make memories with my friends while we were all trying to develop professionally and struggle at the same time.",
-            "What's your favorite SHPE memory?": "The lawlessness of the national convention—meeting big companies while also being stressed and having fun in California."
+            "What's your favorite SHPE memory?": "The lawlessness of the national convention, meeting big companies while also being stressed and having fun in California."
           }
         },
         {
@@ -390,7 +278,7 @@
           img: "assets/img/2025/leadership/Faces/ana.JPG",
           linkedin: "https://www.linkedin.com/in/anapaolamarquezhernandez/",
           qa: {
-            "Why did you join SHPE?": "I wanted to be more involved and learn how to get ahead in my career—SHPE/MAES has been exactly that.",
+            "Why did you join SHPE?": "I wanted to be more involved and learn how to get ahead in my career, SHPE/MAES has been exactly that.",
             "What's your favorite SHPE memory?": "SHPEtinas trip to Austin and touring Dell Technologies."
           }
         },
@@ -403,7 +291,7 @@
           linkedin: "https://www.linkedin.com/in/vm-bonilla/",
           qa: {
             "Why did you join SHPE?": "I wanted to connect with people who share my interests and goals in engineering and push each other to grow.",
-            "What's your favorite SHPE memory?": "Interviewing with Cummins at National Convention—no offer, but I was happy to have the opportunity."
+            "What's your favorite SHPE memory?": "Interviewing with Cummins at National Convention, no offer, but I was happy to have the opportunity."
           }
         },
         {
@@ -430,7 +318,7 @@
           linkedin: "https://www.linkedin.com/in/catherine-torres-971bb2324/",
           qa: {
             "Why did you join SHPE?": "I liked how it involved all engineering majors and focused on both professional and social development.",
-            "What's your favorite SHPE memory?": "My first National Convention—met ambitious people, gained skills, and explored California."
+            "What's your favorite SHPE memory?": "My first National Convention, met ambitious people, gained skills, and explored California."
           }
         },
         {
@@ -441,8 +329,8 @@
           img: "assets/img/2025/leadership/Faces/damian.JPG",
           linkedin: "",
           qa: {
-            "Why did you join SHPE?": "I joined SHPE to develop connections within my department and companies—so essentially, to get a job.",
-            "What's your favorite SHPE memory?": "First general meeting Spring 2024—won a huge SHPE shirt and it was a fun intro to the community."
+            "Why did you join SHPE?": "I joined SHPE to develop connections within my department and companies, so essentially, to get a job.",
+            "What's your favorite SHPE memory?": "First general meeting Spring 2024, won a huge SHPE shirt and it was a fun intro to the community."
           }
         },
         {
@@ -462,7 +350,7 @@
           name: "Natalia Hernandez",
           role: "Marketing Chair",
           major: "Civil Engineering",
-          img: "", // add when you have it
+          img: "",
           linkedin: "",
           qa: {}
         },
@@ -471,7 +359,7 @@
           name: "Steven Sanchez",
           role: "Alumni Chair",
           major: "Biomedical Engineering",
-          img: "", // add when you have it
+          img: "",
           linkedin: "",
           qa: {
             "Why did you join SHPE?": "To push opportunities to more students, especially in Biomedical Engineering, and help people succeed.",
@@ -481,118 +369,112 @@
       ]
     };
 
-    /**
-     * ===========
-     * RENDER
-     * ===========
-     */
-    function leaderCardHTML(leader){
+    /* ===================================================
+       RENDER
+       =================================================== */
+    function leaderCardHTML(leader) {
       const imgTag = leader.img
-        ? `<img class="leader-avatar" data-src="${leader.img}" alt="${leader.name}" loading="lazy">`
-        : `<div class="leader-avatar d-flex align-items-center justify-content-center">
-             <i class="fa-solid fa-user" style="font-size:2.2rem; color:#9ca3af;"></i>
-           </div>`;
+        ? `<img class="leader-card__photo" data-src="${leader.img}" alt="${leader.name}" loading="lazy" decoding="async">`
+        : `<div class="avatar-placeholder"><i class="fa-solid fa-user" aria-hidden="true"></i></div>`;
 
       const linkedIn = leader.linkedin
-        ? `<a href="${leader.linkedin}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>`
+        ? `<a class="leader-card__linkedin" href="${leader.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="${leader.name} on LinkedIn" onclick="event.stopPropagation()"><i class="fab fa-linkedin"></i></a>`
         : ``;
 
       return `
-        <div class="col-sm-6 col-md-4 col-lg-3 reveal">
-          <div class="leader-card p-3 text-center" data-leader-id="${leader.id}">
-            <div class="avatar-wrap">${imgTag}</div>
-            <div class="pt-3">
-              <div class="leader-name">${leader.name}</div>
-              <div class="leader-role">${leader.role}</div>
-              <div class="leader-major">${leader.major || ""}</div>
-              <div class="leader-links">${linkedIn}</div>
+        <div class="col-6 col-md-4 col-lg-3 col-xl-2 reveal">
+          <div class="leader-card"
+            data-leader-id="${leader.id}"
+            tabindex="0"
+            role="button"
+            aria-label="View ${leader.name} profile">
+            <div class="leader-card__img-wrap">
+              ${imgTag}
+              <span class="leader-card__role-badge">${leader.role}</span>
+            </div>
+            <div class="leader-card__body">
+              <div class="leader-card__name">${leader.name}</div>
+              <div class="leader-card__major">${leader.major || ""}</div>
+              ${linkedIn}
             </div>
           </div>
         </div>
       `;
     }
 
-    function renderSection(gridId, leaders){
-      const grid = document.getElementById(gridId);
-      grid.innerHTML = leaders.map(leaderCardHTML).join("");
+    function renderSection(gridId, leaders) {
+      document.getElementById(gridId).innerHTML = leaders.map(leaderCardHTML).join("");
     }
 
     renderSection("exec-grid", LEADERS.exec);
     renderSection("directors-grid", LEADERS.directors);
     renderSection("chairs-grid", LEADERS.chairs);
 
-    /**
-     * ===========
-     * LAZY LOAD IMAGES + REVEAL
-     * ===========
-     */
+    /* ===================================================
+       LAZY LOAD + SCROLL REVEAL
+       =================================================== */
     const io = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(!entry.isIntersecting) return;
-
-        // reveal animation
+        if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
-
-        // image lazy load (data-src -> src)
         const img = entry.target.querySelector("img[data-src]");
-        if(img && !img.src){
+        if (img && !img.src) {
           img.src = img.getAttribute("data-src");
+          img.onload = () => img.classList.add("loaded");
         }
-
         io.unobserve(entry.target);
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0, rootMargin: "0px 0px 400px 0px" });
 
     document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-    /**
-     * ===========
-     * MODAL (CLICK CARD)
-     * ===========
-     */
-    const modal = new bootstrap.Modal(document.getElementById("leaderModal"));
-    const titleEl = document.getElementById("leaderModalTitle");
-    const bodyEl = document.getElementById("leaderModalBody");
-
-    // Fast lookup by id
+    /* ===================================================
+       MODAL
+       =================================================== */
+    const modal    = new bootstrap.Modal(document.getElementById("leaderModal"));
+    const titleEl  = document.getElementById("leaderModalTitle");
+    const bodyEl   = document.getElementById("leaderModalBody");
     const leaderMap = {};
     [...LEADERS.exec, ...LEADERS.directors, ...LEADERS.chairs].forEach(l => leaderMap[l.id] = l);
 
-    function qaToHTML(qa){
+    function qaToHTML(qa) {
       const keys = qa ? Object.keys(qa) : [];
-      if(keys.length === 0){
-        return `<p class="text-muted mb-0">More info coming soon.</p>`;
-      }
+      if (keys.length === 0) return `<p class="text-muted mb-0">More info coming soon.</p>`;
       return keys.map(q => `
         <div class="qa-q">${q}</div>
         <div class="qa-a">${qa[q]}</div>
       `).join("");
     }
 
-    document.addEventListener("click", (e) => {
-      const card = e.target.closest(".leader-card");
-      if(!card) return;
-
-      const id = card.getAttribute("data-leader-id");
+    function openModal(id) {
       const leader = leaderMap[id];
-      if(!leader) return;
-
-      titleEl.textContent = `${leader.role} — ${leader.name}`;
-
-      // Use innerHTML so formatting displays cleanly
+      if (!leader) return;
+      titleEl.textContent = `${leader.role}, ${leader.name}`;
       bodyEl.innerHTML = `
         <div class="d-flex flex-column flex-md-row gap-4 align-items-start">
-          <div style="min-width:170px;">
-            ${leader.img ? `<img src="${leader.img}" alt="${leader.name}" class="rounded-4" style="width:170px; height:170px; object-fit:cover;">` : ``}
+          <div style="min-width: 150px;">
+            ${leader.img
+              ? `<img src="${leader.img}" alt="${leader.name}" class="rounded-4" style="width:150px;height:150px;object-fit:cover;">`
+              : ``}
           </div>
           <div class="flex-grow-1">
-            <div class="text-muted mb-2">${leader.major || ""}</div>
+            <p class="text-muted mb-3" style="font-family:var(--font-body);">${leader.major || ""}</p>
             ${qaToHTML(leader.qa)}
           </div>
         </div>
       `;
-
       modal.show();
+    }
+
+    document.addEventListener("click", e => {
+      const card = e.target.closest(".leader-card");
+      if (card) openModal(card.getAttribute("data-leader-id"));
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const card = e.target.closest(".leader-card[role='button']");
+      if (card) { e.preventDefault(); openModal(card.getAttribute("data-leader-id")); }
     });
   </script>
 

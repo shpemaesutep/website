@@ -1,190 +1,72 @@
-(() => {
-  const overlay = document.getElementById("expand-overlay");
-  const modal = overlay?.querySelector(".expand-modal");
-
-  if (!overlay || !modal) return;
-
-  let activeCard = null;
-  let placeholder = null;
-
-  function openCard(card) {
-    if (activeCard) return;
-
-    activeCard = card;
-
-    // Create a placeholder so the grid doesn’t collapse
-    placeholder = document.createElement("div");
-    placeholder.style.width = `${card.offsetWidth}px`;
-    placeholder.style.height = `${card.offsetHeight}px`;
-    placeholder.style.display = getComputedStyle(card).display === "inline" ? "inline-block" : "block";
-    card.parentNode.insertBefore(placeholder, card);
-
-    // FLIP: First
-    const first = card.getBoundingClientRect();
-
-    // Move card into modal
-    modal.innerHTML = "";
-    modal.appendChild(card);
-
-    // Show overlay + lock scroll
-    overlay.classList.add("is-open");
-    overlay.setAttribute("aria-hidden", "false");
-    document.body.classList.add("expand-lock");
-
-    // FLIP: Last
-    const last = card.getBoundingClientRect();
-
-    // Invert
-    const dx = first.left - last.left;
-    const dy = first.top - last.top;
-    const sx = first.width / last.width;
-    const sy = first.height / last.height;
-
-    card.style.transformOrigin = "top left";
-    card.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
-    card.style.transition = "transform 0s";
-
-    // Play
-    requestAnimationFrame(() => {
-      card.style.transition = "transform 420ms ease";
-      card.style.transform = "translate(0px, 0px) scale(1, 1)";
-    });
-  }
-
-  function closeCard() {
-    if (!activeCard) return;
-
-    const card = activeCard;
-
-    // FLIP back to placeholder location
-    const first = card.getBoundingClientRect();
-
-    // Move card back to where it came from (before placeholder)
-    placeholder.parentNode.insertBefore(card, placeholder);
-
-    const last = card.getBoundingClientRect();
-
-    const dx = first.left - last.left;
-    const dy = first.top - last.top;
-    const sx = first.width / last.width;
-    const sy = first.height / last.height;
-
-    // Hide overlay immediately (but keep animation on card)
-    overlay.classList.remove("is-open");
-    overlay.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("expand-lock");
-
-    card.classList.remove("is-flipped");
-
-    card.style.transformOrigin = "top left";
-    card.style.transform = `translate(${dx}px, ${dy}px) scale(${sx}, ${sy})`;
-    card.style.transition = "transform 0s";
-
-    requestAnimationFrame(() => {
-      card.style.transition = "transform 420ms ease";
-      card.style.transform = "translate(0px, 0px) scale(1, 1)";
-    });
-
-    // Cleanup after animation
-    card.addEventListener(
-      "transitionend",
-      () => {
-        card.style.transition = "";
-        card.style.transform = "";
-        placeholder?.remove();
-        placeholder = null;
-        activeCard = null;
-      },
-      { once: true }
-    );
-  }
-
-  // Open triggers:
-  // 1) click the open button
-  // 2) optionally click anywhere on the card (uncomment below)
-  document.addEventListener("click", (e) => {
-    const openBtn = e.target.closest(".expand-open-btn");
-    if (openBtn) {
-      const card = e.target.closest(".js-expand-card");
-      if (card) openCard(card);
-      return;
-    }
-
-    // Optional: click card to open (but not links/buttons)
-    // const card = e.target.closest(".js-expand-card");
-    // if (card && !e.target.closest("a, button")) openCard(card);
-
-    // Flip button (works in both normal and expanded states)
-    const flipBtn = e.target.closest(".expand-flip-btn");
-    if (flipBtn) {
-      const card = e.target.closest(".js-expand-card");
-      if (card) card.classList.toggle("is-flipped");
-      return;
-    }
-
-    // Click outside card to close when overlay is open
-    if (overlay.classList.contains("is-open")) {
-      const clickedInsideCard = e.target.closest(".js-expand-card");
-      const clickedInsideModal = e.target.closest(".expand-modal");
-      if (clickedInsideModal && !clickedInsideCard) closeCard();
-    }
-  });
-
-  // ESC to close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
-      closeCard();
-    }
-  });
-
-  // Also allow clicking the dim area to close (more direct)
-  overlay.addEventListener("click", (e) => {
-    if (e.target === overlay) closeCard();
-  });
-})();
 document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector(".shpe-navbar");
-  if (!nav) return;
 
-  // 1) Shrink on scroll
-  const onScroll = () => {
-    nav.classList.toggle("is-scrolled", window.scrollY > 12);
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
+  // ── Navbar (runs after async header injection) ───────────────────
+  function initNav() {
+    const nav = document.querySelector(".shpe-navbar");
+    if (!nav || nav._initialized) return;
+    nav._initialized = true;
 
-  // 2) Active link highlight (exact match only)
-  const path = location.pathname;
-  const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
+    // 1) Shadow on scroll
+    const onScroll = () => nav.classList.toggle("is-scrolled", window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
 
-  document.querySelectorAll(".shpe-navbar .nav-link").forEach(link => {
-    const href = link.getAttribute("href");
-
-    if (!href || href === "#" || href.startsWith("http")) return;
-
-    // Normalize
-    const cleanHref = href.replace("./", "");
-
-    if (cleanHref === page) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-
-  // 3) Mobile: close menu when a link is clicked
-  const collapseEl = document.getElementById("mainNavbar");
-  const toggler = document.querySelector(".navbar-toggler");
-
-  if (collapseEl && toggler) {
-    nav.addEventListener("click", (e) => {
-      const target = e.target.closest("a.nav-link, .dropdown-item");
-      if (!target) return;
-
-      // If menu is open on mobile, close it
-      const isExpanded = toggler.getAttribute("aria-expanded") === "true";
-      const isMobile = window.matchMedia("(max-width: 991px)").matches;
-      if (isMobile && isExpanded) toggler.click();
+    // 2) Active link highlight
+    const path = location.pathname;
+    const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
+    nav.querySelectorAll(".nav-link").forEach(link => {
+      const href = link.getAttribute("href");
+      if (!href || href === "#" || href.startsWith("http")) return;
+      const cleanHref = href.replace("./", "");
+      if (cleanHref === page) link.classList.add("active");
+      else link.classList.remove("active");
     });
+
+    // 3) Mobile: close menu when a link is clicked
+    const toggler = nav.querySelector(".navbar-toggler");
+    if (toggler) {
+      nav.addEventListener("click", (e) => {
+        const target = e.target.closest("a.nav-link, .dropdown-item");
+        if (!target) return;
+        const isExpanded = toggler.getAttribute("aria-expanded") === "true";
+        const isMobile = window.matchMedia("(max-width: 991px)").matches;
+        if (isMobile && isExpanded) toggler.click();
+      });
+    }
   }
+
+  // Try immediately (works when nav is already in DOM)
+  initNav();
+
+  // Also fire once header partial is injected via $.load()
+  const headerSlot = document.getElementById("page-header");
+  if (headerSlot) {
+    new MutationObserver((_, obs) => {
+      if (document.querySelector(".shpe-navbar")) {
+        obs.disconnect();
+        initNav();
+      }
+    }).observe(headerSlot, { childList: true, subtree: true });
+  }
+
+  // ── Scroll-reveal (IntersectionObserver) ────────────────────────
+  if ("IntersectionObserver" in window) {
+    const revealEls = document.querySelectorAll(".reveal");
+    if (revealEls.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealEls.forEach(el => observer.observe(el));
+    }
+  } else {
+    document.querySelectorAll(".reveal").forEach(el => el.classList.add("is-visible"));
+  }
+
 });

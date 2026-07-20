@@ -1,654 +1,472 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="UTEP SHPE//MAES — Official Website" />
-    <meta name="author" content="UTEP SHPE//MAES" />
-    <title>UTEP SHPE//MAES</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join SHPE//MAES UTEP, become a member, access national resources, and plug into a committee">
+  <meta name="author" content="UTEP SHPE//MAES">
+  <title>Join | UTEP SHPE//MAES</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.png" type="image/png">
-    <link rel="apple-touch-icon" href="/favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.png" type="image/png">
 
-    <!-- Google Fonts (ALL the fonts your header + pages need) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&family=Mohave:wght@500&display=swap"
-        rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap (use the SAME version sitewide) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
 
-    <!-- Font Awesome (single version for consistency) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" />
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/design-tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/my-styles.css">
 
-    <!-- YOUR CSS FILES (ORDER MATTERS — DO NOT CHANGE) -->
-    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Base theme + Bootstrap overrides -->
-    <link rel="stylesheet" href="assets/css/my-styles.css"> <!-- Your sitewide custom overrides -->
-    <link rel="stylesheet" href="assets/css/style-shpe.css"> <!-- App Dev styling -->
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/index.js"></script>
 
-    <!-- JQuery (MUST come BEFORE Bootstrap JS + your header loader) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* ── Join Step Cards ──────────────────────────────────────── */
+    .join-step-card {
+      background: var(--surface-default);
+      border: 1px solid rgba(4, 30, 66, 0.07);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .join-step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-navy);
+      color: #fff;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .join-step-card h5 {
+      font-family: var(--font-display);
+      color: var(--color-navy);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .join-step-card p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
 
-    <!-- Bootstrap JS (same version as CSS) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    /* ── Committee Cards ──────────────────────────────────────── */
+    .committee-card {
+      width: 100%;
+      border: 1px solid rgba(4, 30, 66, 0.08);
+      background: var(--surface-default);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-align: left;
+      box-shadow: var(--shadow-xs);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .committee-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .committee-num {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-sm);
+      background: var(--color-navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .committee-title {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .committee-sub {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-size: var(--text-ui);
+      margin: 0;
+    }
+    .committee-chevron {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .committee-card[aria-expanded="true"] .committee-chevron {
+      transform: rotate(180deg);
+    }
+    .committee-details { margin-top: 0.5rem; }
+    .committee-details-inner {
+      background: var(--surface-soft);
+      border: 1px solid rgba(4, 30, 66, 0.07);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+    }
+    .committee-details-inner ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+    .committee-details-inner li {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
 
-    <!-- Site Scripts -->
-    <script src="assets/js/scripts.js"></script>
-    <script src="assets/js/index.js"></script>
+    @media (max-width: 575.98px) {
+      .committee-num { width: 50px; height: 50px; border-radius: var(--radius-xs); }
+      .committee-card { padding: 0.9rem; }
+    }
+  </style>
 </head>
 
 <body>
 
-    <header id="page-header">
-    </header>
+  <header id="page-header"></header>
 
-    <section>
-        <div class="container-fluid text-center bg" id="join-welcome">
-            <h1 class="title fade-in-up">BECOME A MEMBER!</h1>
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="inner-hero" aria-label="Join page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Get Involved</p>
+          <h1 class="inner-hero__title">Become a Member</h1>
+          <p class="inner-hero__subtitle">Join a community built around your success in STEM, and find your familia at UTEP.</p>
+          <div class="inner-hero__actions">
+            <a href="https://minetracker.utep.edu/organization/maesshpe30"
+              target="_blank" rel="noopener noreferrer"
+              class="btn-primary">Join on MineTracker</a>
+            <a href="#committees" class="btn-ghost">See Committees</a>
+          </div>
+        </div>
+        <div class="inner-hero__visual" aria-hidden="true">
+          <img class="inner-hero__img" src="assets/img/2025/join/get_involved.JPG" alt="" loading="eager" style="object-position: center top;">
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO JOIN -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Getting Started</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">How to Join SHPE//MAES</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Start with the campus membership, then add SHPE and/or MAES national for full benefits.
+          </p>
         </div>
 
-        <!-- HOW TO JOIN (quick steps) -->
-        <section class="py-5" style="background:#F9FAFB;">
-            <div class="container">
-                <div class="text-center mb-4">
-                    <h2 class="fw-bold" style="color:#041E42; font-family:'Playfair Display', serif;">
-                        How to Join SHPE//MAES
-                    </h2>
-                    <p class="text-muted" style="max-width:760px; margin:0 auto;">
-                        New here? Start with the campus membership, then add SHPE and/or MAES national membership for
-                        full benefits.
-                    </p>
-                </div>
-
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-4">
-                        <div class="join-step-card h-100">
-                            <div class="join-step-badge">1</div>
-                            <h5 class="fw-bold mb-2">Join on MineTracker</h5>
-                            <p class="text-muted mb-3">
-                                This is the fastest way to be officially added to the UTEP chapter roster.
-                            </p>
-                            <a class="btn btn-sm btn-primary w-100" target="_blank"
-                                href="https://minetracker.utep.edu/organization/maesshpe30">
-                                Join Campus Membership
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="join-step-card h-100">
-                            <div class="join-step-badge">2</div>
-                            <h5 class="fw-bold mb-2">Choose National Membership</h5>
-                            <p class="text-muted mb-3">
-                                Want scholarships, convention eligibility, and national resources? Add SHPE and/or MAES.
-                            </p>
-                            <div class="d-grid gap-2">
-                                <a class="btn btn-sm btn-outline-primary" target="_blank"
-                                    href="https://www.shpeconnect.org/eweb/DynamicPage.aspx?WebCode=LoginRequired&expires=yes&Site=shpe">
-                                    SHPE National
-                                </a>
-                                <a class="btn btn-sm btn-outline-success" target="_blank"
-                                    href="https://membership.mymaes.org/login.aspx">
-                                    MAES National
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="join-step-card h-100">
-                            <div class="join-step-badge">3</div>
-                            <h5 class="fw-bold mb-2">Join a Committee</h5>
-                            <p class="text-muted mb-3">
-                                This is where members actually plug in: help run events, build resources, and grow the
-                                chapter.
-                            </p>
-                            <a class="btn btn-sm btn-dark w-100" href="#committees">
-                                See Committees
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 reveal" data-delay="100">
+            <div class="join-step-card">
+              <div class="join-step-badge">1</div>
+              <h5>Join on MineTracker</h5>
+              <p>The fastest way to be officially added to the UTEP chapter roster.</p>
+              <a class="btn-primary d-block text-center"
+                target="_blank" rel="noopener noreferrer"
+                href="https://minetracker.utep.edu/organization/maesshpe30">
+                Join Campus Membership
+              </a>
             </div>
-        </section>
+          </div>
 
-
-        <!-- COMMITTEES -->
-        <section id="committees" class="py-5">
-            <div class="container">
-                <div class="row align-items-center g-5">
-                    <!-- Left: Title + QR -->
-                    <div class="col-lg-4">
-                        <h2 class="fw-bold" style="color:#041E42; font-family:'Playfair Display', serif;">
-                            Join our Committees
-                        </h2>
-                        <p class="text-muted" style="line-height:1.7;">
-                            Committees are open to all members. Pick one that matches your interests, and you’ll be
-                            contacted with next steps.
-                        </p>
-
-                        <!-- Replace src with your real QR file path -->
-                        <!-- <div class="committee-qr mt-4">
-                            <img src="assets/img/2025/join/committee-qr.png" alt="Committee Interest Form QR Code"
-                                loading="lazy" />
-                            <div class="small text-muted mt-2">
-                                Scan to fill out the committee interest form
-                            </div>
-                        </div> -->
-                    </div>
-
-                    <!-- Right: Committee list -->
-                    <div class="col-lg-8">
-                        <div class="row g-3">
-
-                            <!-- Committee card template -->
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-academic" aria-expanded="false">
-                                    <div class="committee-num">01</div>
-                                    <div>
-                                        <div class="committee-title">Academic</div>
-                                        <div class="committee-sub">Planning, organizing & academics</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-academic" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Study jams + exam prep sessions</li>
-                                            <li>Workshops (resume, internships, research)</li>
-                                            <li>Academic resources and tracking</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-website" aria-expanded="false">
-                                    <div class="committee-num">02</div>
-                                    <div>
-                                        <div class="committee-title">Website</div>
-                                        <div class="committee-sub">Maintain, update & inform</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-website" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Update pages, photos, and announcements</li>
-                                            <li>Optimize loading (lazy images, better performance)</li>
-                                            <li>Keep branding consistent across the site</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-community" aria-expanded="false">
-                                    <div class="committee-num">03</div>
-                                    <div>
-                                        <div class="committee-title">Community Engagement</div>
-                                        <div class="committee-sub">Plan, support & engage</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-community" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Member socials + retention</li>
-                                            <li>Mentorship matching + check-ins</li>
-                                            <li>Culture-building events</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-ops" aria-expanded="false">
-                                    <div class="committee-num">04</div>
-                                    <div>
-                                        <div class="committee-title">Operations</div>
-                                        <div class="committee-sub">Food, logistics & setup</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-ops" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Room setup, check-in, supplies</li>
-                                            <li>Food/snacks coordination</li>
-                                            <li>Event flow support</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-outreach" aria-expanded="false">
-                                    <div class="committee-num">05</div>
-                                    <div>
-                                        <div class="committee-title">Outreach</div>
-                                        <div class="committee-sub">Contact, connect & organize</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-outreach" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>K-12 STEM events + community service</li>
-                                            <li>Partnerships with campus orgs</li>
-                                            <li>Volunteer planning</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-marketing" aria-expanded="false">
-                                    <div class="committee-num">06</div>
-                                    <div>
-                                        <div class="committee-title">Marketing</div>
-                                        <div class="committee-sub">Flyers, social & promote</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-marketing" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Flyers, posts, and content planning</li>
-                                            <li>Event promo timelines</li>
-                                            <li>Photo/video coverage</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-membershpe" aria-expanded="false">
-                                    <div class="committee-num">07</div>
-                                    <div>
-                                        <div class="committee-title">MemberSHPE</div>
-                                        <div class="committee-sub">Track, support & members</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-membershpe" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Member point system + attendance</li>
-                                            <li>Onboarding + follow-ups</li>
-                                            <li>Support member success</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <button class="committee-card" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#c-shpetinas" aria-expanded="false">
-                                    <div class="committee-num">08</div>
-                                    <div>
-                                        <div class="committee-title">SHPEtinas</div>
-                                        <div class="committee-sub">Organize, plan & empower</div>
-                                    </div>
-                                    <i class="fa-solid fa-chevron-down committee-chevron"></i>
-                                </button>
-                                <div id="c-shpetinas" class="collapse committee-details">
-                                    <div class="committee-details-inner">
-                                        <ul class="mb-0">
-                                            <li>Women-centered events + mentorship</li>
-                                            <li>Professional + community building</li>
-                                            <li>Support and empowerment</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- <div class="mt-4">
-                            <a class="btn btn-primary" href="#join-memberships">Get Memberships</a>
-                            <a class="btn btn-outline-dark ms-2" target="_blank" href="#">
-                                Committee Interest Form
-                            </a>
-                            Replace that href="#" with your actual form link when you have it
-                        </div> -->
-                    </div>
-                </div>
+          <div class="col-md-4 reveal" data-delay="200">
+            <div class="join-step-card">
+              <div class="join-step-badge">2</div>
+              <h5>Choose National Membership</h5>
+              <p>Want scholarships, convention eligibility, and national resources? Add SHPE and/or MAES.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-sm btn-outline-primary"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://www.shpeconnect.org/eweb/DynamicPage.aspx?WebCode=LoginRequired&expires=yes&Site=shpe">
+                  SHPE National
+                </a>
+                <a class="btn btn-sm btn-outline-success"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://membership.mymaes.org/login.aspx">
+                  MAES National
+                </a>
+              </div>
             </div>
-        </section>
+          </div>
 
+          <div class="col-md-4 reveal" data-delay="300">
+            <div class="join-step-card">
+              <div class="join-step-badge">3</div>
+              <h5>Join a Committee</h5>
+              <p>This is where members plug in: help run events, build resources, and grow the chapter.</p>
+              <a class="btn-secondary d-block text-center" href="#committees">See Committees</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <footer id="page-footer">
-        </footer>
+    <!-- COMMITTEES -->
+    <section id="committees" class="section">
+      <div class="container">
+        <div class="row align-items-start g-5">
 
-        <style>
-            #join-welcome {
-                display: flex;
-                align-items: center;
-                justify-content: center;
+          <!-- Left: Title -->
+          <div class="col-lg-4 reveal" data-anim="slide-left">
+            <span class="section-pill">Get Involved</span>
+            <h2 class="section-title mt-3">Join a Committee</h2>
+            <p style="font-family: var(--font-body); color: var(--text-muted); line-height: 1.7; margin-top: 1rem;">
+              Committees are open to all members. Pick one that matches your interests , 
+              you'll be contacted with next steps.
+            </p>
+          </div>
 
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("assets/img/2025/join/join3.jpeg");
-                height: 700px;
-                background-position: bottom;
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-attachment: fixed
-            }
+          <!-- Right: Committee accordion -->
+          <div class="col-lg-8">
+            <div class="row g-3">
 
-            li {
-                font-size: 20px;
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-academic"
+                  aria-expanded="false" aria-controls="c-academic">
+                  <div class="committee-num">01</div>
+                  <div>
+                    <div class="committee-title">Academic</div>
+                    <p class="committee-sub">Planning, organizing &amp; academics</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-academic" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Study jams + exam prep sessions</li>
+                      <li>Workshops (resume, internships, research)</li>
+                      <li>Academic resources and tracking</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            a {
-                font-family: 'Oswald', sans-serif;
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-website"
+                  aria-expanded="false" aria-controls="c-website">
+                  <div class="committee-num">02</div>
+                  <div>
+                    <div class="committee-title">Website</div>
+                    <p class="committee-sub">Maintain, update &amp; inform</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-website" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Update pages, photos, and announcements</li>
+                      <li>Optimize loading (lazy images, better performance)</li>
+                      <li>Keep branding consistent across the site</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            @media (max-width: 575.98px) {
-                #join-welcome {
-                    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/join.JPEG");
-                    height: 100%;
-                    background-position: bottom;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    background-attachment: initial;
-                }
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-community"
+                  aria-expanded="false" aria-controls="c-community">
+                  <div class="committee-num">03</div>
+                  <div>
+                    <div class="committee-title">Community Engagement</div>
+                    <p class="committee-sub">Plan, support &amp; engage</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-community" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Member socials + retention</li>
+                      <li>Mentorship matching + check-ins</li>
+                      <li>Culture-building events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            .title {
-                font-family: 'Playfair Display', serif !important;
-                font-size: 3.5rem;
-                letter-spacing: 1px;
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-ops"
+                  aria-expanded="false" aria-controls="c-ops">
+                  <div class="committee-num">04</div>
+                  <div>
+                    <div class="committee-title">Operations</div>
+                    <p class="committee-sub">Food, logistics &amp; setup</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-ops" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Room setup, check-in, supplies</li>
+                      <li>Food/snacks coordination</li>
+                      <li>Event flow support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-                font-weight: 700;
-                /* same thickness as Page 1 */
-                color: #ffffff;
-                /* optional depending on design */
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-outreach"
+                  aria-expanded="false" aria-controls="c-outreach">
+                  <div class="committee-num">05</div>
+                  <div>
+                    <div class="committee-title">Outreach</div>
+                    <p class="committee-sub">Contact, connect &amp; organize</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-outreach" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>K-12 STEM events + community service</li>
+                      <li>Partnerships with campus orgs</li>
+                      <li>Volunteer planning</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-marketing"
+                  aria-expanded="false" aria-controls="c-marketing">
+                  <div class="committee-num">06</div>
+                  <div>
+                    <div class="committee-title">Marketing</div>
+                    <p class="committee-sub">Flyers, social &amp; promote</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-marketing" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Flyers, posts, and content planning</li>
+                      <li>Event promo timelines</li>
+                      <li>Photo/video coverage</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            #points-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/becomeamember.jpg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-membershpe"
+                  aria-expanded="false" aria-controls="c-membershpe">
+                  <div class="committee-num">07</div>
+                  <div>
+                    <div class="committee-title">MemberSHPE</div>
+                    <p class="committee-sub">Track, support &amp; members</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-membershpe" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Member point system + attendance</li>
+                      <li>Onboarding + follow-ups</li>
+                      <li>Support member success</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            #shpe-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Ismael.jpeg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-shpetinas"
+                  aria-expanded="false" aria-controls="c-shpetinas">
+                  <div class="committee-num">08</div>
+                  <div>
+                    <div class="committee-title">SHPEtinas</div>
+                    <p class="committee-sub">Organize, plan &amp; empower</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-shpetinas" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Women-centered events + mentorship</li>
+                      <li>Professional + community building</li>
+                      <li>Support and empowerment</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-            #maes-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Members.JPG");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            #minetracker-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Members2.JPG");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+    <!-- CTA -->
+    <section class="cta-section section">
+      <div class="container text-center">
+        <h2 class="cta-section__title">Ready to Join?</h2>
+        <p class="cta-section__subtitle mb-4">
+          Start with MineTracker, it takes two minutes and connects you to the whole SHPE//MAES familia.
+        </p>
+        <div class="page-hero__actions">
+          <a href="https://minetracker.utep.edu/organization/maesshpe30"
+            target="_blank" rel="noopener noreferrer"
+            class="btn-primary">
+            Join on MineTracker
+          </a>
+          <a href="mailto:shpemaesutep@gmail.com" class="btn-ghost">Questions? Email Us</a>
+        </div>
+      </div>
+    </section>
 
-            /* #slack-button {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/slackimage.jpeg");
-            opacity: .85;
-            border-radius: 7%;
-            height: 400px;
-            width: auto;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        } */
+  </main>
 
-            #whats-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/mirca.JPG");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
+  <footer id="page-footer"></footer>
 
-            #insta-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/Convention24/Presi and vps.JPG");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #facebook-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/facebookbutton.jpeg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #linkedin-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/eboard2023final.jpg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #internships-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/internshipbutton.jpeg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #coursera-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/courserabutton.jpg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            #resume-button {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("assets/img/resumebutton.jpg");
-                opacity: .85;
-                border-radius: 7%;
-                height: 400px;
-                width: auto;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            /* --- Join Steps --- */
-            .join-step-card {
-                background: #fff;
-                border: 1px solid rgba(0, 0, 0, .06);
-                border-radius: 16px;
-                padding: 20px;
-                box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
-                position: relative;
-            }
-
-            .join-step-badge {
-                width: 40px;
-                height: 40px;
-                border-radius: 12px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: #041E42;
-                color: #fff;
-                font-weight: 700;
-                margin-bottom: 12px;
-            }
-
-            /* --- Committee section --- */
-            .committee-qr {
-                background: #fff;
-                border: 1px solid rgba(0, 0, 0, .06);
-                border-radius: 16px;
-                padding: 16px;
-                display: inline-block;
-                box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
-            }
-
-            .committee-qr img {
-                width: 100%;
-                max-width: 260px;
-                height: auto;
-                display: block;
-                border-radius: 12px;
-            }
-
-            .committee-card {
-                width: 100%;
-                border: 1px solid rgba(0, 0, 0, .06);
-                background: #fff;
-                border-radius: 18px;
-                padding: 16px 16px;
-                display: flex;
-                align-items: center;
-                gap: 14px;
-                text-align: left;
-                box-shadow: 0 10px 26px rgba(0, 0, 0, .06);
-                transition: transform .18s ease, box-shadow .18s ease;
-            }
-
-            .committee-card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 14px 34px rgba(0, 0, 0, .09);
-            }
-
-            .committee-num {
-                width: 62px;
-                height: 62px;
-                border-radius: 16px;
-                background: #143B6B;
-                color: #fff;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-weight: 700;
-                font-size: 1.2rem;
-                flex: 0 0 auto;
-            }
-
-            .committee-title {
-                font-weight: 800;
-                font-size: 1.05rem;
-                color: #111;
-            }
-
-            .committee-sub {
-                color: #6c757d;
-                font-size: .95rem;
-            }
-
-            .committee-chevron {
-                margin-left: auto;
-                color: #6c757d;
-            }
-
-            .committee-details {
-                margin-top: 10px;
-            }
-
-            .committee-details-inner {
-                background: #fff;
-                border: 1px solid rgba(0, 0, 0, .06);
-                border-radius: 16px;
-                padding: 14px 16px;
-            }
-
-            .committee-details-inner li {
-                font-size: 1rem;
-            }
-
-            /* small screens */
-            @media (max-width: 575.98px) {
-                .committee-num {
-                    width: 54px;
-                    height: 54px;
-                    border-radius: 14px;
-                }
-
-                .committee-card {
-                    padding: 14px;
-                    border-radius: 16px;
-                }
-            }
-        </style>
-
-
-        <!-- Scripts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap"
-            rel="stylesheet">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Mohave:wght@500&family=Roboto&display=swap');
-        </style>
-        <script>
-            $("#page-header").load("header.html");
-            $("#page-footer").load("footer.html");
-
-        </script>
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
 
 </body>
-
-
 </html>
