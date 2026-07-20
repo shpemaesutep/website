@@ -98,12 +98,45 @@ a {
     vertical-align: middle;
 }
 /* Sponsor Section Layout */
-.sponsor-logos {
+.sponsor-marquee {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  overflow: hidden;
+  padding: 0.75rem 0 2.25rem;
+  position: relative;
+}
+
+.sponsor-marquee::before,
+.sponsor-marquee::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sponsor-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #f8f9fa 0%, rgba(248,249,250,0) 100%);
+}
+
+.sponsor-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #f8f9fa 0%, rgba(248,249,250,0) 100%);
+}
+
+.sponsor-logos {
+  animation: sponsor-scroll 28s linear infinite;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 2rem;
+  min-width: max-content;
+}
+
+.sponsor-marquee:hover .sponsor-logos {
+  animation-play-state: paused;
 }
 
 /* Sponsor Card */
@@ -130,6 +163,33 @@ a {
   max-height: 45px;
   object-fit: contain;
   display: block;
+}
+
+@keyframes sponsor-scroll {
+  from {
+    transform: translateX(calc(-100% - 2rem));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-marquee {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sponsor-logos {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .sponsor-logos[aria-hidden="true"] {
+    display: none;
+  }
 }
 /* Pillar Cards */
 .card {
