@@ -82,10 +82,10 @@ body {
 
 /* Nav links — dark so they read on light hero */
 .shpe-navbar .nav-link {
-  font-family: var(--font-ui);
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: var(--text-ui);
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.01em;
   color: rgba(4, 30, 66, 0.72) !important;
   position: relative;
   padding: 0.5rem 1rem;
@@ -155,9 +155,9 @@ body {
 }
 
 .shpe-navbar .dropdown-item {
-  font-family: var(--font-ui);
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: var(--text-ui);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   color: rgba(4, 30, 66, 0.78);
   border-radius: var(--radius-sm);
   padding: 0.6rem 0.9rem;
@@ -188,10 +188,10 @@ body {
 
 /* CTA "Join" button */
 .btn-nav-cta {
-  font-family: var(--font-ui);
+  font-family: 'Inter', system-ui, sans-serif;
   font-size: var(--text-ui);
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
   color: #fff !important;
   background: var(--color-orange);
   border-radius: var(--radius-pill);
