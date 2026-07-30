@@ -29,10 +29,16 @@
   <!-- jQuery + Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/announcements.js"></script>
+  <script src="assets/js/member-of-month.js"></script>
   <script src="assets/js/index.js"></script>
 </head>
 
 <body>
+
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
 
   <header id="page-header"></header>
 
@@ -68,17 +74,17 @@
 
           <div class="home-hero__stats" aria-label="Chapter highlights">
             <div class="home-hero__stat">
-              <span class="home-hero__stat-num">1977</span>
+              <span class="home-hero__stat-num js-count-up">1977</span>
               <span class="home-hero__stat-label">Founded<br>at UTEP</span>
             </div>
             <div class="home-hero__stat-divider" aria-hidden="true"></div>
             <div class="home-hero__stat">
-              <span class="home-hero__stat-num">11K+</span>
+              <span class="home-hero__stat-num js-count-up">11K+</span>
               <span class="home-hero__stat-label">SHPE Members<br>Nationwide</span>
             </div>
             <div class="home-hero__stat-divider" aria-hidden="true"></div>
             <div class="home-hero__stat">
-              <span class="home-hero__stat-num">6</span>
+              <span class="home-hero__stat-num js-count-up">6</span>
               <span class="home-hero__stat-label">Pillars of<br>Growth</span>
             </div>
           </div>
@@ -168,22 +174,22 @@
         <div class="home-impact__grid">
 
           <div class="home-impact__stat reveal" data-anim="fade" data-delay="100">
-            <span class="home-impact__num home-impact__num--orange">1977</span>
+            <span class="home-impact__num home-impact__num--orange js-count-up">1977</span>
             <span class="home-impact__stat-label">Year our UTEP chapter was founded by Richard Martinez</span>
           </div>
 
           <div class="home-impact__stat reveal" data-anim="fade" data-delay="200">
-            <span class="home-impact__num home-impact__num--white">11K+</span>
+            <span class="home-impact__num home-impact__num--white js-count-up">11K+</span>
             <span class="home-impact__stat-label">SHPE members across 289 chapters nationwide</span>
           </div>
 
           <div class="home-impact__stat reveal" data-anim="fade" data-delay="300">
-            <span class="home-impact__num home-impact__num--green">40+</span>
+            <span class="home-impact__num home-impact__num--green js-count-up">40+</span>
             <span class="home-impact__stat-label">Active MAES student chapters across the country</span>
           </div>
 
           <div class="home-impact__stat reveal" data-anim="fade" data-delay="400">
-            <span class="home-impact__num home-impact__num--orange">6</span>
+            <span class="home-impact__num home-impact__num--orange js-count-up">6</span>
             <span class="home-impact__stat-label">Pillars of academic, professional, and leadership growth</span>
           </div>
 
@@ -193,7 +199,53 @@
 
 
     <!-- ══════════════════════════════════════════════════════════
-         SECTION 4, UPCOMING EVENTS
+         SECTION 3, MEMBER OF THE MONTH
+         ════════════════════════════════════════════════════════ -->
+    <section class="section section--soft" id="member-of-month" aria-labelledby="motm-heading">
+      <div class="container">
+
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Spotlight</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100" id="motm-heading">Member of the Month</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Celebrating a standout member of our chapter.
+          </p>
+        </div>
+
+        <div class="motm-wrap reveal" data-delay="300" id="motm-card-slot">
+          <!-- Rendered by assets/js/member-of-month.js -->
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 4, ANNOUNCEMENTS
+         ════════════════════════════════════════════════════════ -->
+    <!-- <section class="section" id="announcements" aria-labelledby="announcements-heading">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 section-header">
+          <div>
+            <span class="section-pill reveal" data-anim="fade">Stay in the Loop</span>
+            <h2 class="section-title mt-3 reveal" data-delay="100" id="announcements-heading">Latest Announcements</h2>
+          </div>
+          <a href="announcements.html" class="btn-text-link reveal" data-delay="150">
+            View All <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="announcement-grid reveal" data-delay="200" id="home-announcements-grid" aria-live="polite">
+          <!-- Rendered by assets/js/announcements.js -->
+        <!-- </div> -->
+
+      <!-- </div> -->
+    <!-- </section> -->
+
+
+    <!-- ══════════════════════════════════════════════════════════
+         SECTION 5, UPCOMING EVENTS
          ════════════════════════════════════════════════════════ -->
     <section class="section" id="events" aria-labelledby="events-heading">
       <div class="container">
@@ -220,7 +272,7 @@
 
 
     <!-- ══════════════════════════════════════════════════════════
-         SECTION 5, SPONSORS
+         SECTION 6, SPONSORS
          ════════════════════════════════════════════════════════ -->
     <section class="section section--soft" id="sponsors" aria-labelledby="sponsors-heading">
 
@@ -262,6 +314,18 @@
     </section>
 
   </main>
+
+  <!-- Member of the Month modal -->
+  <div class="modal fade" id="motmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="border-radius: var(--radius-xl);">
+        <div class="modal-header border-0">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="motmModalBody"></div>
+      </div>
+    </div>
+  </div>
 
 
   <footer id="page-footer"></footer>
