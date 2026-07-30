@@ -1798,7 +1798,9 @@ textarea.form-control {
   .leader-card:hover,
   .pillar-card:hover,
   .sponsor-card:hover,
-  .resource-card:hover {
+  .resource-card:hover,
+  .announcement-card:hover,
+  .motm-card:hover {
     transform: none;
   }
 
@@ -1806,4 +1808,437 @@ textarea.form-control {
   .shpe-navbar .dropdown-menu {
     animation: none;
   }
+
+  /* Announcement cards render instantly instead of popping in */
+  .announcement-card {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   15. ANNOUNCEMENTS
+   ═══════════════════════════════════════════════════════════════ */
+
+.announcement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+}
+
+.announcement-card {
+  --accent-color: var(--color-navy);
+  --accent-text: #fff;
+
+  background: var(--surface-default);
+  border-radius: var(--radius-lg);
+  border-top: 4px solid var(--accent-color);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-card);
+  animation: fade-up var(--duration-slow) var(--ease-out) backwards;
+}
+
+.announcement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.announcement-grid .announcement-card:nth-child(1) { animation-delay: 0ms; }
+.announcement-grid .announcement-card:nth-child(2) { animation-delay: 70ms; }
+.announcement-grid .announcement-card:nth-child(3) { animation-delay: 140ms; }
+.announcement-grid .announcement-card:nth-child(4) { animation-delay: 210ms; }
+.announcement-grid .announcement-card:nth-child(5) { animation-delay: 280ms; }
+.announcement-grid .announcement-card:nth-child(6) { animation-delay: 350ms; }
+
+/* Pinned announcement — full-width, navy feature treatment */
+.announcement-card--pinned {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+  border-top: none;
+  color: var(--text-on-dark);
+}
+
+.announcement-card--pinned .announcement-card__title {
+  color: var(--text-on-dark);
+}
+
+.announcement-card--pinned .announcement-card__body {
+  color: var(--text-on-dark-muted);
+}
+
+.announcement-card--pinned .announcement-date {
+  color: var(--text-on-dark-muted);
+}
+
+.announcement-pin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-green);
+}
+
+.announcement-card__top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.announcement-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent-color);
+  color: var(--accent-text);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+}
+
+.announcement-new {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-orange-text);
+}
+
+.announcement-date {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.announcement-card__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.3;
+  margin-bottom: var(--space-3);
+}
+
+.announcement-card__body {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: var(--space-4);
+}
+
+.announcement-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  text-decoration: none;
+  margin-top: auto;
+  transition: color var(--duration-fast) var(--ease-in-out), gap var(--duration-fast) var(--ease-out);
+}
+
+.announcement-card--pinned .announcement-card__link {
+  color: var(--color-green);
+}
+
+.announcement-card__link:hover {
+  gap: 0.55rem;
+  color: var(--color-orange-hover);
+}
+
+.announcement-card--pinned .announcement-card__link:hover {
+  color: var(--color-green);
+  opacity: 0.85;
+}
+
+.announcement-card__link:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.announcement-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  padding: var(--space-9) 0;
+}
+
+/* ─── Filter bar (announcements.html only) ──────────────────── */
+
+.announcement-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.announcement-filter {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  background: var(--surface-muted);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-pill);
+  padding: 8px 20px;
+  cursor: pointer;
+  transition: var(--transition-color);
+}
+
+.announcement-filter:hover {
+  background: var(--color-navy-tint);
+}
+
+.announcement-filter.is-active {
+  background: var(--color-orange);
+  border-color: var(--color-orange);
+  color: #fff;
+}
+
+.announcement-filter:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 2px;
+}
+
+@media (max-width: 575.98px) {
+  .announcement-card__top {
+    gap: var(--space-2);
+  }
+
+  .announcement-date {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   16. MEMBER OF THE MONTH
+   ═══════════════════════════════════════════════════════════════ */
+
+.motm-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.motm-card {
+  display: flex;
+  background: var(--surface-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  max-width: 640px;
+  width: 100%;
+  cursor: pointer;
+  transition: var(--transition-card);
+}
+
+.motm-card:hover,
+.motm-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.motm-card:focus-visible {
+  outline: 2px solid var(--color-orange);
+  outline-offset: 3px;
+}
+
+.motm-card__media {
+  width: 200px;
+  flex-shrink: 0;
+  background: var(--surface-muted);
+}
+
+.motm-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.motm-card__body {
+  padding: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.motm-card__eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orange-text);
+  margin-bottom: var(--space-2);
+}
+
+.motm-card__name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  line-height: 1.25;
+}
+
+.motm-card__meta {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.motm-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-orange);
+  width: fit-content;
+  transition: color var(--duration-fast) var(--ease-in-out), gap var(--duration-fast) var(--ease-out);
+}
+
+.motm-card:hover .motm-card__cta {
+  gap: 0.6rem;
+  color: var(--color-orange-hover);
+}
+
+@media (max-width: 575.98px) {
+  .motm-card {
+    flex-direction: column;
+  }
+
+  .motm-card__media {
+    width: 100%;
+    height: 220px;
+  }
+}
+
+/* ─── Modal content (shared shape with Leadership page modal) ── */
+
+.motm-modal-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.motm-modal-eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-orange-text);
+  margin-bottom: var(--space-2);
+}
+
+.motm-modal-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--space-1);
+}
+
+.motm-modal-meta {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  margin-bottom: var(--space-4);
+}
+
+.motm-modal-section-label {
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-navy);
+  margin-bottom: var(--space-2);
+}
+
+.motm-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.motm-chip {
+  background: var(--color-green-tint);
+  color: var(--color-green-dark);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   17. SCROLL PROGRESS
+   ═══════════════════════════════════════════════════════════════ */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 2000;
+  background: transparent;
+  pointer-events: none;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to right, var(--color-orange), var(--color-green));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 80ms linear;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   18. CURSOR TILT (.js-tilt)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tilt is applied via inline transform in JS (assets/js/index.js);
+   this just ensures the existing card transition covers it smoothly
+   and resets cleanly when the tilt listener removes the inline style. */
+.js-tilt {
+  transform: translateZ(0);
 }

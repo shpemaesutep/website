@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Announcements, deadlines, and events from UTEP SHPE//MAES." />
+  <meta name="author" content="UTEP SHPE//MAES" />
+  <title>Announcements | UTEP SHPE//MAES</title>
+
+  <link rel="icon" href="/favicon.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- CSS load order -->
+  <link href="assets/css/styles.css" rel="stylesheet" />
+  <link href="assets/css/design-tokens.css" rel="stylesheet" />
+  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/my-styles.css" rel="stylesheet" />
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/announcements.js"></script>
+  <script src="assets/js/index.js"></script>
+</head>
+
+<body>
+
+  <header id="page-header"></header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="inner-hero inner-hero--centered" aria-label="Announcements page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Announcements</p>
+          <h1 class="inner-hero__title">What's Happening</h1>
+          <p class="inner-hero__subtitle">
+            Events, deadlines, and chapter updates, all in one place. Pinned items matter most, so check them first.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section class="section section--soft">
+      <div class="container">
+
+        <div class="announcement-filters reveal" data-anim="fade" role="group" aria-label="Filter announcements by category">
+          <button type="button" class="announcement-filter is-active" data-filter="all">All</button>
+          <button type="button" class="announcement-filter" data-filter="event">Events</button>
+          <button type="button" class="announcement-filter" data-filter="deadline">Deadlines</button>
+          <button type="button" class="announcement-filter" data-filter="general">General</button>
+        </div>
+
+        <div class="announcement-grid reveal" data-delay="100" id="announcements-grid" aria-live="polite">
+          <!-- Rendered by assets/js/announcements.js -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <script>
+    $(function () {
+      $("#page-header").load("header.html");
+      $("#page-footer").load("footer.html");
+    });
+  </script>
+
+</body>
+</html>
