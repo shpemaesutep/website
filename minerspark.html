@@ -28,11 +28,6 @@
   <style>
     .team-card {
       border-radius: var(--radius-xl);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
     }
     .gallery-img {
       width: 100%;
@@ -215,30 +210,19 @@
       <div class="container">
         <div class="text-center mb-5">
           <span class="section-pill reveal" data-anim="fade">Team</span>
-          <h2 class="section-title mt-3 reveal" data-delay="100">Meet the MinerSpark Leads</h2>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Meet the MinerSpark Lead</h2>
           <p class="section-subtitle reveal" data-delay="200">Leading research, mentorship, and cohort structure</p>
         </div>
 
         <div class="row g-4 justify-content-center">
           <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="100">
             <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
-              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-                style="width:120px;height:120px;background:var(--surface-muted);">
-                <i class="fa-solid fa-user fa-2x text-muted"></i>
-              </div>
-              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-              <p class="text-muted small mt-1 mb-2">MinerSpark Lead<br>Add Major · Add Year</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="200">
-            <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
-              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-                style="width:120px;height:120px;background:var(--surface-muted);">
-                <i class="fa-solid fa-user fa-2x text-muted"></i>
-              </div>
-              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-              <p class="text-muted small mt-1 mb-2">MinerSpark Lead<br>Add Major · Add Year</p>
+              <img src="assets/img/2026/leadership/Faces/rosario-lara.jpg" alt="Rosario Lara"
+                class="rounded-circle mx-auto mb-3" style="width:120px;height:120px;object-fit:cover;object-position:center 75%;" loading="lazy">
+              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Rosario Lara</h5>
+              <p class="text-muted small mt-1 mb-2">MinerSpark Lead · Director of Research<br>Computer Science</p>
+              <a class="program-lead-link mx-auto" href="https://www.linkedin.com/in/rosario-g-lara/"
+                target="_blank" rel="noopener noreferrer" aria-label="Rosario Lara on LinkedIn">LinkedIn</a>
             </div>
           </div>
         </div>
@@ -281,52 +265,6 @@
   </main>
 
   <footer id="page-footer"></footer>
-
-  <!-- TEAM DIRECTORY MODAL -->
-  <div class="modal fade" id="minersparkModal" tabindex="-1"
-    aria-labelledby="minersparkModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content" style="border-radius: var(--radius-xl);">
-        <div class="modal-header">
-          <h5 class="modal-title" id="minersparkModalLabel"
-            style="font-family: var(--font-display); color: var(--color-navy);">
-            MinerSpark Team Directory
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <div class="modal-body">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="card shadow-sm border-0 p-3 text-center">
-                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
-                  style="width:120px;height:120px;background:var(--surface-muted);">
-                  <i class="fa-solid fa-user fa-2x text-muted"></i>
-                </div>
-                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-                <p class="text-muted small mb-0">MinerSpark Lead · Add Major · Add Year</p>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="card shadow-sm border-0 p-3 text-center">
-                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
-                  style="width:120px;height:120px;background:var(--surface-muted);">
-                  <i class="fa-solid fa-user fa-2x text-muted"></i>
-                </div>
-                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-                <p class="text-muted small mb-0">MinerSpark Lead · Add Major · Add Year</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

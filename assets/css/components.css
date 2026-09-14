@@ -43,9 +43,9 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 .shpe-navbar {
-  background: transparent;
-  border-bottom: 1px solid transparent;
-  box-shadow: none;
+  background: #fff;
+  border-bottom: 1px solid rgba(4, 30, 66, 0.12);
+  box-shadow: 0 3px 18px rgba(4, 30, 66, 0.10);
   transition:
     background      var(--duration-default) var(--ease-in-out),
     box-shadow      var(--duration-default) var(--ease-in-out),
@@ -67,12 +67,6 @@ body {
 
 .navbar-logo:hover {
   opacity: 0.80;
-}
-
-/* Hamburger icon */
-.nav-hamburger-icon {
-  color: rgba(4, 30, 66, 0.80);
-  font-size: 1.15rem;
 }
 
 .shpe-navbar .navbar-toggler:focus-visible {
@@ -219,13 +213,10 @@ body {
   box-shadow: var(--shadow-focus);
 }
 
-/* Scrolled — white frosted glass, no blue */
+/* Keep the navigation solid while scrolling over photos and page content. */
 .shpe-navbar.is-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  box-shadow: 0 1px 24px rgba(4, 30, 66, 0.10);
-  border-bottom-color: rgba(4, 30, 66, 0.07);
+  background: #fff;
+  box-shadow: 0 3px 20px rgba(4, 30, 66, 0.14);
 }
 
 /* Mobile collapse panel */
@@ -702,7 +693,7 @@ body {
 .page-hero--leadership {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
-    url("../img/2025/leadership/team.JPG");
+    url("../img/2026/leadership/team.jpg");
 }
 
 .page-hero--join {
@@ -1120,20 +1111,8 @@ body {
   box-shadow: var(--shadow-md);
   overflow: hidden;
   height: 100%;
-  cursor: pointer;
-  transition: transform 0.22s ease, box-shadow 0.22s ease;
   display: flex;
   flex-direction: column;
-}
-
-.leader-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-}
-
-.leader-card:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-focus), var(--shadow-xl);
 }
 
 .leader-card__img-wrap {
@@ -1151,15 +1130,11 @@ body {
   object-position: center top;
   display: block;
   opacity: 0;
-  transition: transform 0.35s ease, opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .leader-card__photo.loaded {
   opacity: 1;
-}
-
-.leader-card:hover .leader-card__photo {
-  transform: scale(1.05);
 }
 
 .leader-card__role {
@@ -1236,9 +1211,14 @@ body {
   overflow: hidden;
 }
 
-/* Hero variant — taller, used as the first element on the leadership page */
+/* Keep the title over the lower part of the full photo, below every face. */
 .team-photo-band--hero {
-  height: clamp(460px, 62vw, 720px);
+  height: auto;
+  background: var(--color-navy);
+}
+
+.team-photo-band--hero .team-photo-band__img {
+  height: auto;
 }
 
 .team-photo-band__img {
@@ -1274,6 +1254,35 @@ body {
   text-align: center;
   background: linear-gradient(to bottom, rgba(4,30,66,0.30), rgba(4,30,66,0.58));
   padding: 2rem;
+}
+
+.team-photo-band--hero .team-photo-band__overlay {
+  justify-content: flex-end;
+  align-items: flex-start;
+  text-align: left;
+  padding: 2rem clamp(1.5rem, 8vw, 8rem);
+  background: linear-gradient(
+    to bottom,
+    transparent 56%,
+    rgba(4, 30, 66, 0.08) 73%,
+    rgba(4, 30, 66, 0.68) 100%
+  );
+}
+
+@media (max-width: 991.98px) {
+  .team-photo-band--hero .team-photo-band__overlay {
+    position: relative;
+    margin-top: -28px;
+    padding: 36px 1.25rem 1rem;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom, transparent, var(--color-navy) 28px);
+  }
+}
+
+.team-photo-band--hero .team-photo-band__title {
+  font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  margin-bottom: 0.35rem;
 }
 
 .team-photo-band__eyebrow {
@@ -1695,9 +1704,21 @@ textarea.form-control {
 .left-card   { animation-delay: 1.2s;  }
 .right-card  { animation-delay: 1.4s;  }
 
-.team-card:hover {
-  transform: translateY(-8px);
-  transition: transform 0.3s ease;
+.card.team-card:hover {
+  transform: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.program-lead-link {
+  color: var(--color-navy);
+  font-family: var(--font-ui);
+  font-size: var(--text-ui-sm);
+  font-weight: 600;
+  text-underline-offset: 3px;
+}
+
+.program-lead-link:hover {
+  color: var(--color-orange);
 }
 
 /* ─── Scroll-reveal (IntersectionObserver adds .is-visible) ─── */
@@ -1786,12 +1807,10 @@ textarea.form-control {
   /* Keep functionality, remove hover motion */
   .program-card:hover,
   .feature-card:hover,
-  .leader-card:hover,
   .pillar-card:hover,
   .sponsor-card:hover,
   .resource-card:hover,
-  .announcement-card:hover,
-  .motm-card:hover {
+  .announcement-card:hover {
     transform: none;
   }
 
@@ -2027,174 +2046,6 @@ textarea.form-control {
     width: 100%;
     margin-left: 0;
   }
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   16. MEMBER OF THE MONTH
-   ═══════════════════════════════════════════════════════════════ */
-
-.motm-wrap {
-  display: flex;
-  justify-content: center;
-}
-
-.motm-card {
-  display: flex;
-  background: var(--surface-default);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
-  overflow: hidden;
-  max-width: 640px;
-  width: 100%;
-  cursor: pointer;
-  transition: var(--transition-card);
-}
-
-.motm-card:hover,
-.motm-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-}
-
-.motm-card:focus-visible {
-  outline: 2px solid var(--color-orange);
-  outline-offset: 3px;
-}
-
-.motm-card__media {
-  width: 200px;
-  flex-shrink: 0;
-  background: var(--surface-muted);
-}
-
-.motm-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.motm-card__body {
-  padding: var(--space-7);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: var(--space-1);
-}
-
-.motm-card__eyebrow {
-  font-family: var(--font-ui);
-  font-size: var(--text-ui-sm);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-orange-text);
-  margin-bottom: var(--space-2);
-}
-
-.motm-card__name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-navy);
-  line-height: 1.25;
-}
-
-.motm-card__meta {
-  font-family: var(--font-body);
-  color: var(--text-muted);
-  margin-bottom: var(--space-3);
-}
-
-.motm-card__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-ui);
-  font-size: var(--text-ui-sm);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-orange);
-  width: fit-content;
-  transition: color var(--duration-fast) var(--ease-in-out), gap var(--duration-fast) var(--ease-out);
-}
-
-.motm-card:hover .motm-card__cta {
-  gap: 0.6rem;
-  color: var(--color-orange-hover);
-}
-
-@media (max-width: 575.98px) {
-  .motm-card {
-    flex-direction: column;
-  }
-
-  .motm-card__media {
-    width: 100%;
-    height: 220px;
-  }
-}
-
-/* ─── Modal content (shared shape with Leadership page modal) ── */
-
-.motm-modal-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: var(--radius-lg);
-  flex-shrink: 0;
-}
-
-.motm-modal-eyebrow {
-  font-family: var(--font-ui);
-  font-size: var(--text-ui-sm);
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-orange-text);
-  margin-bottom: var(--space-2);
-}
-
-.motm-modal-name {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--color-navy);
-  margin-bottom: var(--space-1);
-}
-
-.motm-modal-meta {
-  font-family: var(--font-body);
-  color: var(--text-muted);
-  margin-bottom: var(--space-4);
-}
-
-.motm-modal-section-label {
-  font-family: var(--font-ui);
-  font-size: var(--text-ui-sm);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-navy);
-  margin-bottom: var(--space-2);
-}
-
-.motm-chip-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.motm-chip {
-  background: var(--color-green-tint);
-  color: var(--color-green-dark);
-  font-family: var(--font-ui);
-  font-size: var(--text-ui-sm);
-  font-weight: 600;
-  padding: 5px 14px;
-  border-radius: var(--radius-pill);
 }
 
 

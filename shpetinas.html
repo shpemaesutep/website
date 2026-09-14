@@ -27,12 +27,7 @@
 
   <style>
     .team-card {
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
       border-radius: var(--radius-xl);
-    }
-    .team-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
     }
     .gallery-img {
       width: 100%;
@@ -147,31 +142,28 @@
         <div class="row g-4 justify-content-center">
           <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="100">
             <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
-              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-                style="width:120px;height:120px;background:var(--surface-muted);">
-                <i class="fa-solid fa-user fa-2x text-muted"></i>
-              </div>
-              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-              <p class="text-muted small mt-1 mb-2">SHPEtinas Lead · Add Major · Add Year</p>
+              <img src="assets/img/2026/leadership/Faces/catherine-torres.jpg" alt="Catherine Torres"
+                class="rounded-circle mx-auto mb-3" style="width:120px;height:120px;object-fit:cover;object-position:center 75%;" loading="lazy">
+              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Catherine Torres</h5>
+              <p class="text-muted small mt-1 mb-2">Director of SHPEtinas · Mechanical Engineering</p>
+              <a class="program-lead-link mx-auto" href="https://www.linkedin.com/in/catherine-torres-971bb2324/"
+                target="_blank" rel="noopener noreferrer" aria-label="Catherine Torres on LinkedIn">LinkedIn</a>
             </div>
           </div>
           <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="200">
             <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
-              <div class="rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-                style="width:120px;height:120px;background:var(--surface-muted);">
-                <i class="fa-solid fa-user fa-2x text-muted"></i>
-              </div>
-              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-              <p class="text-muted small mt-1 mb-2">SHPEtinas Lead · Add Major · Add Year</p>
+              <img src="assets/img/2026/leadership/Faces/zoe-gardea.jpg" alt="Zoe Gardea"
+                class="rounded-circle mx-auto mb-3" style="width:120px;height:120px;object-fit:cover;object-position:center 75%;" loading="lazy">
+              <h5 class="fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Zoe Gardea</h5>
+              <p class="text-muted small mt-1 mb-2">SHPEtinas Chair · Electrical Engineering</p>
+              <a class="program-lead-link mx-auto" href="https://www.linkedin.com/in/zoe-gardea-b34352234/"
+                target="_blank" rel="noopener noreferrer" aria-label="Zoe Gardea on LinkedIn">LinkedIn</a>
             </div>
           </div>
         </div>
 
         <div class="text-center mt-5">
-          <button class="btn-primary" data-bs-toggle="modal" data-bs-target="#shpetinasModal">
-            Meet the Full Team
-          </button>
-          <p class="text-muted mt-3" style="font-family: var(--font-body);">
+          <p class="text-muted" style="font-family: var(--font-body);">
             Questions? <a href="mailto:shpemaesutep@gmail.com" style="color: var(--color-orange);">Contact us</a>
           </p>
         </div>
@@ -213,51 +205,6 @@
   </main>
 
   <footer id="page-footer"></footer>
-
-  <!-- MODAL -->
-  <div class="modal fade" id="shpetinasModal" tabindex="-1"
-    aria-labelledby="shpetinasModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content" style="border-radius: var(--radius-xl);">
-        <div class="modal-header">
-          <h5 class="modal-title" id="shpetinasModalLabel"
-            style="font-family: var(--font-display); color: var(--color-navy);">
-            SHPEtinas Team
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-
-        <div class="modal-body">
-          <div class="row g-3">
-            <div class="col-md-6">
-              <div class="card shadow-sm border-0 p-3 text-center">
-                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
-                  style="width:120px;height:120px;background:var(--surface-muted);">
-                  <i class="fa-solid fa-user fa-2x text-muted"></i>
-                </div>
-                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-                <p class="text-muted small mb-0">SHPEtinas Lead · Add Major</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="card shadow-sm border-0 p-3 text-center">
-                <div class="rounded-circle mb-3 mx-auto d-flex align-items-center justify-content-center"
-                  style="width:120px;height:120px;background:var(--surface-muted);">
-                  <i class="fa-solid fa-user fa-2x text-muted"></i>
-                </div>
-                <h5 class="mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Add Lead Name</h5>
-                <p class="text-muted small mb-0">SHPEtinas Lead · Add Major</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="modal-footer">
-          <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
