@@ -152,23 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ── Scroll progress bar ──────────────────────────────────────────
-  function initScrollProgress() {
-    const bar = document.getElementById("scroll-progress-bar");
-    if (!bar) return;
-
-    function update() {
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = docHeight > 0 ? window.scrollY / docHeight : 0;
-      bar.style.transform = `scaleX(${progress})`;
-    }
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-  }
-
   initCountUp();
   initTilt();
-  initScrollProgress();
 
 });

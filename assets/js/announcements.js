@@ -20,7 +20,7 @@ const ANNOUNCEMENTS = [
     date: "2026-08-28",
     category: "event",
     pinned: true,
-    body: "Come meet the board, hear about App Dev, SHPEtinas, and MinerSpark, and find out how to get involved this semester. Free food while it lasts!",
+    body: "Come meet the board, hear about Tech Dev, SHPEtinas, and MinerSpark, and find out how to get involved this semester. Free food while it lasts!",
     link: { text: "See event details", href: "#events" },
   },
   {

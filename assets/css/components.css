@@ -2050,32 +2050,7 @@ textarea.form-control {
 
 
 /* ═══════════════════════════════════════════════════════════════
-   17. SCROLL PROGRESS
-   ═══════════════════════════════════════════════════════════════ */
-
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  z-index: 2000;
-  background: transparent;
-  pointer-events: none;
-}
-
-.scroll-progress__bar {
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(to right, var(--color-orange), var(--color-green));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 80ms linear;
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   18. CURSOR TILT (.js-tilt)
+   17. CURSOR TILT (.js-tilt)
    ═══════════════════════════════════════════════════════════════ */
 
 /* Tilt is applied via inline transform in JS (assets/js/index.js);
