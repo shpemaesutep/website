@@ -305,6 +305,10 @@
   gap: 1.5rem;
 }
 
+#programs {
+  scroll-margin-top: calc(var(--nav-height, 80px) + 1rem);
+}
+
 .hpg-card {
   border-radius: var(--radius-xl);
   overflow: hidden;

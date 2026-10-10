@@ -118,15 +118,11 @@ body {
   transform: scaleX(1);
 }
 
-/* Dropdown toggle caret */
+/* Use the same underline as other links instead of Bootstrap's caret. */
 .shpe-navbar .dropdown-toggle::after {
-  transition: transform var(--duration-default) var(--ease-in-out);
-  vertical-align: 0.13em;
-  border-top-color: rgba(4, 30, 66, 0.50);
-}
-
-.shpe-navbar .nav-item.dropdown.show .dropdown-toggle::after {
-  transform: rotate(180deg);
+  display: block;
+  border: 0;
+  margin-left: 0;
 }
 
 /* Dropdown panel — white card */
@@ -277,7 +273,8 @@ body {
 }
 
 .footer-compact {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -294,6 +291,8 @@ body {
 
 .footer-socials {
   display: flex;
+  justify-self: center;
+  justify-content: center;
   align-items: center;
   gap: 0.25rem;
 }
@@ -322,6 +321,7 @@ body {
 }
 
 .footer-email {
+  justify-self: end;
   font-family: var(--font-body);
   font-size: 0.825rem;
   color: var(--text-on-dark-accent);
@@ -335,6 +335,8 @@ body {
 }
 
 .footer-bottom {
+  width: 100%;
+  text-align: center;
   font-family: var(--font-body);
   font-size: 0.72rem;
   color: rgba(255, 255, 255, 0.30);
@@ -343,6 +345,7 @@ body {
 
 @media (max-width: 575.98px) {
   .footer-compact {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.6rem;

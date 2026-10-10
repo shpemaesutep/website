@@ -22,7 +22,7 @@
   <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
   <link href="assets/css/styles.css" rel="stylesheet" />
   <link href="assets/css/design-tokens.css" rel="stylesheet" />
-  <link href="assets/css/components.css" rel="stylesheet" />
+  <link href="assets/css/components.css?v=20261009-nav-orange" rel="stylesheet" />
   <link href="assets/css/my-styles.css" rel="stylesheet" />
 
   <style>
@@ -145,6 +145,28 @@
       box-shadow: var(--shadow-md);
       height: auto;
       width: 100%;
+    }
+    .demographics-images img.demographics-chart {
+      aspect-ratio: 3000 / 1175;
+      object-fit: cover;
+      object-position: top;
+    }
+    .demographics-chart-frame {
+      position: relative;
+      align-self: start;
+    }
+    .demographics-chart-frame img {
+      display: block;
+    }
+    .demographics-chart-frame::after {
+      content: "";
+      position: absolute;
+      left: 64%;
+      top: 52%;
+      width: 10%;
+      height: 16%;
+      background: white;
+      pointer-events: none;
     }
 
     /* ── Responsive ───────────────────────────────────────────── */
@@ -294,7 +316,9 @@
         </div>
 
         <div class="demographics-images">
-          <img src="assets/img/Demographics2023.png" alt="SHPE//MAES 2023 member demographics by major" loading="lazy" class="reveal" data-anim="slide-left" data-delay="100">
+          <div class="demographics-chart-frame reveal" data-anim="slide-left" data-delay="100">
+            <img src="assets/img/2026/SHPE_MAES_Demographics_2025-2026.png" alt="SHPE//MAES 2025–2026 member demographics by major and enrollment classification" loading="lazy" class="demographics-chart">
+          </div>
           <img src="assets/img/past-internships.png" alt="Map showing where SHPE//MAES members have completed internships" loading="lazy" class="reveal" data-anim="slide-right" data-delay="200">
         </div>
       </div>
