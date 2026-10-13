@@ -29,7 +29,7 @@ const ANNOUNCEMENTS = [
     date: "2026-09-05",
     category: "deadline",
     body: "Pay your semester dues to stay active and keep access to socials, workshops, and travel opportunities.",
-    link: { text: "Renew your membership", href: "/website/join/" },
+    link: { text: "Renew your membership", href: "/join/" },
   },
   {
     id: "general-body-meeting-1",
