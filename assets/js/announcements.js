@@ -20,7 +20,7 @@ const ANNOUNCEMENTS = [
     date: "2026-08-28",
     category: "event",
     pinned: true,
-    body: "Come meet the board, hear about Tech Dev, SHPEtinas, and MinerSpark, and find out how to get involved this semester. Free food while it lasts!",
+    body: "Come meet the board, hear about Tech Dev, SHPEtinas, MinerSpark, and S.U.N., and find out how to get involved this semester. Free food while it lasts!",
     link: { text: "See event details", href: "#events" },
   },
   {
@@ -29,7 +29,7 @@ const ANNOUNCEMENTS = [
     date: "2026-09-05",
     category: "deadline",
     body: "Pay your semester dues to stay active and keep access to socials, workshops, and travel opportunities.",
-    link: { text: "Renew your membership", href: "join.html" },
+    link: { text: "Renew your membership", href: "/website/join/" },
   },
   {
     id: "general-body-meeting-1",

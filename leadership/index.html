@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="canonical" href="https://shpemaesutep.github.io/website/leadership/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHPE//MAES UTEP Leadership Team, meet the executive board, directors, and chairs">
+  <meta name="author" content="SHPE//MAES UTEP">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <title>Leadership | SHPE//MAES UTEP</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/design-tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20261009-nav-orange">
+  <link rel="stylesheet" href="../assets/css/my-styles.css">
+
+</head>
+
+<body>
+
+  <header id="page-header"></header>
+
+  <main id="main-content">
+
+    <!-- HERO, group photo with a subtle lower-edge title overlay -->
+    <div class="team-photo-band team-photo-band--hero" role="banner" aria-label="Leadership page header">
+      <img class="team-photo-band__img" src="../assets/img/2026/leadership/team.jpg"
+        alt="SHPE//MAES UTEP officers together in a group photo" loading="eager">
+      <div class="team-photo-band__overlay">
+        <h1 class="team-photo-band__title">Leadership</h1>
+        <p class="team-photo-band__sub">Meet the officers leading SHPE/MAES UTEP.</p>
+      </div>
+    </div>
+
+    <!-- EXECUTIVE BOARD -->
+    <section class="section section--soft">
+      <div class="container">
+        <h2 class="board-section-title reveal" data-delay="50">Executive Board</h2>
+        <div class="row g-3 mt-4" id="exec-grid"></div>
+      </div>
+    </section>
+
+    <!-- BOARD OF DIRECTORS -->
+    <section class="section">
+      <div class="container">
+        <h2 class="board-section-title reveal" data-delay="50">Board of Directors</h2>
+        <div class="row g-3 mt-4" id="directors-grid"></div>
+      </div>
+    </section>
+
+    <!-- BOARD OF CHAIRS -->
+    <section class="section section--soft">
+      <div class="container">
+        <h2 class="board-section-title reveal" data-delay="50">Board of Chairs</h2>
+        <div class="row g-3 mt-4" id="chairs-grid"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="page-footer"></footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(function () {
+      $("#page-header").load("../header.html");
+      $("#page-footer").load("../footer.html");
+    });
+
+    /* ===================================================
+       LEADER DATA
+       =================================================== */
+    const LEADERS = {
+      exec: [
+        {
+          id: "lizbeth",
+          name: "Lizbeth Licerio",
+          role: "President",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/lizbeth-licerio.jpg",
+          photoPosition: "center top",
+          photoTransform: "scale(1.12)",
+          photoTransformOrigin: "center top",
+          linkedin: "https://www.linkedin.com/in/licerio/"
+        },
+        {
+          id: "benjamin",
+          name: "Benjamin Gurovich",
+          role: "Vice President Internal",
+          major: "Computer Engineering",
+          img: "../assets/img/2026/leadership/Faces/benjamin-gurovich.jpg",
+          photoPosition: "center center",
+          linkedin: "https://www.linkedin.com/in/benjamin-gurovich/"
+        },
+        {
+          id: "isaac",
+          name: "Isaac Diaz Palma",
+          role: "Vice President External",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/isaac-diaz-palma.jpg",
+          photoPosition: "center bottom",
+          photoTransform: "scale(1.12)",
+          photoTransformOrigin: "center bottom",
+          linkedin: "https://www.linkedin.com/in/isaac-diaz-palma-2951b3230/"
+        },
+        {
+          id: "arlene",
+          name: "Arlene Cruz",
+          role: "Vice President of Communications",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/arlene-cruz.jpg",
+          photoPosition: "center bottom",
+          linkedin: "https://www.linkedin.com/in/arlene-a-cruz/"
+        },
+        {
+          id: "sofia",
+          name: "Sofia Valenzuela",
+          role: "Treasurer",
+          major: "International Business",
+          img: "../assets/img/2026/leadership/Faces/sofia-valenzuela.jpg",
+          photoPosition: "center bottom"
+        },
+        {
+          id: "abril",
+          name: "Abril Salcido Armendariz",
+          role: "Secretary",
+          major: "Aerospace Engineering",
+          img: "../assets/img/2026/leadership/Faces/abril-salcido.jpg",
+          photoPosition: "center 70%",
+          linkedin: "https://www.linkedin.com/in/abril-salcido-armendariz-9012863bb/"
+        },
+        {
+          id: "manuel",
+          name: "Manuel Rodriguez",
+          role: "Internal Operations Lead",
+          major: "Aerospace Engineering",
+          img: "../assets/img/2026/leadership/Faces/manuel-rodriguez.jpg",
+          photoPosition: "center 45%",
+          linkedin: "https://www.linkedin.com/in/manuelard/"
+        }
+      ],
+      directors: [
+        {
+          id: "vania",
+          name: "Vania Montero",
+          role: "Director of Communications",
+          major: "Aerospace Engineering",
+          img: "../assets/img/2026/leadership/Faces/vania-montero.jpg",
+          photoPosition: "center bottom",
+          linkedin: "https://www.linkedin.com/in/vania-montero-298720250/"
+        },
+        {
+          id: "eduardo",
+          name: "Eduardo Ayala Padilla",
+          role: "Director of MemberSHPE",
+          major: "Electrical Engineering",
+          img: "../assets/img/2026/leadership/Faces/eduardo-ayala-padilla.jpg",
+          photoPosition: "center 40%",
+          linkedin: "https://www.linkedin.com/in/eduardo-alberto-ayala-41279824b/"
+        },
+        {
+          id: "dominic",
+          name: "Dominic Hernandez",
+          role: "Director of Technology",
+          major: "Computer Engineering",
+          img: "../assets/img/2026/leadership/Faces/dominic-hernandez.jpg",
+          photoPosition: "center 25%",
+          linkedin: "https://www.linkedin.com/in/dominic-hernandez/"
+        },
+        {
+          id: "jolie",
+          name: "Jolie Sanchez",
+          role: "Director of Outreach",
+          major: "Aerospace Engineering",
+          img: "../assets/img/2026/leadership/Faces/jolie-sanchez.jpg",
+          photoPosition: "center 90%",
+          linkedin: "https://www.linkedin.com/in/jolie-sanchez-236720376/"
+        },
+        {
+          id: "patricio",
+          name: "Patricio Beltran",
+          role: "Director of Academics",
+          major: "Aerospace Engineering",
+          img: "../assets/img/2026/leadership/Faces/patricio-beltran.jpg",
+          photoPosition: "center 25%",
+          linkedin: "https://www.linkedin.com/in/patriciorodbel1/"
+        },
+        {
+          id: "oscar",
+          name: "Oscar Gomez",
+          role: "Director of Operations",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/oscar-gomez.jpg",
+          photoPosition: "center bottom",
+          linkedin: "https://www.linkedin.com/in/oscar-gomez-a86506357/"
+        },
+        {
+          id: "gerardo",
+          name: "Gerardo Rodriguez",
+          role: "Director of Community Engagement",
+          major: "Engineering Innovation and Leadership",
+          img: "../assets/img/2026/leadership/Faces/gerardo-rodriguez.jpg",
+          photoPosition: "center 75%",
+          linkedin: "https://www.linkedin.com/in/gerardorodriguezsandoval/"
+        },
+        {
+          id: "zoe",
+          name: "Zoe Gardea",
+          role: "Director of SHPEtinas",
+          major: "Electrical Engineering",
+          img: "../assets/img/2026/leadership/Faces/zoe-gardea.jpg",
+          photoPosition: "center bottom",
+          linkedin: "https://www.linkedin.com/in/zoe-gardea-b34352234/"
+        },
+        {
+          id: "rosario",
+          name: "Rosario Lara",
+          role: "Director of Research",
+          major: "Computer Science",
+          img: "../assets/img/2026/leadership/Faces/rosario-lara.jpg",
+          photoPosition: "center 70%",
+          linkedin: "https://www.linkedin.com/in/rosario-g-lara/"
+        }
+      ],
+      chairs: [
+        {
+          id: "santiago",
+          name: "Santiago Delgado",
+          role: "Operations Chair",
+          major: "Electrical Engineering",
+          img: "../assets/img/2026/leadership/Faces/santiago-delgado.png",
+          photoPosition: "center center",
+          photoTransform: "scale(1.65)",
+          photoTransformOrigin: "center 30%",
+          linkedin: "https://www.linkedin.com/in/santiago-d"
+        },
+        {
+          id: "jose",
+          name: "Jose Osuna",
+          role: "Academics Chair",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/jose-osuna.jpg",
+          photoPosition: "center 20%",
+          linkedin: "https://www.linkedin.com/in/joseosunaa/"
+        },
+        {
+          id: "perla",
+          name: "Perla Diaz",
+          role: "Engagement & Events Support Chair",
+          major: "Metallurgical Engineering",
+          img: "../assets/img/2026/leadership/Faces/perla-diaz.jpg",
+          photoPosition: "center 60%"
+        },
+        {
+          id: "edgar",
+          name: "Edgar Alvarez",
+          role: "Marketing Chair",
+          major: "Mechanical Engineering",
+          img: "../assets/img/2026/leadership/Faces/edgar-alvarez.jpg",
+          photoPosition: "center 40%",
+          linkedin: "https://www.linkedin.com/in/edgaralvarez14/"
+        },
+        {
+          id: "arturo",
+          name: "Arturo Rivera",
+          role: "Fundraising Chair",
+          major: "Computer Engineering",
+          img: "../assets/img/2026/leadership/Faces/arturo-rivera.jpg",
+          photoPosition: "center 70%",
+          linkedin: "https://www.linkedin.com/in/arturogrivera/"
+        }
+      ]
+    };
+
+    /* ===================================================
+       RENDER
+       =================================================== */
+    function leaderCardHTML(leader) {
+      const photoStyles = [
+        leader.photoPosition ? `object-position: ${leader.photoPosition};` : "",
+        leader.photoTransform ? `transform: ${leader.photoTransform};` : "",
+        leader.photoTransformOrigin ? `transform-origin: ${leader.photoTransformOrigin};` : ""
+      ].filter(Boolean).join(" ");
+      const photoStyle = photoStyles ? ` style="${photoStyles}"` : "";
+      const imgTag = leader.img
+        ? `<img class="leader-card__photo" data-src="${leader.img}" alt="${leader.name}" loading="lazy" decoding="async"${photoStyle}>`
+        : `<div class="avatar-placeholder"><i class="fa-solid fa-user" aria-hidden="true"></i></div>`;
+
+      const linkedIn = leader.linkedin
+        ? `<a class="leader-card__linkedin" href="${leader.linkedin}" target="_blank" rel="noopener noreferrer" aria-label="${leader.name} on LinkedIn"><i class="fab fa-linkedin"></i></a>`
+        : ``;
+
+      return `
+        <div class="col-6 col-md-4 col-lg-3 col-xl-2 reveal">
+          <div class="leader-card">
+            <div class="leader-card__img-wrap">
+              ${imgTag}
+            </div>
+            <div class="leader-card__body">
+              <div class="leader-card__name">${leader.name}</div>
+              <div class="leader-card__role">${leader.role}</div>
+              <div class="leader-card__major">${leader.major || ""}</div>
+              ${linkedIn}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSection(gridId, leaders) {
+      document.getElementById(gridId).innerHTML = leaders.map(leaderCardHTML).join("");
+    }
+
+    renderSection("exec-grid", LEADERS.exec);
+    renderSection("directors-grid", LEADERS.directors);
+    renderSection("chairs-grid", LEADERS.chairs);
+
+    /* ===================================================
+       LAZY LOAD + SCROLL REVEAL
+       =================================================== */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        const img = entry.target.querySelector("img[data-src]");
+        if (img && !img.src) {
+          img.src = img.getAttribute("data-src");
+          img.onload = () => img.classList.add("loaded");
+        }
+        io.unobserve(entry.target);
+      });
+    }, { threshold: 0, rootMargin: "0px 0px 400px 0px" });
+
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  </script>
+
+</body>
+</html>

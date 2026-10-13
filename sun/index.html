@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="canonical" href="https://shpemaesutep.github.io/website/sun/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="S.U.N., the Summer Undergraduate Network at SHPE//MAES UTEP, gives students hands-on experience designing and building drone and underwater ROV projects.">
+  <title>S.U.N. | SHPE//MAES UTEP</title>
+
+  <link rel="icon" href="../favicon.png" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/design-tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20261009-nav-orange">
+  <link rel="stylesheet" href="../assets/css/my-styles.css">
+
+  <style>
+    .inner-hero--sun {
+      background: #fff8ef;
+    }
+    .inner-hero--sun .inner-hero__eyebrow {
+      color: var(--color-orange);
+    }
+    .inner-hero--sun .inner-hero__eyebrow::before {
+      background: var(--color-orange);
+    }
+
+    .sun-step-num {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--color-orange);
+      line-height: 1;
+    }
+    .sun-project-img {
+      width: 100%;
+      height: 265px;
+      object-fit: cover;
+    }
+    .sun-gallery-img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease;
+    }
+    .sun-gallery-img:hover {
+      transform: scale(1.02);
+    }
+    .team-card {
+      border-radius: var(--radius-xl);
+    }
+  </style>
+</head>
+
+<body>
+  <header id="page-header"></header>
+
+  <main id="main-content">
+
+    <section class="inner-hero inner-hero--sun" aria-label="S.U.N. page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Programs</p>
+          <h1 class="inner-hero__title">S.U.N.</h1>
+          <p class="inner-hero__subtitle"><strong>Summer Undergraduate Network</strong><br>Gain hands-on experience turning ideas into real engineering solutions through interdisciplinary projects.</p>
+        </div>
+        <div class="inner-hero__visual" aria-hidden="true">
+          <img class="inner-hero__img" src="../assets/img/2026/sun/sun-drone-team.jpg" alt="" loading="eager" style="object-position: center;">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 reveal" data-anim="slide-left">
+            <span class="section-pill">About</span>
+            <h2 class="section-title mt-3">What is S.U.N.?</h2>
+            <p class="mt-3" style="font-family: var(--font-body); font-size: var(--text-body-lg); line-height: 1.7; color: var(--text-primary);">
+              The <strong>Summer Undergraduate Network (S.U.N.)</strong> is an applied engineering program that brings students together to transform ideas into functioning systems. Participants build on their academic foundation while developing the practical judgment required to solve real technical challenges.
+            </p>
+            <p style="font-family: var(--font-body); line-height: 1.7; color: var(--text-muted);">
+              Working in interdisciplinary teams, students contribute to design, software, electronics, fabrication, integration, and testing. The experience emphasizes collaboration, project ownership, iterative improvement, and professional engineering practice.
+            </p>
+          </div>
+          <div class="col-lg-6 reveal" data-anim="slide-right" data-delay="150">
+            <img src="../assets/img/2026/sun/sun-submarine-team.jpg"
+              class="w-100 rounded-4 shadow-sm"
+              style="height: 480px; object-fit: cover; object-position: center;"
+              alt="S.U.N. submarine project team"
+              loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Process</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">How S.U.N. Works</h2>
+          <p class="section-subtitle reveal" data-delay="200">A structured progression from foundational training to a validated engineering system</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-3 col-6 reveal" data-delay="100">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <div class="sun-step-num mb-2">1</div>
+              <h5 class="fw-bold" style="font-family: var(--font-display); color: var(--color-navy);">Learn</h5>
+              <p class="text-muted mb-0">Develop core skills through guided workshops in SolidWorks, Raspberry Pi, and Python.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 reveal" data-delay="200">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <div class="sun-step-num mb-2">2</div>
+              <h5 class="fw-bold" style="font-family: var(--font-display); color: var(--color-navy);">Design</h5>
+              <p class="text-muted mb-0">Translate project requirements into custom CAD models and fabrication-ready components.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 reveal" data-delay="300">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <div class="sun-step-num mb-2">3</div>
+              <h5 class="fw-bold" style="font-family: var(--font-display); color: var(--color-navy);">Build</h5>
+              <p class="text-muted mb-0">Integrate mechanical components, electronics, control hardware, and software into a complete system.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-6 reveal" data-delay="400">
+            <div class="card border-0 shadow-sm p-4 h-100 text-center">
+              <div class="sun-step-num mb-2">4</div>
+              <h5 class="fw-bold" style="font-family: var(--font-display); color: var(--color-navy);">Test</h5>
+              <p class="text-muted mb-0">Evaluate performance, identify improvements, and validate the system through iterative testing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Projects</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Engineering in Action</h2>
+          <p class="section-subtitle reveal" data-delay="200">Two multidisciplinary teams, two ambitious systems</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6 reveal" data-anim="slide-left" data-delay="100">
+            <article class="card border-0 shadow-sm h-100 overflow-hidden">
+              <img class="sun-project-img" src="../assets/img/2026/sun/sun-computer-vision.jpg" alt="Computer vision tracking software developed for the S.U.N. drone project" loading="lazy">
+              <div class="p-4">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="fa-solid fa-helicopter" style="font-size: 1.8rem; color: var(--color-orange);"></i>
+                  <h3 class="h4 fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Drone Project</h3>
+                </div>
+                <p class="text-muted">A compact 4S Micro Toothpick FPV drone with a custom 3D-printed frame and autonomous surveillance capabilities.</p>
+                <ul class="text-muted mb-0" style="line-height: 1.9;">
+                  <li>Computer vision using Python, OpenCV, and YOLO</li>
+                  <li>Target tracking and autonomous movement commands</li>
+                  <li>Mechanical design, electronics, and flight control</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-lg-6 reveal" data-anim="slide-right" data-delay="200">
+            <article class="card border-0 shadow-sm h-100 overflow-hidden">
+              <img class="sun-project-img" src="../assets/img/2026/sun/sun-rov-cad.jpg" alt="CAD model of the S.U.N. remotely operated underwater vehicle" loading="lazy" style="object-fit: contain; background: #fff;">
+              <div class="p-4">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <i class="fa-solid fa-water" style="font-size: 1.8rem; color: var(--color-green);"></i>
+                  <h3 class="h4 fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Submarine Project</h3>
+                </div>
+                <p class="text-muted">A compact four-thruster remotely operated vehicle designed for pool testing, live video, and depth sensing.</p>
+                <ul class="text-muted mb-0" style="line-height: 1.9;">
+                  <li>Raspberry Pi 4 control and live camera feed</li>
+                  <li>Custom 3D-printed frame and sealed electronics tube</li>
+                  <li>Mechanical, coding, and electronics subteams</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Team</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Meet the S.U.N. Leads</h2>
+          <p class="section-subtitle reveal" data-delay="200">Guiding project planning, technical learning, and team collaboration</p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="100">
+            <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
+              <img src="../assets/img/2026/leadership/Faces/patricio-beltran.jpg" alt="Patricio Beltran"
+                class="rounded-circle mx-auto mb-3" style="width:120px;height:120px;object-fit:cover;object-position:center 25%;" loading="lazy">
+              <h3 class="h5 fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Patricio Beltran</h3>
+              <p class="text-muted small mt-1 mb-2">S.U.N. Co-Lead · Director of Academics<br>Aerospace Engineering</p>
+              <a class="program-lead-link mx-auto" href="https://www.linkedin.com/in/patriciorodbel1/"
+                target="_blank" rel="noopener noreferrer" aria-label="Patricio Beltran on LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-lg-3 reveal" data-anim="scale" data-delay="200">
+            <div class="card border-0 shadow-sm text-center p-4 h-100 team-card">
+              <div class="rounded-circle mx-auto mb-3 overflow-hidden" style="width:120px;height:120px;">
+                <img src="../assets/img/2026/leadership/Faces/jose-osuna.jpg" alt="Jose Osuna"
+                  class="w-100 h-100" style="object-fit:cover;object-position:center 48%;transform:scale(1.4);transform-origin:center 46%;" loading="lazy">
+              </div>
+              <h3 class="h5 fw-bold mb-0" style="font-family: var(--font-display); color: var(--color-navy);">Jose Osuna</h3>
+              <p class="text-muted small mt-1 mb-2">S.U.N. Co-Lead · Academics Chair<br>Mechanical Engineering</p>
+              <a class="program-lead-link mx-auto" href="https://www.linkedin.com/in/joseosunaa/"
+                target="_blank" rel="noopener noreferrer" aria-label="Jose Osuna on LinkedIn">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-4">
+          <span class="section-pill reveal" data-anim="fade">Gallery</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">S.U.N. in Progress</h2>
+          <p class="section-subtitle reveal" data-delay="200">Collaboration, fabrication, and testing behind the projects</p>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4 reveal" data-delay="100">
+            <img src="../assets/img/2026/sun/sun-collaboration.jpg" class="sun-gallery-img" alt="S.U.N. members collaborating around laptops" loading="lazy">
+          </div>
+          <div class="col-md-4 reveal" data-delay="200">
+            <img src="../assets/img/2026/sun/sun-electronics.jpg" class="sun-gallery-img" alt="S.U.N. member soldering electronics" loading="lazy">
+          </div>
+          <div class="col-md-4 reveal" data-delay="300">
+            <img src="../assets/img/2026/sun/sun-hardware.jpg" class="sun-gallery-img" alt="Electronic hardware under construction for a S.U.N. project" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section section">
+      <div class="container text-center">
+        <h2 class="cta-section__title">Interested in S.U.N.?</h2>
+        <p class="cta-section__subtitle mb-4">Contact the chapter to learn about upcoming cohorts and project opportunities.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="mailto:shpemaesutep@gmail.com" class="btn-primary">
+            <i class="bi bi-envelope-fill"></i> Email Us
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/index.js"></script>
+  <script>
+    $(function () {
+      $("#page-header").load("../header.html");
+      $("#page-footer").load("../footer.html");
+    });
+  </script>
+</body>
+
+</html>

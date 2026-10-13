@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="canonical" href="https://shpemaesutep.github.io/website/join/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join SHPE//MAES UTEP, become a member, access national resources, and plug into a committee">
+  <meta name="author" content="UTEP SHPE//MAES">
+  <title>Join | UTEP SHPE//MAES</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="../favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous">
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/design-tokens.css">
+  <link rel="stylesheet" href="../assets/css/components.css?v=20261009-nav-orange">
+  <link rel="stylesheet" href="../assets/css/my-styles.css">
+
+  <!-- jQuery + Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/index.js"></script>
+
+  <style>
+    /* ── Join Step Cards ──────────────────────────────────────── */
+    .join-step-card {
+      background: var(--surface-default);
+      border: 1px solid rgba(4, 30, 66, 0.07);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .join-step-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-navy);
+      color: #fff;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      flex-shrink: 0;
+    }
+    .join-step-card h5 {
+      font-family: var(--font-display);
+      color: var(--color-navy);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .join-step-card p {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Committee Cards ──────────────────────────────────────── */
+    .committee-card {
+      width: 100%;
+      border: 1px solid rgba(4, 30, 66, 0.08);
+      background: var(--surface-default);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      text-align: left;
+      box-shadow: var(--shadow-xs);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .committee-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .committee-num {
+      width: 58px;
+      height: 58px;
+      border-radius: var(--radius-sm);
+      background: var(--color-navy);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .committee-title {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.15rem;
+    }
+    .committee-sub {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-size: var(--text-ui);
+      margin: 0;
+    }
+    .committee-chevron {
+      margin-left: auto;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .committee-card[aria-expanded="true"] .committee-chevron {
+      transform: rotate(180deg);
+    }
+    .committee-details { margin-top: 0.5rem; }
+    .committee-details-inner {
+      background: var(--surface-soft);
+      border: 1px solid rgba(4, 30, 66, 0.07);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1rem;
+    }
+    .committee-details-inner ul {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+    .committee-details-inner li {
+      font-family: var(--font-body);
+      font-size: var(--text-body);
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 575.98px) {
+      .committee-num { width: 50px; height: 50px; border-radius: var(--radius-xs); }
+      .committee-card { padding: 0.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="page-header"></header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="inner-hero" aria-label="Join page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Get Involved</p>
+          <h1 class="inner-hero__title">Become a Member</h1>
+          <p class="inner-hero__subtitle">Join a community built around your success in STEM, and find your familia at UTEP.</p>
+          <div class="inner-hero__actions">
+            <a href="https://minetracker.utep.edu/organization/maesshpe30"
+              target="_blank" rel="noopener noreferrer"
+              class="btn-primary">Join on MineTracker</a>
+            <a href="#committees" class="btn-ghost">See Committees</a>
+          </div>
+        </div>
+        <div class="inner-hero__visual" aria-hidden="true">
+          <img class="inner-hero__img" src="../assets/img/2025/join/get_involved.JPG" alt="" loading="eager" style="object-position: center top;">
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO JOIN -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Getting Started</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">How to Join SHPE//MAES</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Start with the campus membership, then add SHPE and/or MAES national for full benefits.
+          </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-4 reveal" data-delay="100">
+            <div class="join-step-card">
+              <div class="join-step-badge">1</div>
+              <h5>Join on MineTracker</h5>
+              <p>The fastest way to be officially added to the UTEP chapter roster.</p>
+              <a class="btn-primary d-block text-center"
+                target="_blank" rel="noopener noreferrer"
+                href="https://minetracker.utep.edu/organization/maesshpe30">
+                Join Campus Membership
+              </a>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal" data-delay="200">
+            <div class="join-step-card">
+              <div class="join-step-badge">2</div>
+              <h5>Choose National Membership</h5>
+              <p>Want scholarships, convention eligibility, and national resources? Add SHPE and/or MAES.</p>
+              <div class="d-grid gap-2">
+                <a class="btn btn-sm btn-outline-primary"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://www.shpeconnect.org/eweb/DynamicPage.aspx?WebCode=LoginRequired&expires=yes&Site=shpe">
+                  SHPE National
+                </a>
+                <a class="btn btn-sm btn-outline-success"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://membership.mymaes.org/login.aspx">
+                  MAES National
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 reveal" data-delay="300">
+            <div class="join-step-card">
+              <div class="join-step-badge">3</div>
+              <h5>Join a Committee</h5>
+              <p>This is where members plug in: help run events, build resources, and grow the chapter.</p>
+              <a class="btn-secondary d-block text-center" href="#committees">See Committees</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMITTEES -->
+    <section id="committees" class="section">
+      <div class="container">
+        <div class="row align-items-start g-5">
+
+          <!-- Left: Title -->
+          <div class="col-lg-4 reveal" data-anim="slide-left">
+            <span class="section-pill">Get Involved</span>
+            <h2 class="section-title mt-3">Join a Committee</h2>
+            <p style="font-family: var(--font-body); color: var(--text-muted); line-height: 1.7; margin-top: 1rem;">
+              Committees are open to all members. Pick one that matches your interests ,
+              you'll be contacted with next steps.
+            </p>
+          </div>
+
+          <!-- Right: Committee accordion -->
+          <div class="col-lg-8">
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-academic"
+                  aria-expanded="false" aria-controls="c-academic">
+                  <div class="committee-num">01</div>
+                  <div>
+                    <div class="committee-title">Academic</div>
+                    <p class="committee-sub">Planning, organizing &amp; academics</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-academic" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Study jams + exam prep sessions</li>
+                      <li>Workshops (resume, internships, research)</li>
+                      <li>Academic resources and tracking</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-website"
+                  aria-expanded="false" aria-controls="c-website">
+                  <div class="committee-num">02</div>
+                  <div>
+                    <div class="committee-title">Tech</div>
+                    <p class="committee-sub">Maintain, update &amp; inform</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-website" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Build responsive frontend features for our website and mobile app</li>
+                      <li>Develop and integrate APIs, authentication, databases, and backend services</li>
+                      <li>Test, debug, deploy, and monitor the full stack for security, performance, and reliability</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-community"
+                  aria-expanded="false" aria-controls="c-community">
+                  <div class="committee-num">03</div>
+                  <div>
+                    <div class="committee-title">Community Engagement</div>
+                    <p class="committee-sub">Plan, support &amp; engage</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-community" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Member socials + retention</li>
+                      <li>Mentorship matching + check-ins</li>
+                      <li>Culture-building events</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-ops"
+                  aria-expanded="false" aria-controls="c-ops">
+                  <div class="committee-num">04</div>
+                  <div>
+                    <div class="committee-title">Operations</div>
+                    <p class="committee-sub">Food, logistics &amp; setup</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-ops" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Room setup, check-in, supplies</li>
+                      <li>Food/snacks coordination</li>
+                      <li>Event flow support</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-outreach"
+                  aria-expanded="false" aria-controls="c-outreach">
+                  <div class="committee-num">05</div>
+                  <div>
+                    <div class="committee-title">Outreach</div>
+                    <p class="committee-sub">Contact, connect &amp; organize</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-outreach" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>K-12 STEM events + community service</li>
+                      <li>Partnerships with campus orgs</li>
+                      <li>Volunteer planning</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-marketing"
+                  aria-expanded="false" aria-controls="c-marketing">
+                  <div class="committee-num">06</div>
+                  <div>
+                    <div class="committee-title">Marketing</div>
+                    <p class="committee-sub">Flyers, social &amp; promote</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-marketing" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Flyers, posts, and content planning</li>
+                      <li>Event promo timelines</li>
+                      <li>Photo/video coverage</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-membershpe"
+                  aria-expanded="false" aria-controls="c-membershpe">
+                  <div class="committee-num">07</div>
+                  <div>
+                    <div class="committee-title">MemberSHPE</div>
+                    <p class="committee-sub">Track, support &amp; members</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-membershpe" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Member point system + attendance</li>
+                      <li>Onboarding + follow-ups</li>
+                      <li>Support member success</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <button class="committee-card" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#c-shpetinas"
+                  aria-expanded="false" aria-controls="c-shpetinas">
+                  <div class="committee-num">08</div>
+                  <div>
+                    <div class="committee-title">SHPEtinas</div>
+                    <p class="committee-sub">Organize, plan &amp; empower</p>
+                  </div>
+                  <i class="fa-solid fa-chevron-down committee-chevron" aria-hidden="true"></i>
+                </button>
+                <div id="c-shpetinas" class="collapse committee-details">
+                  <div class="committee-details-inner">
+                    <ul>
+                      <li>Women-centered events + mentorship</li>
+                      <li>Professional + community building</li>
+                      <li>Support and empowerment</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section section">
+      <div class="container text-center">
+        <h2 class="cta-section__title">Ready to Join?</h2>
+        <p class="cta-section__subtitle mb-4">
+          Start with MineTracker, it takes two minutes and connects you to the whole SHPE//MAES familia.
+        </p>
+        <div class="page-hero__actions">
+          <a href="https://minetracker.utep.edu/organization/maesshpe30"
+            target="_blank" rel="noopener noreferrer"
+            class="btn-primary">
+            Join on MineTracker
+          </a>
+          <a href="mailto:shpemaesutep@gmail.com" class="btn-ghost">Questions? Email Us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <script>
+    $(function () {
+      $("#page-header").load("../header.html");
+      $("#page-footer").load("../footer.html");
+    });
+  </script>
+
+</body>
+</html>

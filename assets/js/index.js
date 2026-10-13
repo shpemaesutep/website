@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Keep the homepage URL clean if an old /index.html bookmark is used.
+  if (/\/index\.html$/i.test(window.location.pathname)) {
+    const cleanPath = window.location.pathname.replace(/index\.html$/i, "");
+    window.history.replaceState(null, "", cleanPath + window.location.search + window.location.hash);
+  }
+
   // ── Navbar (runs after async header injection) ───────────────────
   function initNav() {
     const nav = document.querySelector(".shpe-navbar");
@@ -12,14 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", onScroll, { passive: true });
 
     // 2) Active link highlight
-    const path = location.pathname;
-    const page = path.substring(path.lastIndexOf("/") + 1) || "index.html";
+    const normalizePath = (value) => {
+      const url = new URL(value, window.location.origin);
+      const cleanPath = url.pathname
+        .replace(/\/index\.html$/i, "/")
+        .replace(/\.html$/i, "/")
+        .replace(/\/+$/, "");
+      return cleanPath || "/";
+    };
+    const currentPath = normalizePath(window.location.href);
     nav.querySelectorAll(".nav-link").forEach(link => {
       const href = link.getAttribute("href");
       if (!href || href === "#" || href.startsWith("http")) return;
-      const cleanHref = href.replace("./", "");
-      if (cleanHref === page) link.classList.add("active");
-      else link.classList.remove("active");
+      link.classList.toggle("active", normalizePath(link.href) === currentPath);
     });
 
     // 3) Mobile: close menu when a link is clicked

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="canonical" href="https://shpemaesutep.github.io/website/resources/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student resources, internships, courses, resume samples, and chapter bylaws from SHPE//MAES UTEP">
+  <title>Resources | UTEP SHPE//MAES</title>
+
+  <link rel="icon" href="../favicon.png" type="image/png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- CSS: Bootstrap theme → design tokens → components → utilities -->
+  <link href="../assets/css/styles.css" rel="stylesheet" />
+  <link href="../assets/css/design-tokens.css" rel="stylesheet" />
+  <link href="../assets/css/components.css?v=20261009-nav-orange" rel="stylesheet" />
+  <link href="../assets/css/my-styles.css" rel="stylesheet" />
+
+  <style>
+    /* Resource card */
+    .resource-card {
+      background: var(--surface-default);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .resource-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+    }
+    .resource-media {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: #111;
+    }
+    .resource-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.35s ease;
+      opacity: 0.92;
+    }
+    .resource-card:hover .resource-media img {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+    .resource-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.70), rgba(0,0,0,0.25), rgba(0,0,0,0.08));
+      display: flex;
+      align-items: flex-end;
+      padding: 1.1rem;
+      gap: 0.75rem;
+    }
+    .resource-pill {
+      font-family: var(--font-ui);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: var(--radius-pill);
+      padding: 6px 12px;
+      font-size: var(--text-ui-sm);
+      color: #fff;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+    .pill-orange { background: rgba(255,130,0,0.35); border-color: rgba(255,130,0,0.35); }
+    .pill-green  { background: rgba(134,220,61,0.28); border-color: rgba(134,220,61,0.28); }
+    .pill-blue   { background: rgba(4,30,66,0.35);   border-color: rgba(4,30,66,0.35); }
+    .resource-body {
+      padding: 1.25rem 1.25rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .resource-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      color: var(--color-navy);
+      margin-bottom: 0.5rem;
+      font-size: 1.25rem;
+    }
+    .resource-text {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.1rem;
+      flex: 1;
+    }
+    .btn-pill-outline {
+      font-family: var(--font-ui);
+      font-weight: 700;
+      border-radius: var(--radius-pill);
+      padding: 12px 20px;
+      border: 2px solid var(--color-navy);
+      color: var(--color-navy);
+      background: transparent;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: all 0.25s ease;
+      width: fit-content;
+      font-size: var(--text-ui);
+    }
+    .btn-pill-outline:hover {
+      background: var(--color-orange);
+      border-color: var(--color-orange);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(255,130,0,0.22);
+    }
+  </style>
+
+  <!-- jQuery + Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/index.js"></script>
+</head>
+
+<body>
+  <header id="page-header"></header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="inner-hero inner-hero--centered" aria-label="Resources page header">
+      <div class="container inner-hero__inner">
+        <div class="inner-hero__text">
+          <p class="inner-hero__eyebrow">Resources</p>
+          <h1 class="inner-hero__title">Student Resources</h1>
+          <p class="inner-hero__subtitle">Practical links for internships, learning, resume prep, and career development, all in one place.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESOURCE CARDS -->
+    <section class="section section--soft">
+      <div class="container px-4 px-lg-5">
+        <div class="text-center mb-5">
+          <span class="section-pill reveal" data-anim="fade">Student Resources</span>
+          <h2 class="section-title mt-3 reveal" data-delay="100">Tools for Your Next Step</h2>
+          <p class="section-subtitle reveal" data-delay="200">
+            Apply early, sharpen your skills, and keep your documents ready.
+          </p>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- Internships -->
+          <div class="col-lg-6 reveal" data-delay="100">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="../assets/img/2026/summer-2027-tech-internships.jpg" alt="SHPE//MAES students gathered at UTEP" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-orange">
+                    <i class="fa-solid fa-briefcase"></i> Internships
+                  </span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Summer 2027 Tech Internships</h3>
+                <p class="resource-text">
+                  A running list of internship opportunities and application links. Apply early and track deadlines.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/SimplifyJobs/Summer2024-Internships">
+                  Apply <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Coursera -->
+          <div class="col-lg-6 reveal" data-delay="200">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="../assets/img/courserabutton.jpg" alt="Online learning platform" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-green">
+                    <i class="fa-solid fa-graduation-cap"></i> Learning
+                  </span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Free Coursera Courses</h3>
+                <p class="resource-text">
+                  Use UTEP's access to build skills in data, software, design, and professional development.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener noreferrer"
+                  href="https://www.coursera.org/career-academy/programs/career-academy-students-83fyf?authProvider=the-university-of-texas-at-el-paso">
+                  Learn <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Resume Samples -->
+          <div class="col-lg-6 reveal" data-delay="100">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="../assets/img/resumebutton.jpg" alt="Resume document" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-blue">
+                    <i class="fa-solid fa-file-lines"></i> Career
+                  </span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Resumé Samples</h3>
+                <p class="resource-text">
+                  Examples and templates from UTEP Career Center to help you structure strong, ATS-friendly resumes.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener noreferrer"
+                  href="https://www.utep.edu/student-affairs/careers/students-alumni/sample-documents-and-resources.html">
+                  Take a Look <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Bylaws -->
+          <div class="col-lg-6 reveal" data-delay="200">
+            <article class="resource-card">
+              <div class="resource-media">
+                <img src="../assets/img/2026/chapter-bylaws.jpg" alt="SHPE//MAES chapter members holding a UTEP flag" loading="lazy">
+                <div class="resource-overlay">
+                  <span class="resource-pill pill-orange">
+                    <i class="fa-solid fa-scale-balanced"></i> Chapter
+                  </span>
+                </div>
+              </div>
+              <div class="resource-body">
+                <h3 class="resource-title">Chapter Bylaws</h3>
+                <p class="resource-text">
+                  Chapter structure, membership guidelines, and officer responsibilities for 2026–2027.
+                </p>
+                <a class="btn-pill-outline" target="_blank" rel="noopener noreferrer"
+                  href="../assets/docs/Constitution_2026-2027.pdf">
+                  Open PDF <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="donation-heading">
+      <div class="container text-center">
+        <span class="section-pill">Support Our Chapter</span>
+        <h2 class="section-title mt-3" id="donation-heading">Donation Package</h2>
+        <p class="section-subtitle mb-4">Help support the next generation of engineers. View our chapter's donation package to learn more.</p>
+        <a href="../assets/docs/donation-package.pdf" class="btn-primary" target="_blank" rel="noopener noreferrer">
+          View Donation Package (PDF) <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="page-footer"></footer>
+
+  <script>
+    $(function () {
+      $("#page-header").load("../header.html");
+      $("#page-footer").load("../footer.html");
+    });
+  </script>
+</body>
+
+</html>
